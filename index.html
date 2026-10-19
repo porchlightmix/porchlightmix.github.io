@@ -75,16 +75,18 @@
   .waitlist{background:#2a2420;color:#f6efe6;border-radius:20px;padding:44px;text-align:center}
   .waitlist h2{color:#fff}
   .waitlist p{color:#d9cdbf;max-width:36em;margin:0 auto 24px}
-  form.wl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:620px;margin:0 auto}
-  form.wl input,form.wl select{padding:14px 16px;border-radius:999px;border:0;font-size:1rem;min-width:0;flex:1 1 220px}
-  form.wl select{flex:0 1 210px;color:var(--ink)}
-  .radio-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:16px 0 0;font-size:.92rem;color:#d9cdbf}
+  .tally-embed{background:#fff;border-radius:16px;max-width:640px;margin:0 auto;text-align:left;box-shadow:0 8px 28px rgba(0,0,0,.18)}
+  .tally-embed iframe{display:block;width:100%;border:0;border-radius:16px;background:#fff}
+  .waitlist .fallback{margin:16px auto 0;font-size:.95rem}
+  .waitlist a{color:#ffcf6b;font-weight:700}
+  .waitlist a:hover{color:#fff}
   .refund{font-size:.82rem;color:var(--muted);margin-top:10px;line-height:1.45}
   .refund-note{text-align:center;font-size:.9rem;color:var(--muted);margin-top:22px}
+  .product-line{font-weight:700;margin:0 0 8px;max-width:44em}
   .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:10px}
   .faq summary{font-weight:700;cursor:pointer}
   .faq p{color:var(--muted);margin-top:8px}
-  footer{padding:36px 0;color:var(--muted);font-size:.85rem;text-align:center}
+  footer{padding:36px 0;color:var(--muted);font-size:.85rem;text-align:center;line-height:1.7}
   @media (max-width:860px){
     .hero,.report-body,.vs{grid-template-columns:1fr}
     .grid3,.pricing{grid-template-columns:1fr}
@@ -190,6 +192,7 @@
 <section id="pricing">
   <div class="wrap">
     <h2>Simple pricing</h2>
+    <p class="product-line">Automated mix-feedback reports for musicians — $4.99 per report, delivered digitally.</p>
     <p class="sub">Pay per song, or subscribe if you release often. Cancel anytime.</p>
     <div class="pricing">
       <div class="price">
@@ -213,8 +216,7 @@
           <li>Reference-track comparison</li>
           <li>Prioritized fix list + PDF</li>
         </ul>
-        <!-- STRIPE PLACEHOLDER: replace "#STRIPE_LINK" with the $4.99 Stripe Payment Link once Iain has created it -->
-        <a class="btn" href="#STRIPE_LINK">Pre-order a report</a>
+        <a class="btn" href="https://buy.stripe.com/5kQdRa8FielP5a95gYf7i00">Pre-order a report — $4.99</a>
         <p class="refund">Pre-orders are fully refunded if Porchlight Mix doesn't launch. Email <a href="mailto:porchlightmix@gmail.com">porchlightmix@gmail.com</a> anytime.</p>
       </div>
       <div class="price">
@@ -238,23 +240,11 @@
     <div class="waitlist">
       <h2>Be first in line</h2>
       <p>We're opening to a small group of songwriters, bands and worship teams first. Join the waitlist and your first full report is on us.</p>
-      <!-- FORM ACTION PLACEHOLDER: replace "#FORM_ACTION_URL" with the Tally form endpoint once Iain approves -->
-      <form class="wl" action="#FORM_ACTION_URL" method="POST">
-        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
-        <select name="style" aria-label="Your music">
-          <option value="">Your music…</option>
-          <option>Singer-songwriter</option>
-          <option>Folk / Americana</option>
-          <option>Country</option>
-          <option>Band / Rock / Indie</option>
-          <option>Worship</option>
-          <option>Other</option>
-        </select>
-        <button class="btn" type="submit">Join waitlist</button>
-      </form>
-      <div class="radio-row">
-        <label><input type="checkbox" name="preorder" value="yes"> I'd pre-order a $4.99 report today</label>
+      <div class="tally-embed">
+        <iframe data-tally-src="https://tally.so/embed/laDJ05?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="644" frameborder="0" marginheight="0" marginwidth="0" title="Porchlight Mix — Early Access"></iframe>
       </div>
+      <p class="fallback"><a href="https://tally.so/r/laDJ05">Open the signup form</a></p>
+      <script async src="https://tally.so/widgets/embed.js"></script>
     </div>
   </div>
 </section>
@@ -270,7 +260,7 @@
 </section>
 
 <footer>
-  <div class="wrap">© Porchlight Mix · Made for musicians, by musicians · <a href="#">Privacy</a> · <a href="mailto:porchlightmix@gmail.com">Contact: porchlightmix@gmail.com</a></div>
+  <div class="wrap">© Porchlight Mix · Made for musicians, by musicians · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
 </footer>
 
 </body>
