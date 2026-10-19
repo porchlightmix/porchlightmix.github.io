@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Porchlight Mix: Release-Ready Check for songwriters, bands &amp; worship teams</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2715%27 fill=%27%23ffe9a8%27 opacity=%27.5%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27%23f0a24a%27/%3E%3C/svg%3E">
+<meta name="description" content="Upload your mix and get plain-English notes written for acoustic, folk, country, band and worship music, plus a pass/fail check against streaming and distributor specs.">
+<style>
+  :root{
+    --bg:#faf6ef; --ink:#2a2420; --muted:#6d625a; --card:#fff; --line:#e8dfd2;
+    --accent:#c4622d; --accent-dk:#9e4c21; --pass:#2f7d4f; --warn:#b7791f; --fail:#b23a32;
+    --radius:14px; --shadow:0 6px 24px rgba(60,40,20,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
+  a{color:var(--accent-dk)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  header.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+  .logo{font-weight:800;font-size:1.25rem;letter-spacing:.5px;display:flex;align-items:center;gap:10px}
+  .logo .dot{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#fff3c4 0%,#ffcf6b 45%,#e8963e 100%);box-shadow:0 0 0 4px rgba(255,200,100,.28),0 0 16px 6px rgba(255,190,90,.45)}
+  .logo .logo-mix{color:var(--accent)}
+  .nav a.btn-sm{font-size:.9rem;padding:8px 16px;border-radius:999px;border:1.5px solid var(--accent);text-decoration:none;font-weight:600}
+  .hero{padding:56px 0 64px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent-dk);background:#f3e3d6;padding:5px 12px;border-radius:999px;margin-bottom:18px}
+  h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.1rem,4.6vw,3.3rem);line-height:1.12;margin-bottom:18px}
+  h1 em{color:var(--accent);font-style:italic}
+  .lead{font-size:1.15rem;color:var(--muted);margin-bottom:28px;max-width:34em}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:999px;border:0;font-size:1rem;cursor:pointer;transition:background .15s}
+  .btn:hover{background:var(--accent-dk)}
+  .btn.ghost{background:transparent;color:var(--accent-dk);border:1.5px solid var(--accent)}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .fine{font-size:.85rem;color:var(--muted);margin-top:12px}
+  .hero-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+  .hero-card h4{font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:12px}
+  .check{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+  .check:last-child{border-bottom:0}
+  .pill{font-size:.75rem;font-weight:800;padding:3px 10px;border-radius:999px;color:#fff}
+  .pill.pass{background:var(--pass)} .pill.warn{background:var(--warn)} .pill.fail{background:var(--fail)}
+  section{padding:64px 0}
+  section.alt{background:#f3ece1}
+  h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:14px;line-height:1.2}
+  .sub{color:var(--muted);max-width:40em;margin-bottom:36px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .card h3{font-size:1.1rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.97rem}
+  .num{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .vs .card.bad{border-left:5px solid var(--fail)}
+  .vs .card.good{border-left:5px solid var(--pass)}
+  .vs blockquote{font-style:italic;color:var(--ink);margin:10px 0;padding-left:12px;border-left:3px solid var(--line)}
+  .report{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .report-head{background:#2a2420;color:#f6efe6;padding:16px 22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:center}
+  .report-head .tag{background:#f3c74f;color:#2a2420;font-weight:800;font-size:.75rem;padding:4px 10px;border-radius:6px;letter-spacing:.8px}
+  .report-body{padding:22px;display:grid;grid-template-columns:.9fr 1.1fr;gap:26px}
+  .metric{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+  .metric span:last-child{font-weight:700}
+  .note{padding:12px 14px;border-radius:10px;background:#faf6ef;margin-bottom:12px;border-left:4px solid var(--warn);font-size:.95rem}
+  .note.crit{border-left-color:var(--fail)} .note.ok{border-left-color:var(--pass)}
+  .note b{display:block;margin-bottom:3px}
+  .note .ts{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;color:var(--muted)}
+  .disclaimer{font-size:.82rem;color:var(--muted);padding:0 22px 18px}
+  .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  .price{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .price.feat{border:2px solid var(--accent);position:relative}
+  .price.feat::before{content:"Most popular";position:absolute;top:-13px;left:24px;background:var(--accent);color:#fff;font-size:.75rem;font-weight:800;padding:3px 12px;border-radius:999px}
+  .price h3{font-size:1.05rem}
+  .amt{font-family:Georgia,serif;font-size:2.4rem;font-weight:700;margin:6px 0}
+  .amt small{font-size:1rem;color:var(--muted);font-family:inherit;font-weight:400}
+  .price ul{list-style:none;margin:14px 0 22px;flex:1}
+  .price li{padding:5px 0 5px 24px;position:relative;font-size:.95rem;color:var(--muted)}
+  .price li::before{content:"✓";position:absolute;left:0;color:var(--pass);font-weight:800}
+  .waitlist{background:#2a2420;color:#f6efe6;border-radius:20px;padding:44px;text-align:center}
+  .waitlist h2{color:#fff}
+  .waitlist p{color:#d9cdbf;max-width:36em;margin:0 auto 24px}
+  form.wl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:620px;margin:0 auto}
+  form.wl input,form.wl select{padding:14px 16px;border-radius:999px;border:0;font-size:1rem;min-width:0;flex:1 1 220px}
+  form.wl select{flex:0 1 210px;color:var(--ink)}
+  .radio-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:16px 0 0;font-size:.92rem;color:#d9cdbf}
+  .refund{font-size:.82rem;color:var(--muted);margin-top:10px;line-height:1.45}
+  .refund-note{text-align:center;font-size:.9rem;color:var(--muted);margin-top:22px}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:10px}
+  .faq summary{font-weight:700;cursor:pointer}
+  .faq p{color:var(--muted);margin-top:8px}
+  footer{padding:36px 0;color:var(--muted);font-size:.85rem;text-align:center}
+  @media (max-width:860px){
+    .hero,.report-body,.vs{grid-template-columns:1fr}
+    .grid3,.pricing{grid-template-columns:1fr}
+    .hero{padding:28px 0 40px}
+    section{padding:48px 0}
+    .waitlist{padding:30px 20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="nav">
+    <div class="logo"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></div>
+    <a class="btn-sm" href="#waitlist">Join the waitlist</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Release-Ready Check</span>
+      <h1>Mix feedback for songs with <em>real voices</em> and real instruments.</h1>
+      <p class="lead">Upload your mix and get plain-English notes written for acoustic, folk, country, band and worship music. You also get a pass/fail check against Spotify, Apple Music and distributor specs, so you can release with confidence.</p>
+      <div class="cta-row">
+        <a class="btn" href="#waitlist">Get early access</a>
+        <a class="btn ghost" href="#sample">See an example report</a>
+      </div>
+      <p class="fine">Free basic check · Full report $4.99 · No plugins to install</p>
+    </div>
+    <div class="hero-card" aria-label="Example release checklist">
+      <h4>Example release checklist</h4>
+      <div class="check"><span>Integrated loudness</span><span class="pill pass">PASS</span></div>
+      <div class="check"><span>True peak ≤ −1 dBTP</span><span class="pill fail">FIX</span></div>
+      <div class="check"><span>Clipping / overs</span><span class="pill pass">PASS</span></div>
+      <div class="check"><span>Lead vocal vs. guitars</span><span class="pill warn">CHECK</span></div>
+      <div class="check"><span>Low end (kick / bass / boom)</span><span class="pill pass">PASS</span></div>
+      <div class="check"><span>Mono compatibility</span><span class="pill pass">PASS</span></div>
+      <div class="check"><span>Silence at head / tail</span><span class="pill warn">CHECK</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="alt" id="problem">
+  <div class="wrap">
+    <h2>Most mix checkers were built for EDM.</h2>
+    <p class="sub">Most AI mix tools compare your song to dance-music targets: big sub-bass, hyped highs, loudness pushed to the limit. Run a fingerpicked ballad or a worship set through one and the advice can work against the song.</p>
+    <div class="vs">
+      <div class="card bad">
+        <h3>Genre-blind advice</h3>
+        <blockquote>"Low end is 6 dB below target. Boost sub-bass. Increase loudness to −8 LUFS."</blockquote>
+        <p>Following that on an acoustic track leaves you with boom, a squashed vocal, and a song that sounds worse after Spotify turns it down.</p>
+      </div>
+      <div class="card good">
+        <h3>Advice that understands your song</h3>
+        <blockquote>"Your vocal drops about 3 dB under the strummed guitar in the choruses. Try a little vocal ride or a gentle 2–4 kHz dip on the guitar."</blockquote>
+        <p>Notes compared against songs like yours, in words you can act on in any DAW.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">No plugins, no jargon, no waiting days for a stranger's opinion.</p>
+    <div class="grid3">
+      <div class="card"><div class="num">1</div><h3>Upload your mix</h3><p>Drop in a WAV, AIFF, FLAC or MP3 and pick your style: singer-songwriter, folk, country, band or worship. Add a reference track if you like.</p></div>
+      <div class="card"><div class="num">2</div><h3>Get your report in minutes</h3><p>We measure loudness, true peak, clipping, frequency balance, stereo width and how the vocal sits, then explain it all in plain English.</p></div>
+      <div class="card"><div class="num">3</div><h3>Work through the fix list</h3><p>A short, prioritized list of what to change before you release, plus a pass/fail check against streaming and distributor specs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="sample">
+  <div class="wrap">
+    <h2>What a report looks like</h2>
+    <p class="sub">An excerpt from a full report. <strong>This is an illustrative example, not a real customer's song.</strong></p>
+    <div class="report">
+      <div class="report-head">
+        <div><strong>"Harbor Lights" (mix v3)</strong> · Style: Singer-songwriter (vocal + acoustic guitar + light band)</div>
+        <span class="tag">EXAMPLE REPORT</span>
+      </div>
+      <div class="report-body">
+        <div>
+          <div class="metric"><span>Integrated loudness</span><span>−13.2 LUFS</span></div>
+          <div class="metric"><span>True peak</span><span style="color:var(--fail)">−0.1 dBTP</span></div>
+          <div class="metric"><span>Loudness range</span><span>7.4 LU</span></div>
+          <div class="metric"><span>Stereo correlation</span><span>+0.62</span></div>
+          <div class="metric"><span>Low-mid (200–500 Hz) vs. genre</span><span style="color:var(--warn)">+3.1 dB</span></div>
+          <div class="metric"><span>Sample rate / bit depth</span><span>44.1 kHz / 24-bit</span></div>
+        </div>
+        <div>
+          <div class="note crit"><b>1. Peaks are too hot for streaming</b>Your true peak is −0.1 dBTP. Streaming services recommend −1 dBTP or lower. Pull your limiter ceiling down to −1.0 dB so the song doesn't distort when it's converted.</div>
+          <div class="note"><b>2. The vocal gets buried in the choruses</b><span class="ts">1:02–1:34, 2:20–2:52</span><br>The lead vocal drops about 3 dB against the strummed guitar. Ride the vocal up 1–2 dB in those sections, or carve a gentle 2–4 kHz dip in the guitar.</div>
+          <div class="note"><b>3. A little boxy around 300 Hz</b>Low mids are fuller than typical for this style. A wide 2 dB cut around 250–350 Hz on the guitar bus should open things up.</div>
+          <div class="note ok"><b>Working well</b>Dynamics breathe nicely for an acoustic song, and the mix holds up in mono.</div>
+        </div>
+      </div>
+      <p class="disclaimer">Example data for illustration only. Spec references: Spotify recommends about −14 LUFS integrated and a true peak at or below −1 dBTP.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Simple pricing</h2>
+    <p class="sub">Pay per song, or subscribe if you release often. Cancel anytime.</p>
+    <div class="pricing">
+      <div class="price">
+        <h3>Basic Check</h3>
+        <div class="amt">Free</div>
+        <ul>
+          <li>Loudness &amp; true peak</li>
+          <li>Clipping check</li>
+          <li>Pass/fail streaming checklist</li>
+          <li>Your #1 fix</li>
+        </ul>
+        <a class="btn ghost" href="#waitlist">Join waitlist</a>
+      </div>
+      <div class="price feat">
+        <h3>Full Report</h3>
+        <div class="amt">$4.99 <small>/ song</small></div>
+        <ul>
+          <li>Everything in Basic</li>
+          <li>Vocal &amp; instrument balance notes</li>
+          <li>Genre-aware frequency balance</li>
+          <li>Reference-track comparison</li>
+          <li>Prioritized fix list + PDF</li>
+        </ul>
+        <!-- STRIPE PLACEHOLDER: replace "#STRIPE_LINK" with the $4.99 Stripe Payment Link once Iain has created it -->
+        <a class="btn" href="#STRIPE_LINK">Pre-order a report</a>
+        <p class="refund">Pre-orders are fully refunded if Porchlight Mix doesn't launch. Email <a href="mailto:porchlightmix@gmail.com">porchlightmix@gmail.com</a> anytime.</p>
+      </div>
+      <div class="price">
+        <h3>Songwriter Plan</h3>
+        <div class="amt">$9.99 <small>/ month</small></div>
+        <ul>
+          <li>10 full reports a month</li>
+          <li>Compare mix versions</li>
+          <li>Saved reference tracks</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a class="btn ghost" href="#waitlist">Join waitlist</a>
+      </div>
+    </div>
+    <p class="refund-note">Pre-orders are fully refunded if Porchlight Mix doesn't launch. Email <a href="mailto:porchlightmix@gmail.com">porchlightmix@gmail.com</a> anytime.</p>
+  </div>
+</section>
+
+<section class="alt" id="waitlist">
+  <div class="wrap">
+    <div class="waitlist">
+      <h2>Be first in line</h2>
+      <p>We're opening to a small group of songwriters, bands and worship teams first. Join the waitlist and your first full report is on us.</p>
+      <!-- FORM ACTION PLACEHOLDER: replace "#FORM_ACTION_URL" with the Tally form endpoint once Iain approves -->
+      <form class="wl" action="#FORM_ACTION_URL" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+        <select name="style" aria-label="Your music">
+          <option value="">Your music…</option>
+          <option>Singer-songwriter</option>
+          <option>Folk / Americana</option>
+          <option>Country</option>
+          <option>Band / Rock / Indie</option>
+          <option>Worship</option>
+          <option>Other</option>
+        </select>
+        <button class="btn" type="submit">Join waitlist</button>
+      </form>
+      <div class="radio-row">
+        <label><input type="checkbox" name="preorder" value="yes"> I'd pre-order a $4.99 report today</label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Do I need to install anything?</summary><p>No. It runs in your browser. Export a mix from any DAW (or even a phone recording app) and upload it.</p></details>
+    <details><summary>Is a human listening to my song?</summary><p>No. Your report is generated automatically from measurements of your audio and written up in plain English. Your song is private, and the file is deleted after analysis.</p></details>
+    <details><summary>Will you use my music to train AI?</summary><p>No. Never.</p></details>
+    <details><summary>Does it work for mastered tracks too?</summary><p>Yes. Upload a mix before mastering or a final master before you send it to your distributor.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© Porchlight Mix · Made for musicians, by musicians · <a href="#">Privacy</a> · <a href="mailto:porchlightmix@gmail.com">Contact: porchlightmix@gmail.com</a></div>
+</footer>
+
+</body>
+</html>
