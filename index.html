@@ -75,17 +75,14 @@
   .waitlist{background:#2a2420;color:#f6efe6;border-radius:20px;padding:44px;text-align:center}
   .waitlist h2{color:#fff}
   .waitlist p{color:#d9cdbf;max-width:36em;margin:0 auto 24px}
-  /* Kept so the Tally form (email, style, submit) can be dropped back in. */
-  form.wl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:620px;margin:0 auto}
-  form.wl input,form.wl select{padding:14px 16px;border-radius:999px;border:0;font-size:1rem;min-width:0;flex:1 1 220px}
-  form.wl select{flex:0 1 210px;color:var(--ink)}
-  .radio-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:16px 0 0;font-size:.92rem;color:#d9cdbf}
+  .tally-embed{background:#fff;border-radius:16px;max-width:640px;margin:0 auto;text-align:left;box-shadow:0 8px 28px rgba(0,0,0,.18)}
+  .tally-embed iframe{display:block;width:100%;border:0;border-radius:16px;background:#fff}
+  .waitlist .fallback{margin:16px auto 0;font-size:.95rem}
+  .waitlist a{color:#ffcf6b;font-weight:700}
+  .waitlist a:hover{color:#fff}
   .refund{font-size:.82rem;color:var(--muted);margin-top:10px;line-height:1.45}
   .refund-note{text-align:center;font-size:.9rem;color:var(--muted);margin-top:22px}
   .product-line{font-weight:700;margin:0 0 8px;max-width:44em}
-  .waitlist .soon{color:#f6efe6;font-size:1.08rem;background:rgba(255,255,255,.06);border:1px solid rgba(243,199,79,.4);border-radius:16px;padding:18px 22px;max-width:40em;margin-bottom:0}
-  .waitlist a{color:#ffcf6b;font-weight:700}
-  .waitlist a:hover{color:#fff}
   .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:10px}
   .faq summary{font-weight:700;cursor:pointer}
   .faq p{color:var(--muted);margin-top:8px}
@@ -244,8 +241,11 @@
     <div class="waitlist">
       <h2>Be first in line</h2>
       <p>We're opening to a small group of songwriters, bands and worship teams first. Join the waitlist and your first full report is on us.</p>
-      <!-- TALLY: replace the note below with a Tally embed or a form that posts to the real Tally URL. Do not restore a placeholder action. -->
-      <p class="soon">Signups open very soon — email <a href="mailto:porchlightmix@gmail.com">porchlightmix@gmail.com</a> to get on the early list.</p>
+      <div class="tally-embed">
+        <iframe data-tally-src="https://tally.so/embed/laDJ05?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="644" frameborder="0" marginheight="0" marginwidth="0" title="Porchlight Mix — Early Access"></iframe>
+      </div>
+      <p class="fallback"><a href="https://tally.so/r/laDJ05">Open the signup form</a></p>
+      <script async src="https://tally.so/widgets/embed.js"></script>
     </div>
   </div>
 </section>
