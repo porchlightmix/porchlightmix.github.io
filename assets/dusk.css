@@ -1,0 +1,131 @@
+/* Porchlight Mix: "Porch at Dusk" theme (v4). Loaded LAST on every page so it overrides older page styles.
+   Palette: night #121A30 · panel #1C2542 · cream text #F4ECDC · amber #F5B544 · light amber #FFCF7A.
+   Fonts are self-hosted (SIL Open Font License, see assets/fonts/OFL-*.txt), so no third-party font requests. */
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/fraunces.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-style:italic;font-weight:400 700;font-display:swap;src:url(fonts/fraunces-italic.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/inter.woff2) format("woff2")}
+
+:root{
+  color-scheme:dark;
+  --bg:#121a30; --bg-deep:#0d1426; --card:#1c2542; --card-2:#232d50; --line:#33406a;
+  --ink:#f4ecdc; --muted:#c3bccf; --accent:#f5b544; --accent-dk:#ffcf7a; --on-accent:#1a1205;
+  --pass:#74d39c; --warn:#f7c66b; --fail:#ff9d90; --info:#9ccbec;
+  --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+html{background:var(--bg)}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg) radial-gradient(ellipse 760px 440px at 6% -3%,rgba(245,181,68,.13),transparent 70%) no-repeat}
+::selection{background:rgba(245,181,68,.35);color:#fff}
+h1,h2,.amt,.metric .v{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+h3,h4{color:var(--ink)}
+h1 em{color:var(--accent);font-style:italic;font-weight:500}
+a{color:var(--accent-dk)}
+a:hover{color:#ffe2a8}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+strong,b{color:inherit}
+
+/* header + logo */
+.logo,.logo:hover{color:var(--ink)}
+.logo .logo-mix{color:var(--accent)}
+.logo .dot{box-shadow:0 0 0 5px rgba(255,200,100,.22),0 0 26px 10px rgba(255,190,90,.5)}
+.navlinks a.tl{color:var(--ink)}
+.navlinks a.tl:hover,.navlinks a.tl[aria-current]{color:var(--accent-dk)}
+.navlinks a.btn-sm,.nav a.btn-sm{color:var(--accent-dk);border-color:var(--accent);background:transparent}
+.navlinks a.btn-sm:hover,.nav a.btn-sm:hover{background:var(--accent);color:var(--on-accent)}
+
+/* buttons + small type */
+.btn{background:var(--accent);color:var(--on-accent);font-family:var(--sans)}
+.btn:hover{background:var(--accent-dk);color:var(--on-accent)}
+.btn.ghost{background:transparent;color:var(--accent-dk);border-color:var(--accent)}
+.btn.ghost:hover{background:rgba(245,181,68,.12);color:#ffe2a8}
+button.btn:disabled{opacity:.6;cursor:not-allowed}
+.eyebrow{background:rgba(245,181,68,.14);color:var(--accent-dk)}
+.lead,.sub,.fine,.refund,.refund-note,footer,.disclaimer,.updated,.meta,.footnotes,.sources{color:var(--muted)}
+footer a{color:var(--accent-dk)}
+
+/* status pills: dark text on amber, white text on deep green/red/blue (all ≥4.5:1) */
+.pill{color:#fff}
+.pill.pass{background:#2f7d4f;color:#fff}
+.pill.warn{background:#f0b443;color:var(--on-accent)}
+.pill.fail{background:#b23a32;color:#fff}
+.pill.info{background:#3d6a8a;color:#fff}
+
+/* cards + panels */
+.card,.hero-card,.price,.report,.article,.doc,.faq details,.panel{background:var(--card);border-color:var(--line);box-shadow:var(--shadow)}
+.card p,.price li,.faq p,.post-list .card p{color:var(--muted)}
+.check{border-bottom-color:var(--line)}
+.hero-card h4{color:var(--muted)}
+
+/* homepage */
+.try-band{background:#19213b;border-color:var(--line)}
+.try-band p{color:var(--muted)}
+section.alt{background:var(--bg-deep)}
+.num{background:var(--accent);color:var(--on-accent)}
+.vs blockquote{color:var(--ink);border-left-color:var(--line)}
+.vs .card.bad{border-left-color:#d9534a} .vs .card.good{border-left-color:#3f9e68}
+.report-head{background:#0a1020;color:var(--ink)}
+.report-head .tag,.file-head .tag{background:var(--accent);color:var(--on-accent)}
+.metric{border-bottom-color:var(--line)}
+.note{background:var(--card-2);border-left-color:#e0a43a}
+.note.crit{border-left-color:#e0645a} .note.ok{border-left-color:#3f9e68}
+.note .ts{color:var(--muted)}
+.price.feat{border-color:var(--accent)}
+.price.feat::before{background:var(--accent);color:var(--on-accent)}
+.price li::before{color:var(--pass)}
+.waitlist{background:linear-gradient(180deg,#1f2a4d,#18213d);border:1px solid var(--line)}
+.waitlist h2{color:#fff} .waitlist p{color:var(--muted)}
+.waitlist a{color:var(--accent-dk)} .waitlist a:hover{color:#fff}
+/* Tally form: a warm "lit window" card with breathing room. The form itself is drawn by Tally in its own
+   (light) theme, so the card stays light; color-scheme:light keeps the embed's transparent background working. */
+.tally-embed{background:#f6efe2;padding:22px 26px 8px;border-radius:16px;box-shadow:0 0 0 1px rgba(245,181,68,.35),0 10px 40px rgba(245,181,68,.12)}
+.tally-embed iframe{background:transparent;color-scheme:light;border-radius:0}
+.faq summary{color:var(--ink)}
+.faq details[open]{border-color:#4a5788}
+
+/* shared article/blog styles */
+.cta-band{background:linear-gradient(180deg,#1f2a4d,#18213d);border:1px solid var(--line);color:var(--ink)}
+.cta-band h2{color:#fff} .cta-band p{color:var(--muted)}
+.cta-band a.alt{color:var(--accent-dk)}
+.callout{background:var(--card-2);border-left-color:var(--accent)}
+.callout.check{border-left-color:#3f9e68}
+table.simple th,table.simple td{border-bottom-color:var(--line)}
+table.simple th{color:var(--muted)}
+.sources{border-top-color:var(--line)}
+.post-list .card h2 a{color:var(--ink)}
+.post-list .card h2 a:hover{color:var(--accent-dk)}
+code,kbd{background:var(--card-2);color:var(--ink);border-radius:4px;padding:0 4px}
+
+/* legal pages */
+.back{color:var(--accent-dk)}
+
+/* free checker */
+.privacy-note{background:rgba(63,158,104,.14);border-color:rgba(116,211,156,.35);color:var(--ink)}
+.privacy-note b{color:var(--pass)}
+.drop{background:var(--card);border-color:#4a5788;color:var(--ink)}
+.drop:hover,.drop.over{border-color:var(--accent);background:#222c50}
+.status{color:var(--muted)} .status.err{color:var(--fail)}
+.bar{background:var(--line)} .bar span{background:var(--accent)}
+.file-head{background:#0a1020;color:var(--ink)}
+.panel{border-top:0}
+.panel .metric{background:var(--card-2);border:1px solid var(--line)}
+.metric .k,.metric .v small{color:var(--muted)}
+.fix{background:rgba(245,181,68,.10);border-left-color:var(--accent);color:var(--ink)}
+.rows .row{border-bottom-color:var(--line)}
+.rows .name small{color:var(--muted)}
+.upsell li{color:var(--muted)}
+.upsell li::before{color:var(--accent)}
+.cta-band .fine[style]{color:var(--muted)!important}
+
+/* upload page */
+.field label,.field legend{color:var(--ink)}
+.field .opt,.field .help{color:var(--muted)}
+.field input[type=text],.field input[type=email],.field select,.field textarea{background:#0f1629;border-color:#56639a;color:var(--ink)}
+.field input::placeholder,.field textarea::placeholder{color:#9a93ad}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(245,181,68,.25)}
+.field select option{background:#0f1629;color:var(--ink)}
+.radios input,.check input{accent-color:var(--accent)}
+.drop .chosen{color:var(--pass)}
+.err{color:var(--fail)}
+.progress .bar{background:var(--line)} .progress .bar span{background:var(--accent)}
+.progress .txt{color:var(--muted)}
+#done{border-left-color:#3f9e68}
