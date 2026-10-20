@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Porchlight Mix: Release-Ready Check for songwriters, bands &amp; worship teams</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2715%27 fill=%27%23ffe9a8%27 opacity=%27.5%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27%23f0a24a%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://porchlightmix.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Porchlight Mix">
+<meta property="og:title" content="Porchlight Mix: Release-Ready Check for acoustic and vocal music">
+<meta property="og:description" content="Plain-English mix notes for acoustic, folk, country, band and worship music, plus a pass/fail check against streaming and distributor specs.">
+<meta property="og:url" content="https://porchlightmix.github.io/">
 <meta name="description" content="Upload your mix and get plain-English notes written for acoustic, folk, country, band and worship music, plus a pass/fail check against streaming and distributor specs.">
 <style>
   :root{
@@ -86,6 +92,16 @@
   .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:10px}
   .faq summary{font-weight:700;cursor:pointer}
   .faq p{color:var(--muted);margin-top:8px}
+  header.nav{flex-wrap:wrap;gap:10px}
+  .navlinks{display:flex;align-items:center;gap:18px}
+  .navlinks a{white-space:nowrap}
+  .navlinks a.tl{color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem}
+  .navlinks a.tl:hover{color:var(--accent-dk)}
+  @media (max-width:520px){.navlinks{gap:12px}.navlinks a.tl{font-size:.88rem}.nav a.btn-sm{padding:6px 12px;font-size:.82rem}}
+  .try-band{background:#fff6ec;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .try-band .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:26px;padding-bottom:26px;flex-wrap:wrap}
+  .try-band h2{font-size:clamp(1.3rem,2.6vw,1.7rem);margin-bottom:4px}
+  .try-band p{color:var(--muted);max-width:40em}
   footer{padding:36px 0;color:var(--muted);font-size:.85rem;text-align:center;line-height:1.7}
   @media (max-width:860px){
     .hero,.report-body,.vs{grid-template-columns:1fr}
@@ -101,7 +117,11 @@
 <div class="wrap">
   <header class="nav">
     <div class="logo"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></div>
-    <a class="btn-sm" href="#waitlist">Join the waitlist</a>
+    <nav class="navlinks" aria-label="Main">
+      <a class="tl" href="checker.html">Free check</a>
+      <a class="tl" href="blog/index.html">Blog</a>
+      <a class="btn-sm" href="#waitlist">Join the waitlist</a>
+    </nav>
   </header>
 
   <div class="hero">
@@ -113,7 +133,7 @@
         <a class="btn" href="#waitlist">Get early access</a>
         <a class="btn ghost" href="#sample">See an example report</a>
       </div>
-      <p class="fine">Free basic check · Full report $4.99 · No plugins to install</p>
+      <p class="fine"><a href="checker.html">Free basic check, available now</a> · Full report $4.99 · No plugins to install</p>
     </div>
     <div class="hero-card" aria-label="Example release checklist">
       <h4>Example release checklist</h4>
@@ -127,6 +147,16 @@
     </div>
   </div>
 </div>
+
+<section class="try-band" id="free-check" style="padding:0">
+  <div class="wrap">
+    <div>
+      <h2>New: the free Release Check is live</h2>
+      <p>Check your song's loudness (LUFS), true peak, clipping and file format against Spotify, Apple Music, YouTube and Amazon Music. It runs in your browser, and your file is never uploaded.</p>
+    </div>
+    <a class="btn" href="checker.html">Check my song free</a>
+  </div>
+</section>
 
 <section class="alt" id="problem">
   <div class="wrap">
@@ -204,7 +234,7 @@
           <li>Pass/fail streaming checklist</li>
           <li>Your #1 fix</li>
         </ul>
-        <a class="btn ghost" href="#waitlist">Join waitlist</a>
+        <a class="btn ghost" href="checker.html">Run the free check</a>
       </div>
       <div class="price feat">
         <h3>Full Report</h3>
@@ -260,7 +290,7 @@
 </section>
 
 <footer>
-  <div class="wrap">© Porchlight Mix · Made for musicians, by musicians · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
+  <div class="wrap">© Porchlight Mix · Made for musicians, by musicians · <a href="checker.html">Free check</a> · <a href="blog/index.html">Blog</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
 </footer>
 
 </body>

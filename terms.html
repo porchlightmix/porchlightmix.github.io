@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terms of Service — Porchlight Mix</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2715%27 fill=%27%23ffe9a8%27 opacity=%27.5%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27%23f0a24a%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://porchlightmix.github.io/terms.html">
 <meta name="description" content="Terms of service for Porchlight Mix. Digital mix-feedback reports for musicians, provided as guidance. You keep all rights to your music.">
 <style>
   :root{
@@ -27,6 +28,12 @@
   .updated{color:var(--muted);font-size:.9rem;margin-bottom:18px}
   p{margin-bottom:12px}
   .back{display:inline-block;margin-top:12px;font-weight:700;text-decoration:none}
+  header.nav{flex-wrap:wrap;gap:10px}
+  .navlinks{display:flex;align-items:center;gap:18px}
+  .navlinks a{white-space:nowrap}
+  .navlinks a.tl{color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem}
+  .navlinks a.tl:hover{color:var(--accent-dk)}
+  @media (max-width:520px){.navlinks{gap:12px}.navlinks a.tl{font-size:.88rem}.nav a.btn-sm{padding:6px 12px;font-size:.82rem}}
   footer{padding:12px 0 36px;color:var(--muted);font-size:.85rem;text-align:center;line-height:1.7}
   @media (max-width:860px){
     .doc{padding:26px 20px 32px}
@@ -37,7 +44,11 @@
 <div class="wrap">
   <header class="nav">
     <a class="logo" href="index.html"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></a>
-    <a class="btn-sm" href="index.html">Back home</a>
+    <nav class="navlinks" aria-label="Main">
+      <a class="tl" href="checker.html">Free check</a>
+      <a class="tl" href="blog/index.html">Blog</a>
+      <a class="btn-sm" href="index.html">Back home</a>
+    </nav>
   </header>
 
   <article class="doc">
@@ -62,7 +73,7 @@
 </div>
 
 <footer>
-  <div class="wrap">© Porchlight Mix · Operated by Iain Kennedy, Langley, Washington, USA · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
+  <div class="wrap">© Porchlight Mix · Operated by Iain Kennedy, Langley, Washington, USA · <a href="checker.html">Free check</a> · <a href="blog/index.html">Blog</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
 </footer>
 </body>
 </html>
