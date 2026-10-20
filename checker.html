@@ -3,13 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free Release Check: LUFS, True Peak &amp; Streaming Specs | Porchlight Mix</title>
-<meta name="description" content="Free in-browser check for your finished song: integrated LUFS, true peak, clipping, silence and file format, compared with Spotify, Apple Music, YouTube and Amazon Music. Your file never leaves your device.">
+<title>Free LUFS &amp; True Peak Checker for Spotify | Porchlight Mix</title>
+<meta name="description" content="Free online LUFS and true-peak checker. See what Spotify, Apple Music, YouTube and Amazon will do to your song. Runs in your browser; nothing is uploaded.">
 <link rel="canonical" href="https://porchlightmix.github.io/checker.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Porchlight Mix">
-<meta property="og:title" content="Free Release Check: LUFS, true peak and streaming specs">
-<meta property="og:description" content="Check loudness, true peak, clipping and format against Spotify, Apple Music, YouTube and Amazon Music. Runs in your browser; nothing is uploaded.">
+<meta property="og:title" content="Free LUFS &amp; True Peak Checker for Spotify">
+<meta property="og:description" content="Free online LUFS and true-peak checker. See what Spotify, Apple Music, YouTube and Amazon will do to your song. Runs in your browser; nothing is uploaded.">
+<meta property="og:image" content="https://porchlightmix.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Porchlight Mix: release-ready mix check for acoustic and vocal songs">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://porchlightmix.github.io/checker.html">
 <meta name="theme-color" content="#121a30">
 <meta name="color-scheme" content="dark">
@@ -67,22 +73,121 @@
   }
 </style>
 <link rel="stylesheet" href="assets/dusk.css">
+<style>.faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px}.faq summary{font-weight:700;cursor:pointer;color:var(--ink)}.faq details p{color:var(--muted);margin-top:8px}</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Porchlight Mix Free Release Check",
+   "url": "https://porchlightmix.github.io/checker.html",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any (runs in a web browser)",
+   "browserRequirements": "Requires JavaScript and the Web Audio API",
+   "description": "Free in-browser checker that measures a song's integrated loudness (LUFS, ITU-R BS.1770-4), true peak, loudness range, clipping, silence and file format, and estimates how Spotify, Apple Music, YouTube and Amazon Music will adjust it. Audio is analyzed locally and never uploaded.",
+   "featureList": [
+    "Integrated loudness (LUFS)",
+    "True peak (dBTP, 4x oversampling)",
+    "Loudness range (LU)",
+    "Clipping detection",
+    "Leading and trailing silence",
+    "Sample rate, bit depth and format checks",
+    "Spotify, Apple Music, YouTube and Amazon Music normalization estimates"
+   ],
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Porchlight Mix",
+    "url": "https://porchlightmix.github.io/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is my file uploaded?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The check runs entirely in this browser tab. Your file never leaves your device, and nothing is stored."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why isn't loudness pass or fail?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Spotify, Apple Music, YouTube and Amazon Music adjust playback volume, so a louder master is simply turned down. What can cause real problems is peaks that are too high, which can distort when the file is converted for streaming."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What LUFS should I aim for on Spotify?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Spotify's default setting plays songs at about −14 LUFS. It recommends a true peak below −1 dBTP, or below −2 dBTP if the master is louder than −14 LUFS. Many acoustic and vocal songs sound good somewhere around −16 to −12 LUFS."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Will my reading match my DAW's meter?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It should be close. The check follows the ITU-R BS.1770-4 standard. Small differences between meters are normal, and mono files can read about 3 LU differently depending on how a meter treats them."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What does the free check not cover?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It measures the file, not the mix. It can't tell you if the vocal is buried or the guitar is muddy. The Porchlight Mix full report covers that."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://porchlightmix.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Free Release Check",
+     "item": "https://porchlightmix.github.io/checker.html"
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <div class="wrap">
   <header class="nav">
-    <a class="logo" href="index.html"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></a>
+    <a class="logo" href="./"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></a>
     <nav class="navlinks" aria-label="Main">
       <a class="tl" href="checker.html" aria-current="page">Free check</a>
-      <a class="tl" href="blog/index.html">Blog</a>
-      <a class="btn-sm" href="index.html#waitlist">Join the waitlist</a>
+      <a class="tl" href="blog/">Blog</a>
+      <a class="btn-sm" href="./#waitlist">Join the waitlist</a>
     </nav>
   </header>
 
   <div class="hero">
     <span class="eyebrow">Free Release Check</span>
     <h1>Is your song ready for Spotify and Apple Music?</h1>
-    <p class="lead">Drop in your finished mix or master. In a few seconds you'll see its loudness, true peak, clipping and file format, and what Spotify, Apple Music, YouTube and Amazon Music will do with it.</p>
+    <p class="lead">A free LUFS and true-peak checker for your finished mix or master. Drop in a file. In a few seconds you'll see its loudness, true peak, clipping and file format, and what Spotify, Apple Music, YouTube and Amazon Music will do with it.</p>
   </div>
   <p class="privacy-note"><span aria-hidden="true">🔒</span><span><b>Your file never leaves your device.</b> The analysis runs in this browser tab. Nothing is uploaded or stored, and the page works even if you go offline after it loads.</span></p>
 
@@ -129,8 +234,8 @@
           </ul>
         </div>
         <div class="go">
-          <a class="btn" href="index.html#waitlist">Join the waitlist</a>
-          <p class="fine" style="color:#d9cdbf;margin:12px 0 0">Waitlist members get their first full report free.<br><a class="alt" href="https://tally.so/r/laDJ05">Open the signup form</a></p>
+          <a class="btn" href="./#waitlist">Join the waitlist</a>
+          <p class="fine" style="color:#d9cdbf;margin:12px 0 0">Invited early-access testers get their first full report free.<br><a class="alt" href="https://tally.so/r/laDJ05">Open the signup form</a></p>
         </div>
       </div>
     </div>
@@ -144,6 +249,15 @@
       <div class="row"><div class="name">Loudness range</div><div class="what">How much the loudness moves between the quiet and loud parts of the song, in LU (EBU Tech 3342). Acoustic songs often have more range than pop, and that's fine.</div><div></div></div>
       <div class="row"><div class="name">Clipped spots</div><div class="what">Places where 3 or more samples in a row sit at full scale, which usually means the master clipped.</div><div></div></div>
     </div>
+  </section>
+
+  <section class="how faq" id="faq">
+    <h2>Questions about the free check</h2>
+      <details><summary>Is my file uploaded?</summary><p>No. The check runs entirely in this browser tab. Your file never leaves your device, and nothing is stored.</p></details>
+      <details><summary>Why isn't loudness pass or fail?</summary><p>Spotify, Apple Music, YouTube and Amazon Music adjust playback volume, so a louder master is simply turned down. What can cause real problems is peaks that are too high, which can distort when the file is converted for streaming.</p></details>
+      <details><summary>What LUFS should I aim for on Spotify?</summary><p>Spotify's default setting plays songs at about −14 LUFS. It recommends a true peak below −1 dBTP, or below −2 dBTP if the master is louder than −14 LUFS. Many acoustic and vocal songs sound good somewhere around −16 to −12 LUFS.</p></details>
+      <details><summary>Will my reading match my DAW's meter?</summary><p>It should be close. The check follows the ITU-R BS.1770-4 standard. Small differences between meters are normal, and mono files can read about 3 LU differently depending on how a meter treats them.</p></details>
+      <details><summary>What does the free check not cover?</summary><p>It measures the file, not the mix. It can't tell you if the vocal is buried or the guitar is muddy. The Porchlight Mix full report covers that.</p></details>
     <p class="fine" style="margin-top:12px">New to LUFS? Read <a href="blog/how-loud-acoustic-song-spotify-lufs.html">How loud should an acoustic song be for Spotify?</a></p>
   </section>
 
@@ -161,7 +275,7 @@
 </div>
 
 <footer>
-  <div class="wrap">© Porchlight Mix · <a href="checker.html">Free check</a> · <a href="blog/index.html">Blog</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
+  <div class="wrap">© Porchlight Mix · Made by a musician, for musicians · Washington, USA · <a href="checker.html">Free check</a> · <a href="blog/">Blog</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
 </footer>
 
 <script src="assets/checker-core.js"></script>

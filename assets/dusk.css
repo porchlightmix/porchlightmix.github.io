@@ -129,3 +129,10 @@ code,kbd{background:var(--card-2);color:var(--ink);border-radius:4px;padding:0 4
 .progress .bar{background:var(--line)} .progress .bar span{background:var(--accent)}
 .progress .txt{color:var(--muted)}
 #done{border-left-color:#3f9e68}
+
+/* v5 additions: homepage guide cards + FAQ footnote */
+a.card.guide{display:block;text-decoration:none;transition:border-color .15s,transform .15s}
+a.card.guide h3{color:var(--ink)}
+a.card.guide:hover{border-color:var(--accent);transform:translateY(-2px)}
+a.card.guide:hover h3{color:var(--accent-dk)}
+.faq .fine a{color:var(--accent-dk)}
