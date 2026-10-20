@@ -160,7 +160,7 @@
    "@type": "Product",
    "@id": "https://porchlightmix.github.io/#full-report",
    "name": "Porchlight Mix Full Report",
-   "description": "An automated, plain-English mix-feedback report for one song, emailed as a PDF, usually within 2–3 days: loudness, true peak, clipping, lead vocal vs. band balance, tone balance compared with reference recordings in your style, stereo width and mono, and a prioritized fix list. Uploaded songs are deleted within 7 days of upload, are never public, and are never used to train AI.",
+   "description": "An automated, plain-English mix-feedback report for one song, emailed as a PDF, usually within 2–3 days. It starts with the top 3 fixes in priority order, each with a specific action. It compares the song with Porchlight Mix's own reference recordings in the same style (Creative Commons recordings licensed for commercial use, not songs the customer picks): overall loudness, punch (peak-to-loudness ratio), loudness range, tonal balance, stereo width and lead-vocal level. It also covers true peak, clipping, file format, lead vocal vs. band balance over time and mono compatibility. It includes key release dates and a link to the free Release Checklist pre-filled with the customer's release date and distributor (when provided), and one free re-check of a revised version of the same song sent within 14 days. Uploaded songs are deleted within 7 days of upload, are never public, and are never used to train AI.",
    "brand": {
     "@id": "https://porchlightmix.github.io/#org"
    },
@@ -177,7 +177,8 @@
     "url": "https://buy.stripe.com/5kQdRa8FielP5a95gYf7i00",
     "seller": {
      "@id": "https://porchlightmix.github.io/#org"
-    }
+    },
+    "description": "One full report for one song, including one free re-check within 14 days. Pre-order: invited first, fully refunded if Porchlight Mix doesn't launch."
    }
   },
   {
@@ -205,7 +206,7 @@
      "name": "How much does it cost?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The basic Release Check is free and available now. The full report is $4.99 per song, and you can pre-order one today. The Songwriter Plan will be $9.99 a month for 10 full reports, starting at launch."
+      "text": "The Release Check, Loudness Preview and Release Checklist are free and available now. The full report is $4.99 per song, and you can pre-order one today. The Songwriter Plan will be $9.99 a month for 10 full reports, starting at launch. Every full report includes a free re-check."
      }
     },
     {
@@ -213,7 +214,39 @@
      "name": "What's the difference between the free check and the full report?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The free check measures your file: loudness, true peak, clipping, silence and format, and what each streaming service will do with it. The full report also looks at the mix itself: how the lead vocal sits against the band, tone balance compared with songs in your style, stereo width and mono, with a prioritized fix list."
+      "text": "The free Release Check measures your file: loudness, true peak, clipping, silence and format, and what each streaming service will do with it. The full report also looks at the mix itself. It starts with your top 3 fixes in priority order, each with a clear action. Then it compares your song with similar songs, shows how the lead vocal sits against the band, and checks stereo width and mono. It also includes your Release Checklist and one free re-check."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How does the free re-check work?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "After you fix your mix, send us one revised version of the same song within 14 days of getting your report. We run the same checks again at no charge. You get a short pass or fix result for each fix in your report, usually within 2–3 days. Each report includes one re-check. A different song needs its own report. See the re-check terms."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which songs do you compare my mix with?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Our own reference set: well-made recordings in your style, released under Creative Commons licenses that allow commercial use. We chose and checked them. They aren't songs you pick, and they aren't chart hits. We compare overall loudness, punch, the balance of bass, mids and treble, stereo width and, if there's a lead vocal, how loud it sits against the band. Some styles have small sets for now (12 to 16 recordings for country, worship and instrumental), and the report says so when that applies."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I choose my own reference songs?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not yet. Every report uses our own reference set for the style you pick."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the Release Checklist in my report?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "If you tell us your release date and distributor, your report lists your key dates: when to have files ready, the last safe day to upload, and the last day to pitch to Spotify. It also links to the free Release Checklist, already filled in with your date and distributor, so you can print the full list. No date yet? You get a link to the tool to fill in yourself."
      }
     },
     {
@@ -269,7 +302,7 @@
      "name": "How long does a full report take?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Usually 2–3 days. We email it to you as a PDF with a short fix list. It isn't instant, because each report is prepared one at a time during early access."
+      "text": "Usually 2–3 days. We email it to you as a PDF, starting with your top 3 fixes. It isn't instant, because each report is prepared one at a time during early access."
      }
     },
     {
@@ -424,7 +457,7 @@
       <a class="card tool" href="checker.html"><span class="badge">Free</span><h3>Release Check</h3><p>See your song's loudness (LUFS), true peak, clipping, silence and file format, with a pass, check or fix for each one.</p><span class="go">Check my song →</span></a>
       <a class="card tool" href="loudness-preview.html"><span class="badge">Free</span><h3>Loudness Preview</h3><p>See how much Spotify, Apple Music, YouTube, Amazon, TIDAL and Deezer will turn your song up or down. Then listen to the difference.</p><span class="go">Preview my song →</span></a>
       <a class="card tool" href="release-checklist.html"><span class="badge">Free</span><h3>Release Checklist</h3><p>Pick a release date and distributor. Get a dated, printable list: when to upload, when to pitch to Spotify, and what your files, art and credits need.</p><span class="go">Build my checklist →</span></a>
-      <a class="card tool paid" href="#pricing"><span class="badge">$4.99 a song</span><h3>Full Release-Ready report</h3><p>Plain-English notes on the mix itself: how the lead vocal sits against the band and how your tone compares with songs in your style, with a short fix list. Usually within 2–3 days.</p><span class="go">See the full report →</span></a>
+      <a class="card tool paid" href="#pricing"><span class="badge">$4.99 a song</span><h3>Full Release-Ready report</h3><p>Your top 3 fixes in order, a comparison with similar songs, your Release Checklist dates and one free re-check. Usually within 2–3 days.</p><span class="go">See the full report →</span></a>
     </div>
   </div>
 </section>
@@ -494,10 +527,10 @@
   <div class="wrap">
     <h2>Simple pricing</h2>
     <p class="product-line">Automated mix-feedback reports for musicians — $4.99 per report, delivered digitally.</p>
-    <p class="sub">Start with the free check. Get a full report for $4.99 a song. If you release often, the monthly plan costs less per report.</p>
+    <p class="sub">Start with the free tools. Get a full report for $4.99 a song. If you release often, the monthly plan costs less per report.</p>
     <div class="pricing">
       <div class="price">
-        <h3>Basic Check</h3>
+        <h3>Release Check</h3>
         <div class="amt">Free</div>
         <ul>
           <li>Loudness (LUFS) &amp; true peak</li>
@@ -512,11 +545,13 @@
         <h3>Full Report</h3>
         <div class="amt">$4.99 <small>/ song</small></div>
         <ul>
-          <li>Everything in Basic</li>
-          <li>Lead vocal vs. band balance</li>
-          <li>Tone balance compared with songs in your style</li>
-          <li>Stereo width &amp; mono check</li>
-          <li>Prioritized fix list, plus a PDF</li>
+          <li>Everything in the free Release Check</li>
+          <li><b>Your top 3 fixes, in order</b>, each with a clear action, like "lower your master by about 2 dB"</li>
+          <li><b>How your song compares with similar songs</b>: loudness, punch, tone, stereo width and vocal level, against our own reference recordings in your style</li>
+          <li>Lead vocal vs. band balance and a mono check</li>
+          <li><b>Your Release Checklist</b>: key dates for your release date and distributor, with your checklist already filled in</li>
+          <li><b>One free re-check</b>: send a revised version within 14 days</li>
+          <li>Emailed as a PDF, usually within 2–3 days</li>
         </ul>
         <a class="btn" href="https://buy.stripe.com/5kQdRa8FielP5a95gYf7i00">Pre-order a report — $4.99</a>
         <p class="refund">Pre-order customers are invited first. Fully refunded if Porchlight Mix doesn't launch. Questions: <a href="mailto:porchlightmix@gmail.com">porchlightmix@gmail.com</a></p>
@@ -526,12 +561,14 @@
         <div class="amt">$9.99 <small>/ month</small></div>
         <ul>
           <li>10 full reports a month</li>
+          <li>Every report includes the top 3 fixes, the comparison with similar songs, your Release Checklist and a free re-check</li>
           <li>Cancel anytime</li>
         </ul>
         <p class="refund">Coming at launch. We may add more to the plan over time. Join the waitlist to hear first.</p>
         <a class="btn ghost" href="#waitlist">Join the waitlist</a>
       </div>
     </div>
+    <p class="refund-note">Free re-check: one per report, for a revised version of the same song, sent within 14 days of getting your report. Re-check results usually arrive within 2–3 days. <a href="terms.html#recheck">Details</a></p>
   </div>
 </section>
 
@@ -569,15 +606,19 @@
     <h2>Frequently asked questions</h2>
     <details><summary>What is Porchlight Mix?</summary><p>Porchlight Mix is an online mix check for acoustic and vocal music. It measures your finished mix or master and tells you, in plain English, what to fix before you release it on Spotify, Apple Music and other streaming services.</p></details>
     <details><summary>Who is it for?</summary><p>Independent singer-songwriters, home recordists, folk and country artists, small bands and church worship teams who mix their own songs and want to know if they're ready to release.</p></details>
-    <details><summary>How much does it cost?</summary><p>The basic Release Check is free and available now. The full report is $4.99 per song, and you can <a href="https://buy.stripe.com/5kQdRa8FielP5a95gYf7i00">pre-order one today</a>. The Songwriter Plan will be $9.99 a month for 10 full reports, starting at launch.</p></details>
-    <details><summary>What's the difference between the free check and the full report?</summary><p>The <a href="checker.html">free check</a> measures your file: loudness, true peak, clipping, silence and format, and what each streaming service will do with it. The full report also looks at the mix itself: how the lead vocal sits against the band, tone balance compared with songs in your style, stereo width and mono, with a prioritized fix list.</p></details>
+    <details><summary>How much does it cost?</summary><p>The Release Check, Loudness Preview and Release Checklist are free and available now. The full report is $4.99 per song, and you can <a href="https://buy.stripe.com/5kQdRa8FielP5a95gYf7i00">pre-order one today</a>. The Songwriter Plan will be $9.99 a month for 10 full reports, starting at launch. Every full report includes a free re-check.</p></details>
+    <details><summary>What's the difference between the free check and the full report?</summary><p>The <a href="checker.html">free Release Check</a> measures your file: loudness, true peak, clipping, silence and format, and what each streaming service will do with it. The full report also looks at the mix itself. It starts with your top 3 fixes in priority order, each with a clear action. Then it compares your song with similar songs, shows how the lead vocal sits against the band, and checks stereo width and mono. It also includes your Release Checklist and one free re-check.</p></details>
+    <details><summary>How does the free re-check work?</summary><p>After you fix your mix, send us one revised version of the same song within 14 days of getting your report. We run the same checks again at no charge. You get a short pass or fix result for each fix in your report, usually within 2–3 days. Each report includes one re-check. A different song needs its own report. See the <a href="terms.html#recheck">re-check terms</a>.</p></details>
+    <details><summary>Which songs do you compare my mix with?</summary><p>Our own reference set: well-made recordings in your style, released under Creative Commons licenses that allow commercial use. We chose and checked them. They aren't songs you pick, and they aren't chart hits. We compare overall loudness, punch, the balance of bass, mids and treble, stereo width and, if there's a lead vocal, how loud it sits against the band. Some styles have small sets for now (12 to 16 recordings for country, worship and instrumental), and the report says so when that applies.</p></details>
+    <details><summary>Can I choose my own reference songs?</summary><p>Not yet. Every report uses our own reference set for the style you pick.</p></details>
+    <details><summary>What is the Release Checklist in my report?</summary><p>If you tell us your release date and distributor, your report lists your key dates: when to have files ready, the last safe day to upload, and the last day to pitch to Spotify. It also links to the free <a href="release-checklist.html">Release Checklist</a>, already filled in with your date and distributor, so you can print the full list. No date yet? You get a link to the tool to fill in yourself.</p></details>
     <details><summary>Is my song uploaded when I use the free check?</summary><p>No. The free check runs entirely in your web browser. Your file never leaves your device, and we never see it or its results.</p></details>
     <details><summary>What free tools do you have?</summary><p>Three, and they all run in your browser. The <a href="checker.html">Release Check</a> measures loudness, true peak, clipping and format. The <a href="loudness-preview.html">Loudness Preview</a> shows, and lets you hear, how much each streaming service will turn your song up or down. The <a href="release-checklist.html">Release Checklist</a> builds a dated to-do list from your release date and distributor.</p></details>
     <details><summary>When should I upload my song and pitch it to Spotify?</summary><p>Most distributors suggest uploading about 3–4 weeks before release. Pitch to Spotify's editors in Spotify for Artists at least 7 days before release. Our free <a href="release-checklist.html">Release Checklist</a> works out the dates for you, with links to each distributor's own rules.</p></details>
     <details><summary>How loud should my song be for Spotify?</summary><p>Spotify turns every song to about −14 LUFS on its default setting, so a louder master just gets turned down. Spotify recommends a true peak below −1 dBTP, or below −2 dBTP if your master is louder than −14 LUFS. Many acoustic releases sound good somewhere around −16 to −12 LUFS. Read more in <a href="blog/how-loud-acoustic-song-spotify-lufs.html">How loud should an acoustic song be for Spotify?</a></p></details>
     <details><summary>What file types can I use?</summary><p>The full report accepts WAV, AIFF, FLAC and MP3. The free check works with WAV, FLAC and MP3 in every modern browser, and with AIFF and M4A in some browsers. For the most accurate result, use the same lossless file you'll send to your distributor.</p></details>
     <details><summary>Do I need to install anything?</summary><p>No. The free check runs in your browser. For the full report, you export a mix from any recording app (or even a phone recording app) and send us the file.</p></details>
-    <details><summary>How long does a full report take?</summary><p>Usually 2–3 days. We email it to you as a PDF with a short fix list. It isn't instant, because each report is prepared one at a time during early access.</p></details>
+    <details><summary>How long does a full report take?</summary><p>Usually 2–3 days. We email it to you as a PDF, starting with your top 3 fixes. It isn't instant, because each report is prepared one at a time during early access.</p></details>
     <details><summary>Is a human listening to my song?</summary><p>No. Your report is generated automatically from measurements of your audio and written up in plain English. Your song stays private.</p></details>
     <details><summary>What happens to my song after the report?</summary><p>We delete uploaded songs within 7 days of upload, along with any working copies we made. The report itself is kept so you can ask about it later. See our <a href="privacy.html">privacy policy</a>.</p></details>
     <details><summary>Will you share my song or use it to train AI?</summary><p>No. Never. Your song is never public and is never shared with anyone. It's never sent to an outside AI service, and it's never used to train any AI model. We analyze it with our own software on our own computer (this includes an open-source audio-separation tool that splits the vocal from the instruments). No human listens to it.</p></details>

@@ -63,6 +63,20 @@
   function save(s) { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {} }
   var st = load(); st.done = st.done || {};
 
+  // Pre-fill from a link (used by the full report): ?date=YYYY-MM-DD&dist=distrokid&plan=artist&p=spotify,apple&opt=cover,alt
+  // Values only fill the form in this browser. Nothing is sent anywhere. A new release date clears old ticks.
+  (function fromLink() {
+    var q; try { q = new URLSearchParams(window.location.search); } catch (e) { return; }
+    if (!q || !q.toString()) return;
+    var d = q.get('date'), di = q.get('dist'), pl = q.get('plan'), ps = q.get('p'), op = q.get('opt'), used = false;
+    if (d && parse(d)) { if (st.date !== d) st.done = {}; st.date = d; used = true; }
+    if (di && D[di]) { st.dist = di; used = true; }
+    if (pl && AMUSE[pl]) { st.amusePlan = pl; used = true; }
+    if (ps) { var keys = PLATFORMS.map(function (x) { return x[0]; }); var sel = ps.split(',').filter(function (k) { return keys.indexOf(k) >= 0; }); if (sel.length) { st.platforms = sel; used = true; } }
+    if (op !== null) { var o = op.split(','); st.cover = o.indexOf('cover') >= 0; st.alt = o.indexOf('alt') >= 0; if (o.indexOf('nopresave') >= 0) st.presave = false; used = true; }
+    if (used) { save(st); window.__checklistPrefilled = true; }
+  })();
+
   function readForm() {
     st.date = $('date').value; st.dist = $('dist').value; st.amusePlan = $('amuse-plan').value;
     st.platforms = PLATFORMS.map(function (p) { return p[0]; }).filter(function (k) { return $('p-' + k).checked; });
@@ -142,6 +156,7 @@
   function update() { readForm(); $('amuse-row').hidden = st.dist !== 'amuse'; build(); }
   writeForm(); $('amuse-row').hidden = (st.dist || 'distrokid') !== 'amuse';
   readForm(); build();
+  if (window.__checklistPrefilled) { var pf = document.createElement('p'); pf.className = 'fine prefilled'; pf.setAttribute('role', 'status'); pf.textContent = 'Filled in from your link. Change anything below and the dates update.'; var fm = $('form'); fm.parentNode.insertBefore(pf, fm); }
   Array.prototype.forEach.call(document.querySelectorAll('#form input, #form select'), function (el) { el.addEventListener('change', update); el.addEventListener('input', update); });
   $('print').addEventListener('click', function () { window.print(); });
   $('copy').addEventListener('click', function () {
