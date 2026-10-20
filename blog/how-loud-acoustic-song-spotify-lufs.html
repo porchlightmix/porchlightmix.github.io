@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How loud should an acoustic or singer-songwriter song be for Spotify? (LUFS explained) | Porchlight Mix</title>
+<meta name="description" content="What LUFS and true peak mean, what Spotify does to quiet and loud masters, and a sensible loudness range for singer-songwriter, folk and acoustic releases.">
+<link rel="canonical" href="https://porchlightmix.github.io/blog/how-loud-acoustic-song-spotify-lufs.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Porchlight Mix">
+<meta property="og:title" content="How loud should an acoustic or singer-songwriter song be for Spotify? (LUFS explained) | Porchlight Mix">
+<meta property="og:description" content="What LUFS and true peak mean, what Spotify does to quiet and loud masters, and a sensible loudness range for singer-songwriter, folk and acoustic releases.">
+<meta property="og:url" content="https://porchlightmix.github.io/blog/how-loud-acoustic-song-spotify-lufs.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2715%27 fill=%27%23ffe9a8%27 opacity=%27.5%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27%23f0a24a%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+<meta property="article:published_time" content="2026-10-19">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "How loud should an acoustic or singer-songwriter song be for Spotify? (LUFS explained)",
+ "description": "What LUFS and true peak mean, what Spotify does to quiet and loud masters, and a sensible loudness range for singer-songwriter, folk and acoustic releases.",
+ "datePublished": "2026-10-19",
+ "dateModified": "2026-10-19",
+ "mainEntityOfPage": {
+  "@type": "WebPage",
+  "@id": "https://porchlightmix.github.io/blog/how-loud-acoustic-song-spotify-lufs.html"
+ },
+ "url": "https://porchlightmix.github.io/blog/how-loud-acoustic-song-spotify-lufs.html",
+ "author": {
+  "@type": "Organization",
+  "name": "Porchlight Mix",
+  "url": "https://porchlightmix.github.io/"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Porchlight Mix",
+  "url": "https://porchlightmix.github.io/"
+ },
+ "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="../index.html"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></a>
+    <nav class="navlinks" aria-label="Main">
+      <a class="tl" href="../checker.html">Free check</a>
+      <a class="tl" href="index.html">Blog</a>
+      <a class="btn-sm" href="../index.html#waitlist">Join the waitlist</a>
+    </nav>
+  </header>
+  <div class="wrap narrow">
+    <article class="article">
+      <p class="fine" style="margin-bottom:6px"><a href="index.html">← All articles</a></p>
+      <h1>How loud should an acoustic or singer-songwriter song be for Spotify? (LUFS explained)</h1>
+      <p class="meta">Porchlight Mix · <time datetime="2026-10-19">October 19, 2026</time> · 6 min read</p>
+<p>If you've ever uploaded a quiet, fingerpicked song next to a friend's loud pop master, you've probably wondered whether yours needs to be louder. The short answer: on Spotify, usually not. Spotify adjusts playback volume so most songs land at about the same loudness, and once you understand how that works, you can master acoustic songs for how they <em>sound</em> instead of for a number.</p>
+<p>This guide explains what LUFS means, what Spotify actually does with your file, and a sensible loudness range for singer-songwriter, folk and acoustic releases.</p>
+
+<h2>What LUFS actually measures</h2>
+<p><strong>LUFS</strong> (Loudness Units relative to Full Scale) is a measure of perceived loudness, defined in the international standard ITU-R BS.1770.<sup><a href="#s3">3</a></sup> Unlike a peak meter, which only shows the single highest sample, a LUFS meter tries to measure how loud something <em>feels</em> to a listener:</p>
+<ul>
+  <li>It applies a filter called <strong>K-weighting</strong>, which reduces the influence of deep bass and slightly emphasizes the upper midrange and treble, roughly matching how our ears respond.</li>
+  <li>It averages energy over time, in overlapping 400-millisecond blocks.</li>
+  <li>For the <strong>integrated</strong> (whole-song) value, it ignores near-silence and drops the quietest passages (anything more than 10 LU below the running average), so a long, quiet intro doesn't drag the number down much.</li>
+</ul>
+<p>One LU is the same size as one decibel, so a song at −10 LUFS is 4 dB louder than a song at −14 LUFS. When people say "my master is at −9," they almost always mean integrated loudness.</p>
+<p>You'll also see <strong>true peak</strong>, written in dBTP. Digital audio is a series of samples, and the smooth waveform rebuilt from them can rise slightly <em>between</em> samples. A true-peak meter oversamples the audio to estimate those in-between peaks. A file whose highest sample is −0.1 dBFS can have a true peak above 0 dBTP, and those overs can turn into distortion when the file is converted to a streaming format.</p>
+
+<h2>What Spotify does with your song</h2>
+<p>Spotify publishes its approach in its artist help pages,<sup><a href="#s1">1</a></sup> and the key points are:</p>
+<ul>
+  <li><strong>The default reference is −14 LUFS integrated</strong>, measured with ITU 1770. Premium listeners can choose "Loud" (−11 LUFS) or "Quiet" (−19 LUFS) instead.</li>
+  <li><strong>Louder songs are turned down.</strong> A master at −8 LUFS is played about 6 dB quieter. Spotify notes this lowers the volume without adding distortion.</li>
+  <li><strong>Quieter songs are turned up, but only as far as their peaks allow.</strong> Spotify leaves 1 dB of headroom. Its own example is a track at −20 LUFS with a true peak of −5 dBFS, which only gets raised to −16 LUFS.</li>
+  <li><strong>Albums are normalized as a unit</strong> when someone plays the album, so a gentle ballad stays gentler than the full-band track next to it. In playlists and on shuffle, each track is adjusted individually.</li>
+  <li><strong>Not every playback path normalizes.</strong> Spotify says the web player and some third-party devices, like TVs and speakers, don't apply normalization.</li>
+</ul>
+<p>Spotify's mastering tips are to aim for around −14 LUFS integrated, keep true peak below −1 dBTP, and if your master is louder than −14 LUFS, keep true peak below −2 dBTP, because loud tracks are more likely to distort when they're encoded.</p>
+
+<div class="callout"><strong>The practical takeaway:</strong> making your master louder than −14 LUFS doesn't make it louder for most Spotify listeners. It just gets turned down, and if you squashed it with a limiter to get there, the squashing is all they'll notice.</div>
+
+<h2>So how loud should an acoustic song be?</h2>
+<p>There's no single correct number, and no standard says every song must sit at −14. A sensible approach for acoustic and vocal music:</p>
+<ol>
+  <li><strong>Master for the song first.</strong> Fingerpicked guitar, breathy vocals and room sound depend on dynamics. If pushing the limiter harder makes the vocal sound pinched or the guitar loses its attack, you've gone too far, whatever the meter says.</li>
+  <li><strong>Somewhere around −16 to −12 LUFS integrated is a comfortable zone</strong> for many acoustic releases. It's close enough to Spotify's reference that the song isn't turned down by much, and it leaves room for dynamics. Treat this as a starting point, not a rule. A whisper-quiet piano piece might sit lower, and a full-band country track might sit higher.</li>
+  <li><strong>If you go quieter than −14, watch your peaks.</strong> Spotify only raises a quiet song until its true peak hits about −1 dBTP. A dynamic song at −17 LUFS with peaks at −1 dBTP can't be turned up at all, so it plays about 3 dB quieter than tracks around it. That's perfectly acceptable for an intimate song, but it should be a choice you make on purpose.</li>
+  <li><strong>Keep true peak at −1 dBTP or lower</strong> (−2 dBTP if you master louder than −14). Most modern limiters have a true-peak mode, so turn it on and set the ceiling there.</li>
+  <li><strong>Keep songs on the same release consistent with each other.</strong> Because Spotify normalizes albums together, the relative levels between your tracks are what listeners hear when they play the whole album. Balance them by ear so the quiet song feels quieter by the amount you intend.</li>
+</ol>
+
+<h2>A worked example</h2>
+<p>Say you have two masters of the same song:</p>
+<div class="table-wrap"><table class="simple">
+  <tr><th>Master</th><th>Integrated</th><th>True peak</th><th>What Spotify does (Normal setting)</th></tr>
+  <tr><td>A: pushed hard</td><td>−9 LUFS</td><td>−0.2 dBTP</td><td>Turned down about 5 dB. Peaks exceed Spotify's −2 dBTP advice for loud masters, so there's a risk of encoding distortion.</td></tr>
+  <tr><td>B: left dynamic</td><td>−14.5 LUFS</td><td>−1.5 dBTP</td><td>Turned up 0.5 dB. Peaks are fine.</td></tr>
+</table></div>
+<p>On Spotify's default setting, both play at roughly the same loudness. Master B keeps its transients and breath, while master A has paid for loudness it doesn't get to keep. (These are illustrative numbers, not measurements of a real release.)</p>
+
+<h2>What about Apple Music, YouTube and Amazon?</h2>
+<p>The other big services also normalize, but they publish less detail:</p>
+<ul>
+  <li><strong>Apple Music</strong> uses Sound Check. Apple doesn't publish a LUFS target for music, but independent measurements put its reference around −16 LUFS.<sup><a href="#s4">4</a></sup> Apple's Digital Masters guide recommends leaving at least 1 dB of headroom to avoid clipping during playback conversion.<sup><a href="#s2">2</a></sup></li>
+  <li><strong>YouTube</strong> doesn't publish a number. Independent tests report about −14 LUFS, with loud uploads turned down and quiet ones not turned up.<sup><a href="#s4">4</a></sup></li>
+  <li><strong>Amazon Music</strong> has a loudness normalization setting in its apps but doesn't publish a target. Independent testing reported about −14 LUFS.<sup><a href="#s5">5</a></sup></li>
+</ul>
+<p>Since the targets are within a couple of dB of each other, a master that sounds good around −16 to −12 LUFS with true peaks at −1 dBTP or lower (−2 if you're on the loud side) will travel well across all of them.</p>
+
+<h2>How to check your own song</h2>
+<p>Most DAWs now include a loudness meter, and many free plugins show integrated LUFS and true peak. Play the whole song through, because integrated loudness needs the full track, and read the integrated value and the maximum true peak at the end.</p>
+<p>If you'd rather not set up a meter, our <a href="../checker.html">free Release Check</a> does this in your browser. Drop in your WAV, FLAC or MP3 and it shows integrated LUFS, true peak, loudness range and clipping, plus how much Spotify, Apple Music, YouTube and Amazon will turn the song up or down. The file never leaves your device.</p>
+
+<h2>Quick checklist</h2>
+<ul>
+  <li>Integrated loudness: whatever sounds best for the song. For acoustic material, −16 to −12 LUFS is a common, comfortable zone.</li>
+  <li>True peak: −1 dBTP or lower, or −2 dBTP or lower if you're louder than −14 LUFS.</li>
+  <li>No audible clipping or limiter pumping on vocal peaks and strummed accents.</li>
+  <li>Tracks on the same release balanced against each other by ear.</li>
+  <li>Listen to the final file on earbuds and in the car, not just on studio monitors.</li>
+</ul>
+
+      <div class="cta-band" style="margin:30px 0 0">
+        <h2>Check your song in 10 seconds</h2>
+        <p>Free, in your browser, with nothing uploaded: integrated LUFS, true peak, clipping and file format, compared with Spotify, Apple Music, YouTube and Amazon Music.</p>
+        <a class="btn" href="../checker.html">Run the free Release Check</a>
+        <p class="fine" style="color:#d9cdbf;margin:14px auto 0">Want genre-aware mix notes too? <a class="alt" href="../index.html#waitlist">Join the waitlist</a> for the full report.</p>
+      </div>
+      <div class="sources" id="sources"><strong>Sources</strong><ol>
+<li id="s1">Spotify for Artists, "Loudness normalization." <a href="https://support.spotify.com/us/artists/article/loudness-normalization/">support.spotify.com</a></li>
+<li id="s2">Apple, "Apple Digital Masters" technical guide. <a href="https://www.apple.com/apple-music/apple-digital-masters/docs/apple-digital-masters.pdf">apple.com (PDF)</a></li>
+<li id="s3">ITU-R Recommendation BS.1770, "Algorithms to measure audio programme loudness and true-peak audio level." <a href="https://www.itu.int/rec/R-REC-BS.1770">itu.int</a></li>
+<li id="s4">iZotope, "How to master for streaming platforms: normalization, LUFS, and loudness" (platform comparison table). <a href="https://www.izotope.com/community/blog/mastering-for-streaming-platforms">izotope.com</a></li>
+<li id="s5">Production Advice, "Amazon Music Loudness Normalization Arrives." <a href="https://productionadvice.co.uk/amazon-music-loudness-normalization/">productionadvice.co.uk</a></li>
+</ol></div>
+    </article>
+  </div>
+</div>
+<footer>
+  <div class="wrap">© Porchlight Mix · <a href="../checker.html">Free check</a> · <a href="../blog/index.html">Blog</a> · <a href="../privacy.html">Privacy</a> · <a href="../refunds.html">Refunds</a> · <a href="../terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
+</footer>
+</body>
+</html>

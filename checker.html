@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Release Check: LUFS, True Peak &amp; Streaming Specs | Porchlight Mix</title>
+<meta name="description" content="Free in-browser check for your finished song: integrated LUFS, true peak, clipping, silence and file format, compared with Spotify, Apple Music, YouTube and Amazon Music. Your file never leaves your device.">
+<link rel="canonical" href="https://porchlightmix.github.io/checker.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Porchlight Mix">
+<meta property="og:title" content="Free Release Check: LUFS, true peak and streaming specs">
+<meta property="og:description" content="Check loudness, true peak, clipping and format against Spotify, Apple Music, YouTube and Amazon Music. Runs in your browser; nothing is uploaded.">
+<meta property="og:url" content="https://porchlightmix.github.io/checker.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2715%27 fill=%27%23ffe9a8%27 opacity=%27.5%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27%23f0a24a%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .hero{padding:26px 0 10px;max-width:46em}
+  .privacy-note{display:flex;gap:10px;align-items:flex-start;background:#eef5ef;border:1px solid #cfe3d4;border-radius:12px;padding:12px 14px;font-size:.95rem;margin:4px 0 22px;max-width:46em}
+  .privacy-note b{color:var(--pass)}
+  .drop{display:block;position:relative;border:2px dashed #d8c7b3;border-radius:var(--radius);background:var(--card);padding:34px 22px;text-align:center;cursor:pointer;transition:border-color .15s,background .15s}
+  .drop:hover,.drop.over{border-color:var(--accent);background:#fffaf4}
+  .drop strong{display:block;font-size:1.15rem;margin-bottom:4px}
+  .drop input{position:absolute;width:1px;height:1px;opacity:0}
+  .status{margin:16px 0 0;font-weight:600;color:var(--muted);min-height:1.6em}
+  .status.err{color:var(--fail)}
+  .bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin-top:8px;display:none}
+  .bar span{display:block;height:100%;width:40%;background:var(--accent);border-radius:6px;animation:slide 1.1s ease-in-out infinite}
+  @keyframes slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+  #results{display:none;margin-top:28px}
+  .file-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;background:#2a2420;color:#f6efe6;border-radius:var(--radius) var(--radius) 0 0;padding:14px 20px}
+  .file-head .tag{background:#f3c74f;color:#2a2420;font-weight:800;font-size:.72rem;padding:4px 10px;border-radius:6px;letter-spacing:.8px}
+  .panel{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 var(--radius) var(--radius);box-shadow:var(--shadow);padding:22px}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .metric{background:#faf6ef;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .metric .k{font-size:.75rem;text-transform:uppercase;letter-spacing:.7px;color:var(--muted)}
+  .metric .v{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;line-height:1.25}
+  .metric .v small{font-family:inherit;font-size:.85rem;font-weight:600;color:var(--muted)}
+  .fix{margin:20px 0 4px;padding:14px 16px;border-radius:12px;background:#fff6ec;border-left:5px solid var(--accent)}
+  .fix b{display:block;margin-bottom:2px}
+  h2.sec{font-size:1.3rem;margin:30px 0 10px}
+  .rows .row{display:grid;grid-template-columns:150px 1fr auto;gap:14px;align-items:start;padding:12px 0;border-bottom:1px dashed var(--line)}
+  .rows .row:last-child{border-bottom:0}
+  .rows .name{font-weight:700}
+  .rows .name small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
+  .rows .what{font-size:.95rem}
+  .rows .pills{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+  .upsell{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;text-align:left}
+  .upsell ul{list-style:none;margin:0 0 6px}
+  .upsell li{padding:4px 0 4px 24px;position:relative;color:#d9cdbf}
+  .upsell li::before{content:"✓";position:absolute;left:0;color:#ffcf6b;font-weight:800}
+  .upsell .go{text-align:center}
+  .footnotes{font-size:.82rem;color:var(--muted);margin:26px 0 10px;line-height:1.55}
+  .footnotes ol{margin-left:1.2em}
+  .footnotes li{margin:4px 0}
+  .how{margin-top:34px}
+  @media (max-width:860px){
+    .metrics{grid-template-columns:repeat(2,1fr)}
+    .rows .row{grid-template-columns:1fr auto}
+    .rows .what{grid-column:1 / -1;grid-row:2}
+    .upsell{grid-template-columns:1fr;text-align:center}
+    .upsell ul{display:inline-block;text-align:left}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="index.html"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></a>
+    <nav class="navlinks" aria-label="Main">
+      <a class="tl" href="checker.html" aria-current="page">Free check</a>
+      <a class="tl" href="blog/index.html">Blog</a>
+      <a class="btn-sm" href="index.html#waitlist">Join the waitlist</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <span class="eyebrow">Free Release Check</span>
+    <h1>Is your song ready for Spotify and Apple Music?</h1>
+    <p class="lead">Drop in your finished mix or master. In a few seconds you'll see its loudness, true peak, clipping and file format, and what Spotify, Apple Music, YouTube and Amazon Music will do with it.</p>
+  </div>
+  <p class="privacy-note"><span aria-hidden="true">🔒</span><span><b>Your file never leaves your device.</b> The analysis runs in this browser tab. Nothing is uploaded or stored, and the page works even if you go offline after it loads.</span></p>
+
+  <label class="drop" id="drop" for="file">
+    <input type="file" id="file" accept=".wav,.wave,.mp3,.flac,.aif,.aiff,.m4a,audio/*">
+    <strong>Choose an audio file</strong>
+    <span class="fine">or drag it here · WAV, FLAC or MP3 (AIFF and M4A work in some browsers)</span>
+  </label>
+  <div class="status" id="status" role="status" aria-live="polite"></div>
+  <div class="bar" id="bar"><span></span></div>
+
+  <div id="results" aria-live="polite">
+    <div class="file-head"><div><strong id="r-name">file.wav</strong> · <span id="r-fmt"></span></div><span class="tag">FREE CHECK</span></div>
+    <div class="panel">
+      <div class="metrics">
+        <div class="metric"><div class="k">Integrated loudness</div><div class="v" id="m-lufs">–</div></div>
+        <div class="metric"><div class="k">True peak</div><div class="v" id="m-tp">–</div></div>
+        <div class="metric"><div class="k">Sample peak</div><div class="v" id="m-sp">–</div></div>
+        <div class="metric"><div class="k">Loudness range</div><div class="v" id="m-lra">–</div></div>
+        <div class="metric"><div class="k">Duration</div><div class="v" id="m-dur">–</div></div>
+        <div class="metric"><div class="k">Sample rate</div><div class="v" id="m-sr">–</div></div>
+        <div class="metric"><div class="k">Channels</div><div class="v" id="m-ch">–</div></div>
+        <div class="metric"><div class="k">Clipped spots</div><div class="v" id="m-clip">–</div></div>
+      </div>
+      <div class="fix" id="fix"></div>
+
+      <h2 class="sec">Streaming services</h2>
+      <p class="fine">Loudness isn't pass/fail. These services adjust playback volume, so a louder master just gets turned down. Peaks are what can actually cause distortion.</p>
+      <div class="rows" id="platforms"></div>
+
+      <h2 class="sec">Distributor file checks</h2>
+      <div class="rows" id="distro"></div>
+    </div>
+
+    <div class="cta-band">
+      <div class="upsell">
+        <div>
+          <h2>Specs are the easy part. Does the mix work?</h2>
+          <p style="margin:0 0 12px">This free check measures your file. The full Porchlight Mix report also listens to the mix itself, with notes written for acoustic, folk, country, band and worship music:</p>
+          <ul>
+            <li>Whether the lead vocal sits on top or gets buried</li>
+            <li>Low-mid mud and boxiness compared with songs like yours</li>
+            <li>A short, prioritized fix list in plain English</li>
+          </ul>
+        </div>
+        <div class="go">
+          <a class="btn" href="index.html#waitlist">Join the waitlist</a>
+          <p class="fine" style="color:#d9cdbf;margin:12px 0 0">Waitlist members get their first full report free.<br><a class="alt" href="https://tally.so/r/laDJ05">Open the signup form</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="how">
+    <h2>What this check measures</h2>
+    <div class="rows">
+      <div class="row"><div class="name">Integrated loudness</div><div class="what">The average loudness of the whole song in LUFS, measured the way streaming services do (ITU-R BS.1770-4 K-weighting with gating). This is the number they use to turn your song up or down.</div><div></div></div>
+      <div class="row"><div class="name">True peak</div><div class="what">The highest level the waveform reaches between samples, estimated with 4× oversampling, in dBTP. A file can peak above 0 dBTP even when no sample hits 0 dBFS, and those overs can distort after MP3/AAC encoding.</div><div></div></div>
+      <div class="row"><div class="name">Loudness range</div><div class="what">How much the loudness moves between the quiet and loud parts of the song, in LU (EBU Tech 3342). Acoustic songs often have more range than pop, and that's fine.</div><div></div></div>
+      <div class="row"><div class="name">Clipped spots</div><div class="what">Places where 3 or more samples in a row sit at full scale, which usually means the master clipped.</div><div></div></div>
+    </div>
+    <p class="fine" style="margin-top:12px">New to LUFS? Read <a href="blog/how-loud-acoustic-song-spotify-lufs.html">How loud should an acoustic song be for Spotify?</a></p>
+  </section>
+
+  <div class="footnotes">
+    <strong>Sources and notes</strong>
+    <ol>
+      <li><b>Spotify</b> normalizes to −14 LUFS integrated by default and recommends keeping true peak below −1 dBTP, or below −2 dBTP if the master is louder than −14 LUFS. Quieter songs are turned up only as far as leaving 1 dB of peak headroom allows. <a href="https://support.spotify.com/us/artists/article/loudness-normalization/">Spotify for Artists: Loudness normalization</a>.</li>
+      <li><b>Apple Music</b> uses Sound Check, but Apple doesn't publish a LUFS target for music. −16 LUFS is the reference level reported by independent measurements (<a href="https://www.izotope.com/community/blog/mastering-for-streaming-platforms">iZotope</a>). Apple recommends leaving at least 1 dB of headroom to avoid clipping on playback (<a href="https://www.apple.com/apple-music/apple-digital-masters/docs/apple-digital-masters.pdf">Apple Digital Masters</a>).</li>
+      <li><b>YouTube</b> doesn't publish a loudness number. −14 LUFS is the reference level reported by independent measurements, and YouTube is reported to turn loud uploads down but not turn quiet ones up (<a href="https://www.izotope.com/community/blog/mastering-for-streaming-platforms">iZotope</a>). There's no published true-peak limit, so −1 dBTP is shown as general good practice.</li>
+      <li><b>Amazon Music</b> offers loudness normalization in its apps (<a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=TgG1d8mPjGwf885hRP">Amazon help</a>) but doesn't publish a target. −14 LUFS comes from independent tests (<a href="https://productionadvice.co.uk/amazon-music-loudness-normalization/">Production Advice</a>), and −2 dBTP is a conservative working ceiling, not an Amazon rule.</li>
+      <li><b>Distributor file specs:</b> DistroKid accepts WAV, FLAC, MP3, M4A, AIFF and WMA, and says a 16-bit, 44.1 kHz WAV is typical (<a href="https://support.distrokid.com/hc/en-us/articles/360013647753-What-Audio-File-Formats-Can-I-Upload">DistroKid help</a>). Other distributors have similar or stricter rules, so check yours. The silence thresholds here are rules of thumb, not published limits.</li>
+      <li><b>Measurement:</b> loudness follows <a href="https://www.itu.int/rec/R-REC-BS.1770">ITU-R BS.1770-4</a> and <a href="https://tech.ebu.ch/publications/tech3342">EBU Tech 3342</a> (loudness range). Mono files are measured as one channel, as BS.1770 specifies. Some players treat mono as dual-mono, which reads about 3 LU louder. Readings can differ slightly from your DAW's meter. Service targets change over time, and listeners can turn normalization off.</li>
+    </ol>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">© Porchlight Mix · <a href="checker.html">Free check</a> · <a href="blog/index.html">Blog</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
+</footer>
+
+<script src="assets/checker-core.js"></script>
+<script src="assets/checker.js"></script>
+</body>
+</html>
