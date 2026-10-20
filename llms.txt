@@ -1,0 +1,35 @@
+# Porchlight Mix
+
+> Porchlight Mix makes release-ready mix checks for acoustic and vocal music. A free in-browser checker measures a song's loudness (LUFS), true peak, clipping, silence and file format and shows what Spotify, Apple Music, YouTube and Amazon Music will do with it. A $4.99 Full Report adds plain-English mix notes (lead vocal vs. band balance, tone balance compared with reference recordings in the same style, stereo width and mono) and a prioritized fix list. It is for independent singer-songwriters, home recordists, folk and country artists, small bands and church worship teams.
+
+Key facts:
+- What it is: an online mix and master check for songs with real voices and real instruments (singer-songwriter, acoustic/folk, country, band, worship).
+- Free Release Check: available now at https://porchlightmix.github.io/checker.html. Runs entirely in the browser; the audio file is never uploaded. Measures integrated loudness per ITU-R BS.1770-4, true peak (4x oversampling), loudness range (EBU Tech 3342), clipping, leading/trailing silence, sample rate, bit depth and format.
+- Full Report: $4.99 per song, emailed as a PDF, usually within 2-3 days. Pre-orders are open; pre-order customers are invited first and are fully refunded if Porchlight Mix doesn't launch. Reports are generated automatically from measurements; no human listens.
+- Your song: uploaded songs are deleted within 7 days of upload. They are never public, never shared with anyone, never sent to an outside AI service, and never used to train any AI model. Analysis runs on Porchlight Mix's own software and computer.
+- Songwriter Plan: $9.99 per month for 10 full reports, available at launch.
+- Status (October 2026): pre-launch. People join a free waitlist and are invited in small groups; invited early-access testers get their first full report free.
+- Run by Iain, a long-time musician based in Washington State, USA. Contact: porchlightmix@gmail.com
+
+## Main pages
+- [Home](https://porchlightmix.github.io/): what Porchlight Mix is, pricing, example report, FAQ
+- [Free Release Check](https://porchlightmix.github.io/checker.html): free in-browser LUFS and true-peak checker with streaming-service comparisons and sources
+- [About](https://porchlightmix.github.io/about.html): who runs it and how the check works
+
+## Guides
+- [How loud should an acoustic or singer-songwriter song be for Spotify? (LUFS explained)](https://porchlightmix.github.io/blog/how-loud-acoustic-song-spotify-lufs.html)
+- [Why does my song sound quieter on Spotify than other songs?](https://porchlightmix.github.io/blog/why-song-sounds-quieter-on-spotify.html)
+- [How to make a vocal sit on top of an acoustic guitar in the mix](https://porchlightmix.github.io/blog/vocal-on-top-of-acoustic-guitar-mix.html)
+- [Why does my acoustic guitar and vocal mix sound muddy?](https://porchlightmix.github.io/blog/muddy-acoustic-guitar-vocal-mix.html)
+- [How to record vocals and acoustic guitar at the same time](https://porchlightmix.github.io/blog/record-vocals-and-guitar-at-the-same-time.html)
+- [Worship recording release checklist](https://porchlightmix.github.io/blog/worship-recording-release-checklist.html)
+
+## Streaming loudness facts we cite
+- Spotify normalizes to -14 LUFS integrated by default (Loud -11, Quiet -19 for Premium), turns quiet tracks up only while leaving 1 dB of peak headroom, and recommends true peak below -1 dBTP, or below -2 dBTP for masters louder than -14 LUFS. Source: https://support.spotify.com/us/artists/article/loudness-normalization/
+- Apple Music (Sound Check) does not publish a LUFS target; independent measurements report about -16 LUFS. Apple recommends at least 1 dB of headroom. Sources: https://www.izotope.com/community/blog/mastering-for-streaming-platforms and https://www.apple.com/apple-music/apple-digital-masters/docs/apple-digital-masters.pdf
+- YouTube and Amazon Music do not publish targets; independent tests report about -14 LUFS, with quiet tracks not turned up.
+
+## Policies
+- [Privacy](https://porchlightmix.github.io/privacy.html)
+- [Refunds](https://porchlightmix.github.io/refunds.html)
+- [Terms](https://porchlightmix.github.io/terms.html)
