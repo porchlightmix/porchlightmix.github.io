@@ -136,3 +136,17 @@ a.card.guide h3{color:var(--ink)}
 a.card.guide:hover{border-color:var(--accent);transform:translateY(-2px)}
 a.card.guide:hover h3{color:var(--accent-dk)}
 .faq .fine a{color:var(--accent-dk)}
+
+/* v6 additions: free tools strip, homepage tools cards, screen-reader text */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.toolstrip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 6px}
+.toolstrip a{font-size:.85rem;font-weight:600;text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.toolstrip a:hover{border-color:var(--accent);color:var(--ink)}
+.toolstrip a[aria-current]{border-color:var(--accent);color:var(--accent-dk)}
+.tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:22px}
+a.card.tool{display:flex;flex-direction:column;text-decoration:none;transition:border-color .15s,transform .15s}
+a.card.tool h3{color:var(--ink)}a.card.tool:hover{border-color:var(--accent);transform:translateY(-2px)}a.card.tool:hover h3{color:var(--accent-dk)}
+a.card.tool .go{margin-top:auto;padding-top:12px;font-weight:700;color:var(--accent-dk)}
+a.card.tool .badge{align-self:flex-start;font-size:.72rem;font-weight:800;letter-spacing:.7px;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-bottom:10px;background:rgba(116,211,156,.14);color:var(--pass)}
+a.card.tool.paid{border-color:var(--accent)}a.card.tool.paid .badge{background:rgba(245,181,68,.16);color:var(--accent-dk)}
+@media (max-width:760px){.tools-grid{grid-template-columns:1fr}}

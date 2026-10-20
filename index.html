@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Porchlight Mix">
 <meta property="og:title" content="Porchlight Mix | Release-Ready Check for Acoustic &amp; Vocal Mixes">
-<meta property="og:description" content="Is your song ready for Spotify? Free LUFS and true-peak check, plus $4.99 plain-English mix reports for singer-songwriters, bands and worship teams.">
+<meta property="og:description" content="Is your song ready for Spotify? Free Release Check, Loudness Preview and Release Checklist, plus $4.99 plain-English mix reports for acoustic and vocal songs.">
 <meta property="og:image" content="https://porchlightmix.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://porchlightmix.github.io/">
-<meta name="description" content="Is your song ready for Spotify? Free LUFS and true-peak check, plus $4.99 plain-English mix reports for singer-songwriters, bands and worship teams.">
+<meta name="description" content="Is your song ready for Spotify? Free Release Check, Loudness Preview and Release Checklist, plus $4.99 plain-English mix reports for acoustic and vocal songs.">
 <style>
   :root{
     --bg:#faf6ef; --ink:#2a2420; --muted:#6d625a; --card:#fff; --line:#e8dfd2;
@@ -134,7 +134,7 @@
    "url": "https://porchlightmix.github.io/",
    "logo": "https://porchlightmix.github.io/assets/apple-touch-icon.png",
    "email": "porchlightmix@gmail.com",
-   "description": "Porchlight Mix makes release-ready mix checks for acoustic and vocal music: a free in-browser loudness and true-peak check, and plain-English mix reports for singer-songwriters, home recordists, bands and worship teams.",
+   "description": "Porchlight Mix makes release-ready mix checks for acoustic and vocal music: free in-browser tools (the Release Check for loudness and true peak, the Loudness Preview for streaming playback levels, and the Release Checklist for dated release plans), and plain-English mix reports for singer-songwriters, home recordists, bands and worship teams.",
    "founder": {
     "@type": "Person",
     "name": "Iain",
@@ -226,6 +226,22 @@
     },
     {
      "@type": "Question",
+     "name": "What free tools do you have?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Three, and they all run in your browser. The Release Check measures loudness, true peak, clipping and format. The Loudness Preview shows, and lets you hear, how much each streaming service will turn your song up or down. The Release Checklist builds a dated to-do list from your release date and distributor."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "When should I upload my song and pitch it to Spotify?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Most distributors suggest uploading about 3–4 weeks before release. Pitch to Spotify's editors in Spotify for Artists at least 7 days before release. Our free Release Checklist works out the dates for you, with links to each distributor's own rules."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "How loud should my song be for Spotify?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -305,6 +321,60 @@
      }
     }
    ]
+  },
+  {
+   "@type": "WebApplication",
+   "@id": "https://porchlightmix.github.io/checker.html#app",
+   "name": "Porchlight Mix Free Release Check",
+   "url": "https://porchlightmix.github.io/checker.html",
+   "description": "Free in-browser LUFS, true-peak, clipping, silence and format check, with what Spotify, Apple Music, YouTube and Amazon Music will do to the song. Audio never leaves the device.",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any (runs in a web browser)",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@id": "https://porchlightmix.github.io/#org"
+   }
+  },
+  {
+   "@type": "WebApplication",
+   "@id": "https://porchlightmix.github.io/loudness-preview.html#app",
+   "name": "Porchlight Mix Loudness Preview",
+   "url": "https://porchlightmix.github.io/loudness-preview.html",
+   "description": "Free in-browser tool that estimates how much Spotify (Normal, Loud, Quiet), Apple Music, YouTube, Amazon Music, TIDAL and Deezer will turn a song up or down, with A/B playback. Audio never leaves the device.",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any (runs in a web browser)",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@id": "https://porchlightmix.github.io/#org"
+   }
+  },
+  {
+   "@type": "WebApplication",
+   "@id": "https://porchlightmix.github.io/release-checklist.html#app",
+   "name": "Porchlight Mix Release Checklist",
+   "url": "https://porchlightmix.github.io/release-checklist.html",
+   "description": "Free dated release checklist for independent musicians: distributor upload deadline, Spotify pitch date, file and cover-art specs, credits, ISRC and UPC, with links to official sources.",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Any (runs in a web browser)",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@id": "https://porchlightmix.github.io/#org"
+   }
   }
  ]
 }
@@ -316,7 +386,7 @@
   <header class="nav">
     <div class="logo"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></div>
     <nav class="navlinks" aria-label="Main">
-      <a class="tl" href="checker.html">Free check</a>
+      <a class="tl" href="#tools">Free tools</a>
       <a class="tl" href="blog/">Blog</a>
       <a class="btn-sm" href="#waitlist">Join the waitlist</a>
     </nav>
@@ -331,7 +401,7 @@
         <a class="btn" href="#waitlist">Get early access</a>
         <a class="btn ghost" href="#sample">See an example report</a>
       </div>
-      <p class="fine"><a href="checker.html">Free basic check, available now</a> · Full report $4.99 (pre-order) · Nothing to install</p>
+      <p class="fine"><a href="#tools">Free tools, available now</a> · Full report $4.99 (pre-order) · Nothing to install</p>
     </div>
     <div class="hero-card" aria-label="Example release checklist">
       <h4>Example release checklist</h4>
@@ -346,13 +416,16 @@
   </div>
 </div>
 
-<section class="try-band" id="free-check" style="padding:0">
+<section id="tools">
   <div class="wrap">
-    <div>
-      <h2>Free: check your song for Spotify in seconds</h2>
-      <p>See your song's loudness (LUFS), true peak, clipping and file format, and what Spotify, Apple Music, YouTube and Amazon Music will do with it. It runs in your browser. Your file is never uploaded.</p>
+    <h2>Free tools for your next release</h2>
+    <p class="sub">Three free tools that run in your browser. No sign-up, and your song is never uploaded.</p>
+    <div class="tools-grid">
+      <a class="card tool" href="checker.html"><span class="badge">Free</span><h3>Release Check</h3><p>See your song's loudness (LUFS), true peak, clipping, silence and file format, with a pass, check or fix for each one.</p><span class="go">Check my song →</span></a>
+      <a class="card tool" href="loudness-preview.html"><span class="badge">Free</span><h3>Loudness Preview</h3><p>See how much Spotify, Apple Music, YouTube, Amazon, TIDAL and Deezer will turn your song up or down. Then listen to the difference.</p><span class="go">Preview my song →</span></a>
+      <a class="card tool" href="release-checklist.html"><span class="badge">Free</span><h3>Release Checklist</h3><p>Pick a release date and distributor. Get a dated, printable list: when to upload, when to pitch to Spotify, and what your files, art and credits need.</p><span class="go">Build my checklist →</span></a>
+      <a class="card tool paid" href="#pricing"><span class="badge">$4.99 a song</span><h3>Full Release-Ready report</h3><p>Plain-English notes on the mix itself: how the lead vocal sits against the band and how your tone compares with songs in your style, with a short fix list. Usually within 2–3 days.</p><span class="go">See the full report →</span></a>
     </div>
-    <a class="btn" href="checker.html">Check my song free</a>
   </div>
 </section>
 
@@ -499,6 +572,8 @@
     <details><summary>How much does it cost?</summary><p>The basic Release Check is free and available now. The full report is $4.99 per song, and you can <a href="https://buy.stripe.com/5kQdRa8FielP5a95gYf7i00">pre-order one today</a>. The Songwriter Plan will be $9.99 a month for 10 full reports, starting at launch.</p></details>
     <details><summary>What's the difference between the free check and the full report?</summary><p>The <a href="checker.html">free check</a> measures your file: loudness, true peak, clipping, silence and format, and what each streaming service will do with it. The full report also looks at the mix itself: how the lead vocal sits against the band, tone balance compared with songs in your style, stereo width and mono, with a prioritized fix list.</p></details>
     <details><summary>Is my song uploaded when I use the free check?</summary><p>No. The free check runs entirely in your web browser. Your file never leaves your device, and we never see it or its results.</p></details>
+    <details><summary>What free tools do you have?</summary><p>Three, and they all run in your browser. The <a href="checker.html">Release Check</a> measures loudness, true peak, clipping and format. The <a href="loudness-preview.html">Loudness Preview</a> shows, and lets you hear, how much each streaming service will turn your song up or down. The <a href="release-checklist.html">Release Checklist</a> builds a dated to-do list from your release date and distributor.</p></details>
+    <details><summary>When should I upload my song and pitch it to Spotify?</summary><p>Most distributors suggest uploading about 3–4 weeks before release. Pitch to Spotify's editors in Spotify for Artists at least 7 days before release. Our free <a href="release-checklist.html">Release Checklist</a> works out the dates for you, with links to each distributor's own rules.</p></details>
     <details><summary>How loud should my song be for Spotify?</summary><p>Spotify turns every song to about −14 LUFS on its default setting, so a louder master just gets turned down. Spotify recommends a true peak below −1 dBTP, or below −2 dBTP if your master is louder than −14 LUFS. Many acoustic releases sound good somewhere around −16 to −12 LUFS. Read more in <a href="blog/how-loud-acoustic-song-spotify-lufs.html">How loud should an acoustic song be for Spotify?</a></p></details>
     <details><summary>What file types can I use?</summary><p>The full report accepts WAV, AIFF, FLAC and MP3. The free check works with WAV, FLAC and MP3 in every modern browser, and with AIFF and M4A in some browsers. For the most accurate result, use the same lossless file you'll send to your distributor.</p></details>
     <details><summary>Do I need to install anything?</summary><p>No. The free check runs in your browser. For the full report, you export a mix from any recording app (or even a phone recording app) and send us the file.</p></details>
@@ -514,7 +589,7 @@
 </section>
 
 <footer>
-  <div class="wrap">© Porchlight Mix · Made by a musician, for musicians · Washington, USA · <a href="checker.html">Free check</a> · <a href="blog/">Blog</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
+  <div class="wrap">© Porchlight Mix · Made by a musician, for musicians · Washington, USA · <a href="checker.html">Release Check</a> · <a href="loudness-preview.html">Loudness Preview</a> · <a href="release-checklist.html">Release Checklist</a> · <a href="blog/">Blog</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
 </footer>
 
 </body>
