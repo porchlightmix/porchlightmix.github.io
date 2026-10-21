@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Send your song for a free Release-Ready report | Porchlight Mix</title>
+<meta name="description" content="Upload your finished acoustic or vocal mix and get a free PDF Release-Ready report by email: loudness, peaks, vocal balance, low end and distributor specs, with the top 3 fixes.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://porchlightmix.github.io/upload.html">
+<!-- Filled in after the Worker and Turnstile widget exist (see upload/README.md). -->
+<meta name="upload-api" content="https://porchlight-upload.porchlightmix.workers.dev">
+<meta name="turnstile-sitekey" content="0x4AAAAAAFceQh4qdlwWQIux">
+<meta name="theme-color" content="#121a30">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .hero{padding:26px 0 6px;max-width:46em}
+  form.card{max-width:760px;margin:10px 0 30px}
+  .field{margin:0 0 18px}
+  .field label,.field legend{display:block;font-weight:700;margin-bottom:6px}
+  .field .opt{font-weight:400;color:var(--muted);font-size:.9rem}
+  .field .help{font-size:.88rem;color:var(--muted);margin-top:5px}
+  .field input[type=text],.field input[type=email],.field select,.field textarea{width:100%;font:inherit;font-size:1rem;padding:11px 13px;border:1.5px solid #d8c7b3;border-radius:10px;background:#fff;color:var(--ink)}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(196,98,45,.15)}
+  .field textarea{min-height:90px;resize:vertical}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+  fieldset.field{border:0}
+  .radios{display:flex;gap:22px;flex-wrap:wrap}
+  .radios label,.check label{font-weight:400;display:flex;gap:9px;align-items:flex-start;cursor:pointer}
+  .radios input,.check input{margin-top:5px;accent-color:var(--accent);width:17px;height:17px;flex:none}
+  .drop{display:block;position:relative;border:2px dashed #d8c7b3;border-radius:var(--radius);background:#fffdf9;padding:26px 20px;text-align:center;cursor:pointer;transition:border-color .15s,background .15s}
+  .drop:hover,.drop.over{border-color:var(--accent);background:#fffaf4}
+  .drop strong{display:block;font-size:1.08rem;margin-bottom:2px}
+  .drop input{position:absolute;width:1px;height:1px;opacity:0}
+  .drop .chosen{margin-top:8px;font-weight:700;color:var(--pass)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .err{color:var(--fail);font-weight:600;margin:10px 0 0;min-height:1.4em}
+  .progress{display:none;margin:18px 0 4px}
+  .progress .bar{height:10px;background:var(--line);border-radius:10px;overflow:hidden}
+  .progress .bar span{display:block;height:100%;width:0;background:var(--accent);border-radius:10px;transition:width .25s}
+  .progress .txt{font-size:.92rem;color:var(--muted);margin-top:6px}
+  #done{display:none;max-width:760px;margin:10px 0 40px;border-left:5px solid var(--pass)}
+  #done h2{margin-top:0}
+  .ts{margin:6px 0 16px;min-height:65px}
+  @media (max-width:640px){.grid2{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="assets/dusk.css">
+<style>
+  /* v2: re-check option + release details (page-local, Porch at Dusk colours) */
+  .field input[type=date]{width:100%;font:inherit;font-size:1rem;padding:10px 13px;border:1.5px solid #56639a;border-radius:10px;background:#0f1629;color:var(--ink);color-scheme:dark}
+  .field input[type=date]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(245,181,68,.25)}
+  .recheck-box{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:14px 16px;margin:0 0 22px;background:rgba(245,181,68,.06)}
+  .recheck-box .check label{font-weight:400}
+  .recheck-note{font-size:.9rem;color:var(--muted);margin:0}
+  .recheck-note a,.release .help a{color:var(--accent-dk)}
+  fieldset.release{padding:16px 0 0;border-top:1px solid var(--line)}
+  fieldset.release legend{float:left;width:100%;margin-bottom:6px}
+  fieldset.release legend + .help{clear:both}
+  .release .grid2 .field{margin-bottom:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="./"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></a>
+    <nav class="navlinks" aria-label="Main">
+      <a class="tl" href="./#tools">Free tools</a>
+      <a class="tl" href="blog/">Blog</a>
+      <a class="btn-sm" href="./#waitlist">Join the waitlist</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <span class="eyebrow">Early access</span>
+    <h1>Send your song for a Release-Ready report</h1>
+    <p class="lead">Upload the finished mix you're about to release. We'll check loudness and peaks against Spotify, Apple Music, YouTube and Amazon, plus vocal balance, low end and distributor file specs, and email you a PDF report, usually within 2–3 days. Invited early-access testers get their first report free, and if you pre-ordered, this is where you send your song. Sending a revised version for your free re-check? Use this page too, and tick the re-check box. Either way, we'd love your honest feedback.</p>
+  </div>
+
+  <form id="upform" class="card" novalidate>
+    <div class="recheck-box">
+      <div class="field check" style="margin:0"><label><input id="recheck" name="recheck" type="checkbox" aria-controls="recheck-more" aria-expanded="false"> <span><b>This is a re-check.</b> I'm sending a revised version of a song that already has a Porchlight Mix full report.</span></label></div>
+      <div id="recheck-more" hidden>
+        <div class="field" style="margin:14px 0 10px"><label for="original_ref">Reference from your report email or upload confirmation <span class="opt">(optional)</span></label><input id="original_ref" name="original_ref" type="text" maxlength="40" autocomplete="off" spellcheck="false" placeholder="For example, 20261021-153012-8f92ab12"><div class="help">No reference? That's fine. Use the same email address as last time, and we'll find your report.</div></div>
+        <p class="recheck-note">Each full report includes one free re-check of the same song. Please send it within 14 days of the date we emailed your report. Using it doesn't affect your refund rights, and on the Songwriter Plan it doesn't count toward your 10 reports a month. <a href="terms.html#recheck" target="_blank">Re-check rules</a></p>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="200"><div class="help">Where should we send your report?</div></div>
+      <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required maxlength="120"></div>
+      <div class="field"><label for="title">Song title</label><input id="title" name="title" type="text" required maxlength="160"></div>
+      <div class="field"><label for="artist">Artist name <span class="opt">(optional)</span></label><input id="artist" name="artist" type="text" maxlength="160"><div class="help">As it should appear on the report. Leave blank to use your name.</div></div>
+    </div>
+    <div class="field">
+      <label for="genre">Genre</label>
+      <select id="genre" name="genre" required>
+        <option value="">Choose one…</option>
+        <option value="singer-songwriter">Singer-songwriter</option>
+        <option value="acoustic-folk">Acoustic / folk</option>
+        <option value="country">Country</option>
+        <option value="band-rock">Band / rock</option>
+        <option value="worship">Worship</option>
+        <option value="instrumental-acoustic">Acoustic instrumental</option>
+      </select>
+      <div class="help">Pick the closest one. We compare your mix with reference mixes in that style.</div>
+    </div>
+    <fieldset class="field">
+      <legend>Is it an instrumental?</legend>
+      <div class="radios">
+        <label><input type="radio" name="instrumental" value="no" required> No, it has vocals</label>
+        <label><input type="radio" name="instrumental" value="yes"> Yes, it's an instrumental</label>
+      </div>
+      <div class="help">If it's an instrumental, we skip the vocal checks.</div>
+    </fieldset>
+    <div class="field">
+      <span class="label" style="display:block;font-weight:700;margin-bottom:6px">Your mix</span>
+      <label class="drop" id="drop" for="file">
+        <strong>Choose your file or drop it here</strong>
+        <span class="fine">WAV, AIFF, FLAC or MP3 · up to 200 MB · one song</span>
+        <input id="file" name="file" type="file" accept=".wav,.wave,.aif,.aiff,.flac,.mp3,audio/wav,audio/x-wav,audio/aiff,audio/x-aiff,audio/flac,audio/mpeg" required>
+        <div class="chosen" id="chosen"></div>
+      </label>
+      <div class="help">Upload the exact final master you'd send to your distributor. A 16- or 24-bit WAV gives the most accurate check. MP3 works, but the report will be less precise about peaks.</div>
+    </div>
+    <fieldset class="field release">
+      <legend>Release details <span class="opt">(optional)</span></legend>
+      <div class="help" style="margin:0 0 12px">Tell us when and where you're releasing, and your report will include your own release dates and a link that opens the free <a href="release-checklist.html" target="_blank">Release Checklist</a> already filled in.</div>
+      <div class="grid2">
+        <div class="field"><label for="release_date">Planned release date</label><input id="release_date" name="release_date" type="date"><div class="help">Not sure yet? Leave it blank.</div></div>
+        <div class="field"><label for="distributor">Distributor</label>
+          <select id="distributor" name="distributor">
+            <option value="">Not sure / skip</option>
+            <option value="distrokid">DistroKid</option>
+            <option value="cdbaby">CD Baby</option>
+            <option value="tunecore">TuneCore</option>
+            <option value="amuse">Amuse</option>
+            <option value="unitedmasters">UnitedMasters</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field" id="amuse-row" hidden><label for="amuse_plan">Amuse plan</label>
+          <select id="amuse_plan" name="amuse_plan"><option value="">Not sure</option><option value="artist">Artist</option><option value="plus">Artist Plus</option><option value="pro">Artist Pro</option></select>
+          <div class="help">Amuse's minimum lead time depends on your plan.</div></div>
+        <div class="field" id="other-row" hidden><label for="distributor_other">Which distributor? <span class="opt">(optional)</span></label><input id="distributor_other" name="distributor_other" type="text" maxlength="60"></div>
+      </div>
+    </fieldset>
+    <div class="field"><label for="notes">Anything we should know? <span class="opt">(optional)</span></label><textarea id="notes" name="notes" maxlength="2000" placeholder="For example, what you're worried about, or where you're releasing it."></textarea></div>
+    <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+    <div class="field check"><label><input id="consent" name="consent" type="checkbox" required> <span>I own this recording or have permission to share it. I agree that Porchlight Mix may analyze it to prepare my report, as described in the <a href="privacy.html" target="_blank">Privacy Policy</a>. My song will be deleted within 7 days of upload. It will never be made public, shared, or used to train any AI model.</span></label></div>
+    <div class="field check"><label><input id="updates" name="updates" type="checkbox"> <span>Email me occasional Porchlight Mix updates (about once a month). You can unsubscribe any time.</span></label></div>
+    <div class="ts" id="turnstile"></div>
+    <button class="btn" id="send" type="submit">Send my song</button>
+    <div class="progress" id="progress" aria-live="polite"><div class="bar"><span id="barfill"></span></div><div class="txt" id="ptxt"></div></div>
+    <p class="err" id="err" role="alert"></p>
+    <p class="fine">Your file is stored privately with our storage provider, Cloudflare, only until we copy it to our own computer to prepare your report. We delete it within 7 days of upload. We never share or publish your music, and it's never used to train any AI.</p>
+  </form>
+
+  <div class="card" id="done" role="status" tabindex="-1">
+    <h2>Got it, thanks!</h2>
+    <p><span id="done-kind">Your song</span> <b id="done-title"></b> is in the queue. We'll email your report to <b id="done-email"></b>, usually within 2–3 days.</p>
+    <p class="fine">Reply to that email any time if you want your files deleted sooner. Reference: <span id="done-id"></span></p>
+    <p style="margin-top:14px"><a class="btn ghost" href="checker.html">Try the free instant check</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">© Porchlight Mix · Made by a musician, for musicians · Washington, USA · <a href="checker.html">Release Check</a> · <a href="loudness-preview.html">Loudness Preview</a> · <a href="release-checklist.html">Release Checklist</a> · <a href="blog/">Blog</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
+</footer>
+
+<script src="assets/upload.js"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=porchlightTurnstile&render=explicit" async defer></script>
+</body>
+</html>
