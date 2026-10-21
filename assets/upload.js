@@ -20,7 +20,11 @@
   };
 
   function mb(n) { return (n / 1048576).toFixed(n < 10485760 ? 1 : 0) + " MB"; }
-  function showErr(msg) { errEl.textContent = msg || ""; }
+  function showErr(msg) {
+    errEl.textContent = msg || "";
+    // the message sits under the Send button; make sure it's on screen (it was easy to miss on phones)
+    if (msg && errEl.scrollIntoView) { var r = errEl.getBoundingClientRect(); if (r.top < 0 || r.bottom > window.innerHeight) errEl.scrollIntoView({ block: "center", behavior: "smooth" }); }
+  }
   function fileProblem(f) {
     if (!f) return "Please choose your audio file.";
     var ext = (f.name.split(".").pop() || "").toLowerCase();
@@ -39,10 +43,11 @@
   drop.addEventListener("drop", function (ev) { if (ev.dataTransfer.files.length) { fileIn.files = ev.dataTransfer.files; showChosen(); } });
   // v2: re-check option + optional release details (all re-checked by the server).
   var DISTS = ["distrokid", "cdbaby", "tunecore", "amuse", "unitedmasters", "other"];
-  var REF_RE = /^[A-Za-z0-9#][A-Za-z0-9#_-]{2,39}$/;
   function syncExtras() {
     var on = $("recheck").checked;
     $("recheck-more").hidden = !on; $("recheck").setAttribute("aria-expanded", on ? "true" : "false");
+    // v4: release details aren't used for a re-check, so hide them (and don't send them) while the box is ticked
+    $("release-box").hidden = on;
     $("amuse-row").hidden = $("distributor").value !== "amuse";
     $("other-row").hidden = $("distributor").value !== "other";
     $("done-kind").textContent = on ? "Your re-check of" : "Your song";
@@ -113,9 +118,8 @@
       !v("name") ? "Please add your name." : !v("title") ? "Please add the song title." :
       !v("genre") ? "Please pick a genre." : !inst ? "Please say whether it's an instrumental." :
       fileProblem(f) ||
-      ($("recheck").checked && v("original_ref") && !REF_RE.test(v("original_ref")) ? "That reference doesn't look right. Please copy it from your confirmation or report email, or leave it blank." : "") ||
-      dateProblem(v("release_date")) ||
-      (v("distributor") && DISTS.indexOf(v("distributor")) < 0 ? "Please pick a distributor from the list, or choose Other." : "") ||
+      ($("recheck").checked ? "" : dateProblem(v("release_date"))) ||
+      (!$("recheck").checked && v("distributor") && DISTS.indexOf(v("distributor")) < 0 ? "Please pick a distributor from the list, or choose Other." : "") ||
       (!$("consent").checked ? "Please tick the consent box." : "") ||
       (!tsToken ? "Please wait a moment for the spam check below to finish, then try again." : "");
     if (problem) return showErr(problem);
@@ -125,9 +129,9 @@
       instrumental: inst.value, notes: v("notes"), consent: true, updates: $("updates").checked, website: $("website").value,
       filename: f.name, size: f.size, turnstileToken: tsToken,
       recheck: $("recheck").checked, original_ref: $("recheck").checked ? v("original_ref") : "",
-      release_date: v("release_date"), distributor: v("distributor"),
-      distributor_other: v("distributor") === "other" ? v("distributor_other") : "",
-      amuse_plan: v("distributor") === "amuse" ? v("amuse_plan") : "" };
+      release_date: $("recheck").checked ? "" : v("release_date"), distributor: $("recheck").checked ? "" : v("distributor"),
+      distributor_other: !$("recheck").checked && v("distributor") === "other" ? v("distributor_other") : "",
+      amuse_plan: !$("recheck").checked && v("distributor") === "amuse" ? v("amuse_plan") : "" };
     var sent = 0, token = null;
     progress(0, f.size, "Starting upload…");
     call("POST", "/api/start", payload).then(function (s) {

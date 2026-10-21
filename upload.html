@@ -84,7 +84,7 @@
     <div class="recheck-box">
       <div class="field check" style="margin:0"><label><input id="recheck" name="recheck" type="checkbox" aria-controls="recheck-more" aria-expanded="false"> <span><b>This is a re-check.</b> I'm sending a revised version of a song that already has a Porchlight Mix full report.</span></label></div>
       <div id="recheck-more" hidden>
-        <div class="field" style="margin:14px 0 10px"><label for="original_ref">Reference from your report email or upload confirmation <span class="opt">(optional)</span></label><input id="original_ref" name="original_ref" type="text" maxlength="40" autocomplete="off" spellcheck="false" placeholder="For example, 20261021-153012-8f92ab12"><div class="help">No reference? That's fine. Use the same email address as last time, and we'll find your report.</div></div>
+        <div class="field" style="margin:14px 0 10px"><label for="original_ref">Reference number <span class="opt">(optional)</span></label><input id="original_ref" name="original_ref" type="text" maxlength="80" autocomplete="off" spellcheck="false" placeholder="For example, 20261021-153012-8f92ab12"><div class="help">It's near the end of your report email, after "Your reference". Don't have it? Leave this blank. Just use the same email address as last time, and we'll find your report.</div></div>
         <p class="recheck-note">Each full report includes one free re-check of the same song. Please send it within 14 days of the date we emailed your report. Using it doesn't affect your refund rights, and on the Songwriter Plan it doesn't count toward your 10 reports a month. <a href="terms.html#recheck" target="_blank">Re-check rules</a></p>
       </div>
     </div>
@@ -125,7 +125,7 @@
       </label>
       <div class="help">Upload the exact final master you'd send to your distributor. A 16- or 24-bit WAV gives the most accurate check. MP3 works, but the report will be less precise about peaks.</div>
     </div>
-    <fieldset class="field release">
+    <fieldset class="field release" id="release-box">
       <legend>Release details <span class="opt">(optional)</span></legend>
       <div class="help" style="margin:0 0 12px">Tell us when and where you're releasing, and your report will include your own release dates and a link that opens the free <a href="release-checklist.html" target="_blank">Release Checklist</a> already filled in.</div>
       <div class="grid2">
