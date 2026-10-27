@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16-bit or 24-bit WAV for Spotify &amp; DistroKid? When to Dither</title>
+<meta name="description" content="What bit depth and sample rate to export for Spotify, Apple Music, DistroKid, CD Baby and TuneCore, when dither matters, and how to check your file before upload.">
+<link rel="canonical" href="https://porchlightmix.github.io/blog/16-bit-or-24-bit-wav-dither.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Porchlight Mix">
+<meta property="og:title" content="16-bit or 24-bit WAV for Spotify &amp; DistroKid? When to Dither">
+<meta property="og:description" content="What bit depth and sample rate to export for Spotify, Apple Music, DistroKid, CD Baby and TuneCore, when dither matters, and how to check your file before upload.">
+<meta property="og:image" content="https://porchlightmix.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Porchlight Mix: release-ready mix check for acoustic and vocal songs">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://porchlightmix.github.io/blog/16-bit-or-24-bit-wav-dither.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#121a30">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<meta property="article:published_time" content="2026-10-26">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "Should I export 16-bit or 24-bit WAV for release? (And when to dither)",
+ "description": "What bit depth and sample rate to export for Spotify, Apple Music, DistroKid, CD Baby and TuneCore, when dither matters, and how to check your file before upload.",
+ "datePublished": "2026-10-26",
+ "dateModified": "2026-10-26",
+ "mainEntityOfPage": {
+  "@type": "WebPage",
+  "@id": "https://porchlightmix.github.io/blog/16-bit-or-24-bit-wav-dither.html"
+ },
+ "url": "https://porchlightmix.github.io/blog/16-bit-or-24-bit-wav-dither.html",
+ "author": {
+  "@type": "Organization",
+  "name": "Porchlight Mix",
+  "url": "https://porchlightmix.github.io/"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Porchlight Mix",
+  "url": "https://porchlightmix.github.io/",
+  "logo": {
+   "@type": "ImageObject",
+   "url": "https://porchlightmix.github.io/assets/apple-touch-icon.png"
+  }
+ },
+ "inLanguage": "en",
+ "image": "https://porchlightmix.github.io/assets/og-image.png",
+ "isPartOf": {
+  "@type": "Blog",
+  "name": "Porchlight Mix Blog",
+  "url": "https://porchlightmix.github.io/blog/"
+ }
+}
+</script>
+<link rel="stylesheet" href="../assets/dusk.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://porchlightmix.github.io/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Blog",
+   "item": "https://porchlightmix.github.io/blog/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "Should I export 16-bit or 24-bit WAV for release? (And when to dither)",
+   "item": "https://porchlightmix.github.io/blog/16-bit-or-24-bit-wav-dither.html"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="../"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></a>
+    <nav class="navlinks" aria-label="Main">
+      <a class="tl" href="../#tools">Free tools</a>
+      <a class="tl" href="./">Blog</a>
+      <a class="btn-sm" href="../#waitlist">Join the waitlist</a>
+    </nav>
+  </header>
+  <div class="wrap narrow">
+    <article class="article">
+      <p class="fine" style="margin-bottom:6px"><a href="./">← All articles</a></p>
+      <h1>Should I export 16-bit or 24-bit WAV for release? (And when to dither)</h1>
+      <p class="meta">Porchlight Mix · <time datetime="2026-10-26">October 26, 2026</time> · 6 min read</p>
+<p>You've finished the master and the export window is asking questions: 16-bit or 24-bit? 44.1 or 48 kHz? Dither on or off? The question comes up again and again on Reddit and recording forums, and the advice often disagrees because the rules have changed and each distributor words them a little differently.</p>
+<p>Here's the short answer, then the reasons, using what Spotify, Apple, DistroKid, CD Baby and TuneCore actually publish.</p>
+
+<h2>The short answer</h2>
+<div class="callout check"><ul style="margin-bottom:0">
+  <li><strong>If your distributor accepts 24-bit</strong>, export a 24-bit WAV (or FLAC) at your session's sample rate. No dither needed for this file.</li>
+  <li><strong>If your distributor asks for 16-bit, 44.1 kHz</strong>, export at that spec and turn dither on, once, as the very last step.</li>
+  <li><strong>Never</strong> turn a 16-bit file into a 24-bit one, or bump a 44.1 kHz file up to 96 kHz. It doesn't add quality.</li>
+</ul></div>
+
+<h2>What the streaming services want now</h2>
+<p>Spotify's guidance for audio delivery is clear. It asks for your highest-quality native stereo master, at 44.1 kHz or higher, and 24-bit if that's what the master is. It says to deliver 16-bit only if no higher bit depth master exists, and specifically says not to create a 16-bit version from a 24-bit master for delivery. It also asks you not to downsample, because it handles format conversion itself.<sup><a href="#s1">1</a></sup> That matters more than it used to: Spotify Premium now offers lossless playback at up to 24-bit/44.1 kHz FLAC.<sup><a href="#s2">2</a></sup></p>
+<p>Apple says the same thing in its own terms. To be badged as an Apple Digital Master, audio has to be delivered at 24-bit, at 44.1 kHz up to 192 kHz, and Apple asks for the project's native resolution without downsampling. It also says up-sampling or "bit-padding" 44.1 kHz/16-bit files isn't allowed for that badge.<sup><a href="#s3">3</a></sup></p>
+<p>So if you're uploading straight to the stores' standards, a 24-bit master at the rate you mixed at is the file they're asking for.</p>
+
+<h2>What your distributor accepts</h2>
+<p>Most home artists don't send files to Spotify or Apple directly. A distributor sits in the middle, and its upload rules are the ones your file has to pass. They're not all the same:</p>
+<ul>
+  <li><strong>DistroKid</strong> accepts WAV, FLAC, AIFF, MP3 and other formats. For WAV it says 16-bit, 44.1 kHz is typical, "but pretty much any specification works."<sup><a href="#s4">4</a></sup></li>
+  <li><strong>TuneCore's</strong> upload help article recommends 24-bit WAV files and also accepts 16-bit, 44.1 kHz.<sup><a href="#s5">5</a></sup></li>
+  <li><strong>CD Baby</strong> lists stereo WAV or FLAC at 44.1 kHz and 16-bit in its audio requirements. It even says a 24-bit, 48 kHz file is a common mismatch that needs converting before upload.<sup><a href="#s6">6</a></sup></li>
+</ul>
+<p>Help pages change, so check your distributor's current one before you export. If it accepts 24-bit, send 24-bit. If it asks for 16-bit, give it 16-bit and do the conversion properly, which is where dither comes in.</p>
+
+<h2>What dither actually does</h2>
+<p>Bit depth is how finely each sample's level is measured. When you cut a 24-bit file down to 16 bits, the extra detail has to go somewhere. Without dither it is simply chopped off, which is called truncation. Sound On Sound's technical editor Hugh Robjohns explains that truncation adds distortion, and that while it may not be obvious during most of a track, it can become very obvious in fade-ins and fade-outs.<sup><a href="#s7">7</a></sup></p>
+<p>Dither is a very quiet layer of noise added during the conversion. It turns that distortion into a smooth, barely audible hiss. Robjohns says simple triangular dither adds noise at about −93 dBFS, and that "noise-shaped" dither moves more of that noise up into high frequencies, where it's harder to hear.<sup><a href="#s7">7</a></sup></p>
+<p>This is especially relevant to acoustic music. A solo guitar intro, a held last chord, or a slow fade into silence spends a lot of time at low levels, which is exactly where truncation shows up.</p>
+
+<h2>Dither rules that stop most problems</h2>
+<ol>
+  <li><strong>Dither when you reduce bit depth to 16-bit.</strong> Sound On Sound's answer is direct: if you're going from 24 to 16 bits, you must dither.<sup><a href="#s7">7</a></sup></li>
+  <li><strong>Do it once, at the very end.</strong> Sound On Sound recommends keeping audio at a higher resolution throughout editing and leaving dither and noise shaping to the final stage, and warns against adding more dither to a file that's already been dithered.<sup><a href="#s8">8</a></sup> In practice, that means the dither setting in your final export, or a dither plug-in as the last thing on the master bus, but not both.</li>
+  <li><strong>Watch your ceiling.</strong> If your limiter pushes peaks right to 0 dBFS, the added dither noise can tip them into clipping. Robjohns suggests leaving a little room, roughly −0.3 to −1 dBFS.<sup><a href="#s7">7</a></sup> For streaming, Spotify recommends keeping true peak below −1 dBTP anyway, and below −2 dBTP if your master is louder than −14 LUFS.<sup><a href="#s9">9</a></sup></li>
+  <li><strong>Changing the sample rate counts as processing.</strong> Converting 48 kHz to 44.1 kHz creates a longer word length inside the math, so Sound On Sound says dither is needed when that result is cut back down to 16 bits.<sup><a href="#s10">10</a></sup> If CD Baby needs 16-bit/44.1 kHz from a 48 kHz session, do the rate change and the dither in the same final export.</li>
+</ol>
+
+<h2>What about 24-bit exports?</h2>
+<p>If you're sending a 24-bit file, you're not doing the 24-to-16 cut that the dither rules above are about. Spotify says it does any bit-depth reduction it needs on its side, and asks you not to do those conversions yourself.<sup><a href="#s1">1</a></sup> So for a 24-bit delivery, focus on the master itself, not dither settings.</p>
+<p>What about 32-bit float? Your DAW may mix in 32-bit float, but Spotify says files delivered above 24-bit are reduced internally to a maximum of 24-bit/44.1 kHz FLAC.<sup><a href="#s1">1</a></sup> A 24-bit export is what Spotify and Apple ask for, and DistroKid and TuneCore accept it. CD Baby is the exception, so follow its 16-bit rule there.</p>
+
+<h2>How to check the file you exported</h2>
+<p>Don't trust the export dialog alone. CD Baby suggests right-clicking the file and choosing Properties (Windows) or Get Info (Mac). A 16-bit, 44.1 kHz WAV shows a bit rate of 1,411 kbps and a sample rate of 44.100 kHz.<sup><a href="#s6">6</a></sup> Then actually play it all the way through, especially the quiet start and the fade at the end.</p>
+<p>Or drop it into the <a href="../checker.html">free Release Check</a>. It reads the sample rate, bit depth and format from the file header, and measures loudness and true peak, all in your browser without uploading the song.</p>
+
+<h2>Export checklist</h2>
+<div class="callout check"><ul style="margin-bottom:0">
+  <li>☐ Checked your distributor's current audio requirements</li>
+  <li>☐ 24-bit accepted: exported 24-bit WAV or FLAC at the session's sample rate</li>
+  <li>☐ 16-bit required: exported 16-bit/44.1 kHz with dither on, applied once</li>
+  <li>☐ No upsampling, and no 16-bit file saved as 24-bit</li>
+  <li>☐ True peak at or below −1 dBTP, with a little room left if you're dithering</li>
+  <li>☐ File properties confirmed, and the quiet intro and fade played back</li>
+</ul></div>
+<p>For the rest of the release, the <a href="../release-checklist.html">free Release Checklist</a> builds a to-do list from your release date and distributor. Our guide to <a href="how-loud-acoustic-song-spotify-lufs.html">how loud an acoustic song should be on Spotify</a> covers loudness and true peak in more depth, <a href="16-bit-or-24-bit-wav-dither.html">why distributors reject songs</a> covers cover art, names and rights, and <a href="why-song-sounds-quieter-on-spotify.html">why your song might sound quieter on Spotify</a> picks up where the export leaves off.</p>
+<p>Porchlight Mix is building a full Release-Ready report for home recordings, with a plain-English fix list for the mix and master before you upload. <a href="../#waitlist">Join the waitlist</a> to get early access.</p>
+
+      <div class="cta-band" style="margin:30px 0 0">
+        <h2>Check your song in 10 seconds</h2>
+        <p>Free, in your browser, with nothing uploaded: integrated LUFS, true peak, clipping and file format, compared with Spotify, Apple Music, YouTube and Amazon Music.</p>
+        <a class="btn" href="../checker.html">Run the free Release Check</a>
+        <p class="fine" style="color:#d9cdbf;margin:14px auto 0">Want genre-aware mix notes too? <a class="alt" href="../#waitlist">Join the waitlist</a> for the full report.</p>
+      </div>
+      <div class="sources" id="sources"><strong>Sources</strong><ol>
+<li id="s1">Spotify for Artists, "Audio file formats for Spotify." <a href="https://support.spotify.com/us/artists/article/audio-file-formats/">support.spotify.com</a></li>
+<li id="s2">Spotify Support, "Audio quality" and "Lossless Audio Quality." <a href="https://support.spotify.com/us/article/audio-quality/">support.spotify.com</a></li>
+<li id="s3">Apple, "Apple Video and Audio Asset Guide" (Apple Digital Masters Source Profile). <a href="https://help.apple.com/itc/videoaudioassetguide/en.lproj/static.html">help.apple.com</a></li>
+<li id="s4">DistroKid Help Center, "What Audio File Formats Can I Upload?" <a href="https://support.distrokid.com/hc/en-us/articles/360013647753-What-Audio-File-Formats-Can-I-Upload">support.distrokid.com</a></li>
+<li id="s5">TuneCore Support, "Uploading Audio Files." <a href="https://support.tunecore.com/hc/en-us/articles/115006499327-Uploading-Audio-Files">support.tunecore.com</a></li>
+<li id="s6">CD Baby Help Center, "How do I upload my audio?" <a href="https://support.cdbaby.com/hc/en-us/articles/204498645-How-do-I-upload-my-audio">support.cdbaby.com</a></li>
+<li id="s7">Hugh Robjohns, "Q. Do I really need to use dithering?" Sound On Sound, March 2010. <a href="https://www.soundonsound.com/sound-advice/q-do-really-need-use-dithering">soundonsound.com</a></li>
+<li id="s8">Sound On Sound, "Optimising PC Digital Audio Quality In Software." <a href="https://www.soundonsound.com/techniques/optimising-pc-digital-audio-quality-software">soundonsound.com</a></li>
+<li id="s9">Spotify for Artists, "Loudness normalization on Spotify." <a href="https://support.spotify.com/us/artists/article/loudness-normalization/">support.spotify.com</a></li>
+<li id="s10">Hugh Robjohns, "Q. Should I apply dither after sample-rate conversion?" Sound On Sound. <a href="https://www.soundonsound.com/sound-advice/q-should-apply-dither-after-sample-rate-conversion">soundonsound.com</a></li>
+</ol></div>
+    </article>
+  </div>
+</div>
+<footer>
+  <div class="wrap">© Porchlight Mix · Made by a musician, for musicians · Washington, USA · <a href="../checker.html">Release Check</a> · <a href="../loudness-preview.html">Loudness Preview</a> · <a href="../release-checklist.html">Release Checklist</a> · <a href="./">Blog</a> · <a href="../about.html">About</a> · <a href="../privacy.html">Privacy</a> · <a href="../refunds.html">Refunds</a> · <a href="../terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
+</footer>
+</body>
+</html>

@@ -32,6 +32,8 @@ Key facts:
 - [Why does my acoustic guitar and vocal mix sound muddy?](https://porchlightmix.github.io/blog/muddy-acoustic-guitar-vocal-mix.html)
 - [How to record vocals and acoustic guitar at the same time](https://porchlightmix.github.io/blog/record-vocals-and-guitar-at-the-same-time.html)
 - [Worship recording release checklist](https://porchlightmix.github.io/blog/worship-recording-release-checklist.html)
+- [Why did my distributor reject my song?](https://porchlightmix.github.io/blog/why-distributor-rejected-my-song.html)
+- [Should I export 16-bit or 24-bit WAV for release? (And when to dither)](https://porchlightmix.github.io/blog/16-bit-or-24-bit-wav-dither.html)
 
 ## Streaming loudness facts we cite
 - Spotify normalizes to -14 LUFS integrated by default (Loud -11, Quiet -19 for Premium), turns quiet tracks up only while leaving 1 dB of peak headroom, and recommends true peak below -1 dBTP, or below -2 dBTP for masters louder than -14 LUFS. Source: https://support.spotify.com/us/artists/article/loudness-normalization/
