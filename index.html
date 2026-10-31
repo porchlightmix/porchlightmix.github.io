@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Porchlight Mix | Release-Ready Check for Acoustic &amp; Vocal Mixes</title>
+<title>Porchlight Mix | Launching Soon: Release-Ready Mix Feedback for Acoustic &amp; Vocal Songs</title>
+<meta name="description" content="Porchlight Mix is launching soon: release-ready mix feedback for acoustic and vocal songs, made by a musician in Washington State.">
 <meta name="theme-color" content="#121a30">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -13,114 +14,33 @@
 <link rel="canonical" href="https://porchlightmix.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Porchlight Mix">
-<meta property="og:title" content="Porchlight Mix | Release-Ready Check for Acoustic &amp; Vocal Mixes">
-<meta property="og:description" content="Is your song ready for Spotify? Free Release Check, Loudness Preview and Release Checklist, plus $4.99 plain-English mix reports for acoustic and vocal songs.">
+<meta property="og:title" content="Porchlight Mix | Launching Soon">
+<meta property="og:description" content="Release-ready mix feedback for acoustic and vocal songs. Launching soon.">
 <meta property="og:image" content="https://porchlightmix.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Porchlight Mix: release-ready mix check for acoustic and vocal songs">
 <meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://porchlightmix.github.io/">
-<meta name="description" content="Is your song ready for Spotify? Free Release Check, Loudness Preview and Release Checklist, plus $4.99 plain-English mix reports for acoustic and vocal songs.">
+<meta name="twitter:card" content="summary_large_image">
 <style>
-  :root{
-    --bg:#faf6ef; --ink:#2a2420; --muted:#6d625a; --card:#fff; --line:#e8dfd2;
-    --accent:#c4622d; --accent-dk:#9e4c21; --pass:#2f7d4f; --warn:#b7791f; --fail:#b23a32;
-    --radius:14px; --shadow:0 6px 24px rgba(60,40,20,.08);
-  }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
-  a{color:var(--accent-dk)}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-  header.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+  html,body{height:100%}
+  body{line-height:1.6;font-size:17px;display:flex;flex-direction:column;min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;width:100%}
+  header.nav{display:flex;align-items:center;padding:22px 0}
   .logo{font-weight:800;font-size:1.25rem;letter-spacing:.5px;display:flex;align-items:center;gap:10px}
-  .logo .dot{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#fff3c4 0%,#ffcf6b 45%,#e8963e 100%);box-shadow:0 0 0 4px rgba(255,200,100,.28),0 0 16px 6px rgba(255,190,90,.45)}
-  .logo .logo-mix{color:var(--accent)}
-  .nav a.btn-sm{font-size:.9rem;padding:8px 16px;border-radius:999px;border:1.5px solid var(--accent);text-decoration:none;font-weight:600}
-  .hero{padding:56px 0 64px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
-  .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent-dk);background:#f3e3d6;padding:5px 12px;border-radius:999px;margin-bottom:18px}
-  h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.1rem,4.6vw,3.3rem);line-height:1.12;margin-bottom:18px}
-  h1 em{color:var(--accent);font-style:italic}
-  .lead{font-size:1.15rem;color:var(--muted);margin-bottom:28px;max-width:34em}
-  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:999px;border:0;font-size:1rem;cursor:pointer;transition:background .15s}
-  .btn:hover{background:var(--accent-dk)}
-  .btn.ghost{background:transparent;color:var(--accent-dk);border:1.5px solid var(--accent)}
-  .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-  .fine{font-size:.85rem;color:var(--muted);margin-top:12px}
-  .hero-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
-  .hero-card h4{font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:12px}
-  .check{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
-  .check:last-child{border-bottom:0}
-  .pill{font-size:.75rem;font-weight:800;padding:3px 10px;border-radius:999px;color:#fff}
-  .pill.pass{background:var(--pass)} .pill.warn{background:var(--warn)} .pill.fail{background:var(--fail)}
-  section{padding:64px 0}
-  section.alt{background:#f3ece1}
-  h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:14px;line-height:1.2}
-  .sub{color:var(--muted);max-width:40em;margin-bottom:36px}
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
-  .card h3{font-size:1.1rem;margin-bottom:8px}
-  .card p{color:var(--muted);font-size:.97rem}
-  .num{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-  .vs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .vs .card.bad{border-left:5px solid var(--fail)}
-  .vs .card.good{border-left:5px solid var(--pass)}
-  .vs blockquote{font-style:italic;color:var(--ink);margin:10px 0;padding-left:12px;border-left:3px solid var(--line)}
-  .report{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-  .report-head{background:#2a2420;color:#f6efe6;padding:16px 22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:center}
-  .report-head .tag{background:#f3c74f;color:#2a2420;font-weight:800;font-size:.75rem;padding:4px 10px;border-radius:6px;letter-spacing:.8px}
-  .report-body{padding:22px;display:grid;grid-template-columns:.9fr 1.1fr;gap:26px}
-  .metric{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:.95rem}
-  .metric span:last-child{font-weight:700}
-  .note{padding:12px 14px;border-radius:10px;background:#faf6ef;margin-bottom:12px;border-left:4px solid var(--warn);font-size:.95rem}
-  .note.crit{border-left-color:var(--fail)} .note.ok{border-left-color:var(--pass)}
-  .note b{display:block;margin-bottom:3px}
-  .note .ts{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;color:var(--muted)}
-  .disclaimer{font-size:.82rem;color:var(--muted);padding:0 22px 18px}
-  .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
-  .price{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column}
-  .price.feat{border:2px solid var(--accent);position:relative}
-  .price.feat::before{content:"Pre-orders open";position:absolute;top:-13px;left:24px;background:var(--accent);color:#fff;font-size:.75rem;font-weight:800;padding:3px 12px;border-radius:999px}
-  .price h3{font-size:1.05rem}
-  .amt{font-family:Georgia,serif;font-size:2.4rem;font-weight:700;margin:6px 0}
-  .amt small{font-size:1rem;color:var(--muted);font-family:inherit;font-weight:400}
-  .price ul{list-style:none;margin:14px 0 22px;flex:1}
-  .price li{padding:5px 0 5px 24px;position:relative;font-size:.95rem;color:var(--muted)}
-  .price li::before{content:"✓";position:absolute;left:0;color:var(--pass);font-weight:800}
-  .waitlist{background:#2a2420;color:#f6efe6;border-radius:20px;padding:44px;text-align:center}
-  .waitlist h2{color:#fff}
-  .waitlist p{color:#d9cdbf;max-width:36em;margin:0 auto 24px}
-  .tally-embed{background:#fff;border-radius:16px;max-width:640px;margin:0 auto;text-align:left;box-shadow:0 8px 28px rgba(0,0,0,.18)}
-  .tally-embed iframe{display:block;width:100%;border:0;border-radius:16px;background:#fff}
-  .waitlist .fallback{margin:16px auto 0;font-size:.95rem}
-  .waitlist a{color:#ffcf6b;font-weight:700}
-  .waitlist a:hover{color:#fff}
-  .refund{font-size:.82rem;color:var(--muted);margin-top:10px;line-height:1.45}
-  .refund-note{text-align:center;font-size:.9rem;color:var(--muted);margin-top:22px}
-  .product-line{font-weight:700;margin:0 0 8px;max-width:44em}
-  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:10px}
-  .faq summary{font-weight:700;cursor:pointer}
-  .faq p{color:var(--muted);margin-top:8px}
-  header.nav{flex-wrap:wrap;gap:10px}
-  .navlinks{display:flex;align-items:center;gap:18px}
-  .navlinks a{white-space:nowrap}
-  .navlinks a.tl{color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem}
-  .navlinks a.tl:hover{color:var(--accent-dk)}
-  @media (max-width:520px){.navlinks{gap:12px}.navlinks a.tl{font-size:.88rem}.nav a.btn-sm{padding:6px 12px;font-size:.82rem}}
-  .try-band{background:#fff6ec;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .try-band .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:26px;padding-bottom:26px;flex-wrap:wrap}
-  .try-band h2{font-size:clamp(1.3rem,2.6vw,1.7rem);margin-bottom:4px}
-  .try-band p{color:var(--muted);max-width:40em}
-  footer{padding:36px 0;color:var(--muted);font-size:.85rem;text-align:center;line-height:1.7}
-  @media (max-width:860px){
-    .hero,.report-body,.vs{grid-template-columns:1fr}
-    .grid3,.pricing{grid-template-columns:1fr}
-    .hero{padding:28px 0 40px}
-    section{padding:48px 0}
-    .waitlist{padding:30px 20px}
-  }
+  .logo .dot{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#fff3c4 0%,#ffcf6b 45%,#e8963e 100%)}
+  main{flex:1;display:flex;align-items:center}
+  .hold{padding:48px 0 64px;text-align:center}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:22px}
+  h1{font-size:clamp(2.3rem,6vw,3.6rem);line-height:1.1;margin-bottom:18px}
+  .lead{font-size:1.2rem;max-width:30em;margin:0 auto 30px}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:999px;font-size:1rem}
+  .fine{font-size:.9rem;margin-top:14px}
+  .sign{margin-top:40px;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ink)}
+  .sign small{display:block;font-family:var(--sans);font-style:normal;font-size:.85rem;color:var(--muted);margin-top:2px}
+  footer{padding:28px 0;font-size:.85rem;text-align:center;line-height:1.7}
 </style>
 <link rel="stylesheet" href="assets/dusk.css">
 <script type="application/ld+json">
@@ -134,7 +54,7 @@
    "url": "https://porchlightmix.github.io/",
    "logo": "https://porchlightmix.github.io/assets/apple-touch-icon.png",
    "email": "porchlightmix@gmail.com",
-   "description": "Porchlight Mix makes release-ready mix checks for acoustic and vocal music: free in-browser tools (the Release Check for loudness and true peak, the Loudness Preview for streaming playback levels, and the Release Checklist for dated release plans), and plain-English mix reports for singer-songwriters, home recordists, bands and worship teams.",
+   "description": "Porchlight Mix is launching soon: release-ready mix feedback for acoustic and vocal songs.",
    "founder": {
     "@type": "Person",
     "name": "Iain",
@@ -155,483 +75,29 @@
     "@id": "https://porchlightmix.github.io/#org"
    },
    "inLanguage": "en"
-  },
-  {
-   "@type": "Product",
-   "@id": "https://porchlightmix.github.io/#full-report",
-   "name": "Porchlight Mix Full Report",
-   "description": "An automated, plain-English mix-feedback report for one song, emailed as a PDF, usually within 2–3 days. It starts with the top 3 fixes in priority order, each with a specific action. It compares the song with Porchlight Mix's own reference recordings in the same style (Creative Commons recordings licensed for commercial use, not songs the customer picks): overall loudness, punch (peak-to-loudness ratio), loudness range, tonal balance, stereo width and lead-vocal level. It also covers true peak, clipping, file format, lead vocal vs. band balance over time and mono compatibility. It includes key release dates and a link to the free Release Checklist pre-filled with the customer's release date and distributor (when provided), and one free re-check of a revised version of the same song sent within 14 days. Uploaded songs are deleted within 7 days of upload, are never public, and are never used to train AI.",
-   "brand": {
-    "@id": "https://porchlightmix.github.io/#org"
-   },
-   "category": "Audio mix analysis report",
-   "audience": {
-    "@type": "Audience",
-    "audienceType": "Independent singer-songwriters, home recordists, folk and country artists, bands and worship teams"
-   },
-   "offers": {
-    "@type": "Offer",
-    "price": "4.99",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/PreOrder",
-    "url": "https://buy.stripe.com/5kQdRa8FielP5a95gYf7i00",
-    "seller": {
-     "@id": "https://porchlightmix.github.io/#org"
-    },
-    "description": "One full report for one song, including one free re-check within 14 days. Pre-order: invited first, fully refunded if Porchlight Mix doesn't launch."
-   }
-  },
-  {
-   "@type": "FAQPage",
-   "@id": "https://porchlightmix.github.io/#faq",
-   "mainEntity": [
-    {
-     "@type": "Question",
-     "name": "What is Porchlight Mix?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Porchlight Mix is an online mix check for acoustic and vocal music. It measures your finished mix or master and tells you, in plain English, what to fix before you release it on Spotify, Apple Music and other streaming services."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Who is it for?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Independent singer-songwriters, home recordists, folk and country artists, small bands and church worship teams who mix their own songs and want to know if they're ready to release."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How much does it cost?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The Release Check, Loudness Preview and Release Checklist are free and available now. The full report is $4.99 per song, and you can pre-order one today. The Songwriter Plan will be $9.99 a month for 10 full reports, starting at launch. Every full report includes a free re-check."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What's the difference between the free check and the full report?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The free Release Check measures your file: loudness, true peak, clipping, silence and format, and what each streaming service will do with it. The full report also looks at the mix itself. It starts with your top 3 fixes in priority order, each with a clear action. Then it compares your song with similar songs, shows how the lead vocal sits against the band, and checks stereo width and mono. It also includes your Release Checklist and one free re-check."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How does the free re-check work?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "After you fix your mix, send us one revised version of the same song within 14 days of getting your report. We run the same checks again at no charge. You get a short pass or fix result for each fix in your report, usually within 2–3 days. Each report includes one re-check. A different song needs its own report. See the re-check terms."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Which songs do you compare my mix with?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Our own reference set: well-made recordings in your style, released under Creative Commons licenses that allow commercial use. We chose and checked them. They aren't songs you pick, and they aren't chart hits. We compare overall loudness, punch, the balance of bass, mids and treble, stereo width and, if there's a lead vocal, how loud it sits against the band. Some styles have small sets for now (12 to 16 recordings for country, worship and instrumental), and the report says so when that applies."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Can I choose my own reference songs?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Not yet. Every report uses our own reference set for the style you pick."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What is the Release Checklist in my report?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "If you tell us your release date and distributor, your report lists your key dates: when to have files ready, the last safe day to upload, and the last day to pitch to Spotify. It also links to the free Release Checklist, already filled in with your date and distributor, so you can print the full list. No date yet? You get a link to the tool to fill in yourself."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Is my song uploaded when I use the free check?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No. The free check runs entirely in your web browser. Your file never leaves your device, and we never see it or its results."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What free tools do you have?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Three, and they all run in your browser. The Release Check measures loudness, true peak, clipping and format. The Loudness Preview shows, and lets you hear, how much each streaming service will turn your song up or down. The Release Checklist builds a dated to-do list from your release date and distributor."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "When should I upload my song and pitch it to Spotify?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Most distributors suggest uploading about 3–4 weeks before release. Pitch to Spotify's editors in Spotify for Artists at least 7 days before release. Our free Release Checklist works out the dates for you, with links to each distributor's own rules."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How loud should my song be for Spotify?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Spotify turns every song to about −14 LUFS on its default setting, so a louder master just gets turned down. Spotify recommends a true peak below −1 dBTP, or below −2 dBTP if your master is louder than −14 LUFS. Many acoustic releases sound good somewhere around −16 to −12 LUFS. Read more in How loud should an acoustic song be for Spotify?"
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What file types can I use?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The full report accepts WAV, AIFF, FLAC and MP3. The free check works with WAV, FLAC and MP3 in every modern browser, and with AIFF and M4A in some browsers. For the most accurate result, use the same lossless file you'll send to your distributor."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Do I need to install anything?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No. The free check runs in your browser. For the full report, you export a mix from any recording app (or even a phone recording app) and send us the file."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How long does a full report take?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Usually 2–3 days. We email it to you as a PDF, starting with your top 3 fixes. It isn't instant, because each report is prepared one at a time during early access."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Is a human listening to my song?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No. Your report is generated automatically from measurements of your audio and written up in plain English. Your song stays private."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What happens to my song after the report?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "We delete uploaded songs within 7 days of upload, along with any working copies we made. The report itself is kept so you can ask about it later. See our privacy policy."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Will you share my song or use it to train AI?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No. Never. Your song is never public and is never shared with anyone. It's never sent to an outside AI service, and it's never used to train any AI model. We analyze it with our own software on our own computer (this includes an open-source audio-separation tool that splits the vocal from the instruments). No human listens to it."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Does it work for mastered tracks too?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Yes. Check a mix before mastering, or a final master before you send it to your distributor."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "When does the full report launch?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "We're inviting songwriters, bands and worship teams in small groups now. Join the waitlist for free, and when we invite you, your first full report is free. Pre-order customers ($4.99) are invited first. Once you send your song, we email the report, usually within 2–3 days."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What if I'm not happy with my report?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Pre-orders are fully refunded if Porchlight Mix doesn't launch. After launch, email us within 14 days of a report for a full refund. See our refund policy."
-     }
-    }
-   ]
-  },
-  {
-   "@type": "WebApplication",
-   "@id": "https://porchlightmix.github.io/checker.html#app",
-   "name": "Porchlight Mix Free Release Check",
-   "url": "https://porchlightmix.github.io/checker.html",
-   "description": "Free in-browser LUFS, true-peak, clipping, silence and format check, with what Spotify, Apple Music, YouTube and Amazon Music will do to the song. Audio never leaves the device.",
-   "applicationCategory": "MultimediaApplication",
-   "operatingSystem": "Any (runs in a web browser)",
-   "isAccessibleForFree": true,
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   },
-   "publisher": {
-    "@id": "https://porchlightmix.github.io/#org"
-   }
-  },
-  {
-   "@type": "WebApplication",
-   "@id": "https://porchlightmix.github.io/loudness-preview.html#app",
-   "name": "Porchlight Mix Loudness Preview",
-   "url": "https://porchlightmix.github.io/loudness-preview.html",
-   "description": "Free in-browser tool that estimates how much Spotify (Normal, Loud, Quiet), Apple Music, YouTube, Amazon Music, TIDAL and Deezer will turn a song up or down, with A/B playback. Audio never leaves the device.",
-   "applicationCategory": "MultimediaApplication",
-   "operatingSystem": "Any (runs in a web browser)",
-   "isAccessibleForFree": true,
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   },
-   "publisher": {
-    "@id": "https://porchlightmix.github.io/#org"
-   }
-  },
-  {
-   "@type": "WebApplication",
-   "@id": "https://porchlightmix.github.io/release-checklist.html#app",
-   "name": "Porchlight Mix Release Checklist",
-   "url": "https://porchlightmix.github.io/release-checklist.html",
-   "description": "Free dated release checklist for independent musicians: distributor upload deadline, Spotify pitch date, file and cover-art specs, credits, ISRC and UPC, with links to official sources.",
-   "applicationCategory": "UtilitiesApplication",
-   "operatingSystem": "Any (runs in a web browser)",
-   "isAccessibleForFree": true,
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   },
-   "publisher": {
-    "@id": "https://porchlightmix.github.io/#org"
-   }
   }
  ]
 }
 </script>
 </head>
 <body>
-
 <div class="wrap">
   <header class="nav">
     <div class="logo"><span class="dot" aria-hidden="true"></span><span>Porchlight<span class="logo-mix"> Mix</span></span></div>
-    <nav class="navlinks" aria-label="Main">
-      <a class="tl" href="#tools">Free tools</a>
-      <a class="tl" href="blog/">Blog</a>
-      <a class="btn-sm" href="#waitlist">Join the waitlist</a>
-    </nav>
   </header>
-
-  <div class="hero">
-    <div>
-      <span class="eyebrow">Release-Ready Check</span>
-      <h1>Release-ready mix feedback for <em>acoustic and vocal</em> songs.</h1>
-      <p class="lead">Porchlight Mix checks your finished mix the way streaming services measure it. Then it tells you, in plain English, what to fix before you release. It's built for indie singer-songwriters, home recordists, bands and worship teams: songs with real voices and real instruments.</p>
-      <div class="cta-row">
-        <a class="btn" href="#waitlist">Get early access</a>
-        <a class="btn ghost" href="#sample">See an example report</a>
-      </div>
-      <p class="fine"><a href="#tools">Free tools, available now</a> · Full report $4.99 (pre-order) · Nothing to install</p>
-    </div>
-    <div class="hero-card" aria-label="Example release checklist">
-      <h4>Example release checklist</h4>
-      <div class="check"><span>Loudness (LUFS) for streaming</span><span class="pill pass">OK</span></div>
-      <div class="check"><span>True peak ≤ −1 dBTP</span><span class="pill fail">FIX</span></div>
-      <div class="check"><span>Clipping / overs</span><span class="pill pass">PASS</span></div>
-      <div class="check"><span>Lead vocal vs. guitars</span><span class="pill warn">CHECK</span></div>
-      <div class="check"><span>Low end (kick / bass / boom)</span><span class="pill pass">PASS</span></div>
-      <div class="check"><span>Mono compatibility</span><span class="pill pass">PASS</span></div>
-      <div class="check"><span>Silence at head / tail</span><span class="pill warn">CHECK</span></div>
-    </div>
-  </div>
 </div>
-
-<section id="tools">
-  <div class="wrap">
-    <h2>Free tools for your next release</h2>
-    <p class="sub">Three free tools that run in your browser. No sign-up, and your song is never uploaded.</p>
-    <div class="tools-grid">
-      <a class="card tool" href="checker.html"><span class="badge">Free</span><h3>Release Check</h3><p>See your song's loudness (LUFS), true peak, clipping, silence and file format, with a pass, check or fix for each one.</p><span class="go">Check my song →</span></a>
-      <a class="card tool" href="loudness-preview.html"><span class="badge">Free</span><h3>Loudness Preview</h3><p>See how much Spotify, Apple Music, YouTube, Amazon, TIDAL and Deezer will turn your song up or down. Then listen to the difference.</p><span class="go">Preview my song →</span></a>
-      <a class="card tool" href="release-checklist.html"><span class="badge">Free</span><h3>Release Checklist</h3><p>Pick a release date and distributor. Get a dated, printable list: when to upload, when to pitch to Spotify, and what your files, art and credits need.</p><span class="go">Build my checklist →</span></a>
-      <a class="card tool paid" href="#pricing"><span class="badge">$4.99 a song</span><h3>Full Release-Ready report</h3><p>Your top 3 fixes in order, a comparison with similar songs, your Release Checklist dates and one free re-check. Usually within 2–3 days.</p><span class="go">See the full report →</span></a>
-    </div>
+<main>
+  <div class="wrap hold">
+    <span class="eyebrow">Launching soon</span>
+    <h1>Porchlight Mix is <em>launching soon</em>.</h1>
+    <p class="lead">Release-ready mix feedback for acoustic and vocal songs.</p>
+    <a class="btn" href="https://tally.so/r/laDJ05">Hear when we launch</a>
+    <p class="fine">We only use your email for Porchlight Mix updates. See our <a href="privacy.html">privacy policy</a>.</p>
+    <p class="sign">Iain<small>Washington, USA</small></p>
   </div>
-</section>
-
-<section class="alt" id="problem">
-  <div class="wrap">
-    <h2>Generic mix advice can hurt an acoustic song</h2>
-    <p class="sub">A lot of mix advice assumes a loud, bass-heavy pop or EDM sound: big sub-bass, bright highs, loudness pushed to the limit. Follow that on a fingerpicked ballad or a worship set, and it can work against the song.</p>
-    <div class="vs">
-      <div class="card bad">
-        <h3>Genre-blind advice (example)</h3>
-        <blockquote>"Low end is 6 dB below target. Boost sub-bass. Increase loudness to −8 LUFS."</blockquote>
-        <p>On an acoustic track, that leaves you with boom and a squashed vocal. And Spotify turns a −8 LUFS master down by about 6 dB anyway.</p>
-      </div>
-      <div class="card good">
-        <h3>A Porchlight Mix note (example)</h3>
-        <blockquote>"Your vocal drops about 3 dB under the strummed guitar in the choruses. Try a little vocal ride or a gentle 2–4 kHz dip on the guitar."</blockquote>
-        <p>Notes compared with reference recordings in your style, in words you can act on in any recording app.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="how">
-  <div class="wrap">
-    <h2>How the full report works</h2>
-    <p class="sub">No plugins and no jargon. Three steps from finished mix to a clear fix list.</p>
-    <div class="grid3">
-      <div class="card"><div class="num">1</div><h3>Send your mix</h3><p>Export a WAV, AIFF, FLAC or MP3 from any recording app. Pick your style: singer-songwriter, acoustic/folk, country, band or worship.</p></div>
-      <div class="card"><div class="num">2</div><h3>We measure the mix</h3><p>Loudness, true peak, clipping, tone balance, stereo width, mono playback, and how loud the lead vocal sits against the band. Then we compare it with reference recordings in your style.</p></div>
-      <div class="card"><div class="num">3</div><h3>Get your fix list by email</h3><p>A short list of what to change first, in plain English, plus a check of your file against streaming and distributor specs. We email your report, usually within 2–3 days.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="alt" id="sample">
-  <div class="wrap">
-    <h2>What a report looks like</h2>
-    <p class="sub">An excerpt from a full report. <strong>This is an illustrative example, not a real customer's song.</strong></p>
-    <div class="report">
-      <div class="report-head">
-        <div><strong>"Harbor Lights" (mix v3)</strong> · Style: Singer-songwriter (vocal + acoustic guitar + light band)</div>
-        <span class="tag">EXAMPLE REPORT</span>
-      </div>
-      <div class="report-body">
-        <div>
-          <div class="metric"><span>Integrated loudness</span><span>−13.2 LUFS</span></div>
-          <div class="metric"><span>True peak</span><span style="color:var(--fail)">−0.1 dBTP</span></div>
-          <div class="metric"><span>Loudness range</span><span>7.4 LU</span></div>
-          <div class="metric"><span>Stereo correlation</span><span>+0.62</span></div>
-          <div class="metric"><span>Low-mid (200–500 Hz) vs. genre</span><span style="color:var(--warn)">+3.1 dB</span></div>
-          <div class="metric"><span>Sample rate / bit depth</span><span>44.1 kHz / 24-bit</span></div>
-        </div>
-        <div>
-          <div class="note crit"><b>1. Peaks are too hot for streaming</b>Your true peak is −0.1 dBTP. Streaming services recommend −1 dBTP or lower. Pull your limiter ceiling down to −1.0 dB so the song doesn't distort when it's converted.</div>
-          <div class="note"><b>2. The vocal gets buried in the choruses</b><span class="ts">1:02–1:34, 2:20–2:52</span><br>The lead vocal drops about 3 dB against the strummed guitar. Ride the vocal up 1–2 dB in those sections, or carve a gentle 2–4 kHz dip in the guitar.</div>
-          <div class="note"><b>3. A little boxy around 300 Hz</b>Low mids are fuller than typical for this style. A wide 2 dB cut around 250–350 Hz on the guitar bus should open things up.</div>
-          <div class="note ok"><b>Working well</b>Dynamics breathe nicely for an acoustic song, and the mix holds up in mono.</div>
-        </div>
-      </div>
-      <p class="disclaimer">Example data for illustration only. Spec reference: Spotify recommends a master around −14 LUFS integrated with true peak below −1 dBTP (<a href="https://support.spotify.com/us/artists/article/loudness-normalization/">Spotify for Artists</a>).</p>
-    </div>
-  </div>
-</section>
-
-<section id="pricing">
-  <div class="wrap">
-    <h2>Simple pricing</h2>
-    <p class="product-line">Automated mix-feedback reports for musicians — $4.99 per report, delivered digitally.</p>
-    <p class="sub">Start with the free tools. Get a full report for $4.99 a song. If you release often, the monthly plan costs less per report.</p>
-    <div class="pricing">
-      <div class="price">
-        <h3>Release Check</h3>
-        <div class="amt">Free</div>
-        <ul>
-          <li>Loudness (LUFS) &amp; true peak</li>
-          <li>Clipping, silence &amp; file format</li>
-          <li>What Spotify, Apple Music, YouTube &amp; Amazon do to your song</li>
-          <li>Your #1 fix</li>
-          <li>Runs in your browser, nothing uploaded</li>
-        </ul>
-        <a class="btn ghost" href="checker.html">Run the free check</a>
-      </div>
-      <div class="price feat">
-        <h3>Full Report</h3>
-        <div class="amt">$4.99 <small>/ song</small></div>
-        <ul>
-          <li>Everything in the free Release Check</li>
-          <li><b>Your top 3 fixes, in order</b>, each with a clear action, like "lower your master by about 2 dB"</li>
-          <li><b>How your song compares with similar songs</b>: loudness, punch, tone, stereo width and vocal level, against our own reference recordings in your style</li>
-          <li>Lead vocal vs. band balance and a mono check</li>
-          <li><b>Your Release Checklist</b>: key dates for your release date and distributor, with your checklist already filled in</li>
-          <li><b>One free re-check</b>: send a revised version within 14 days</li>
-          <li>Emailed as a PDF, usually within 2–3 days</li>
-        </ul>
-        <a class="btn" href="https://buy.stripe.com/5kQdRa8FielP5a95gYf7i00">Pre-order a report — $4.99</a>
-        <p class="refund">Pre-order customers are invited first. Fully refunded if Porchlight Mix doesn't launch. Questions: <a href="mailto:porchlightmix@gmail.com">porchlightmix@gmail.com</a></p>
-      </div>
-      <div class="price">
-        <h3>Songwriter Plan</h3>
-        <div class="amt">$9.99 <small>/ month</small></div>
-        <ul>
-          <li>10 full reports a month</li>
-          <li>Every report includes the top 3 fixes, the comparison with similar songs, your Release Checklist and a free re-check</li>
-          <li>Cancel anytime</li>
-        </ul>
-        <p class="refund">Coming at launch. We may add more to the plan over time. Join the waitlist to hear first.</p>
-        <a class="btn ghost" href="#waitlist">Join the waitlist</a>
-      </div>
-    </div>
-    <p class="refund-note">Free re-check: one per report, for a revised version of the same song, sent within 14 days of getting your report. Re-check results usually arrive within 2–3 days. <a href="terms.html#recheck">Details</a></p>
-  </div>
-</section>
-
-<section class="alt" id="waitlist">
-  <div class="wrap">
-    <div class="waitlist">
-      <h2>Be first in line</h2>
-      <p>We're inviting songwriters, bands and worship teams in small groups. Join the waitlist for free. When we invite you, your first full report is free, and we'd love your honest feedback. Don't want to wait? <a href="https://buy.stripe.com/5kQdRa8FielP5a95gYf7i00">Pre-order a report for $4.99</a> and you'll be invited first.</p>
-      <div class="tally-embed">
-        <iframe data-tally-src="https://tally.so/embed/laDJ05?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="560" frameborder="0" marginheight="0" marginwidth="0" title="Porchlight Mix — Early Access"></iframe>
-      </div>
-      <p class="fallback"><a href="https://tally.so/r/laDJ05">Open the signup form</a> · We only use your email for Porchlight Mix updates. See our <a href="privacy.html">privacy policy</a>.</p>
-      <script async src="https://tally.so/widgets/embed.js"></script>
-    </div>
-  </div>
-</section>
-
-<section id="guides">
-  <div class="wrap">
-    <h2>Free guides for acoustic and vocal releases</h2>
-    <p class="sub">Plain-English answers to the questions home recordists ask most.</p>
-    <div class="grid3 guides">
-      <a class="card guide" href="blog/how-loud-acoustic-song-spotify-lufs.html"><h3>How loud should an acoustic song be for Spotify?</h3><p>LUFS and true peak explained, with a sensible range for acoustic music.</p></a>
-      <a class="card guide" href="blog/why-song-sounds-quieter-on-spotify.html"><h3>Why does my song sound quieter on Spotify?</h3><p>Seven real reasons, and what to do about each one.</p></a>
-      <a class="card guide" href="blog/vocal-on-top-of-acoustic-guitar-mix.html"><h3>How to make a vocal sit on top of an acoustic guitar</h3><p>Balance, EQ, compression and automation, step by step.</p></a>
-      <a class="card guide" href="blog/muddy-acoustic-guitar-vocal-mix.html"><h3>Why does my acoustic mix sound muddy?</h3><p>Where low-mid buildup comes from and how to fix it.</p></a>
-      <a class="card guide" href="blog/record-vocals-and-guitar-at-the-same-time.html"><h3>Recording vocals and guitar at the same time</h3><p>Four mic setups, and how to mix a recording with bleed.</p></a>
-      <a class="card guide" href="blog/worship-recording-release-checklist.html"><h3>Worship recording release checklist</h3><p>Rights, mixing, loudness, files and metadata for a live set.</p></a>
-    </div>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <div class="wrap">
-    <h2>Frequently asked questions</h2>
-    <details><summary>What is Porchlight Mix?</summary><p>Porchlight Mix is an online mix check for acoustic and vocal music. It measures your finished mix or master and tells you, in plain English, what to fix before you release it on Spotify, Apple Music and other streaming services.</p></details>
-    <details><summary>Who is it for?</summary><p>Independent singer-songwriters, home recordists, folk and country artists, small bands and church worship teams who mix their own songs and want to know if they're ready to release.</p></details>
-    <details><summary>How much does it cost?</summary><p>The Release Check, Loudness Preview and Release Checklist are free and available now. The full report is $4.99 per song, and you can <a href="https://buy.stripe.com/5kQdRa8FielP5a95gYf7i00">pre-order one today</a>. The Songwriter Plan will be $9.99 a month for 10 full reports, starting at launch. Every full report includes a free re-check.</p></details>
-    <details><summary>What's the difference between the free check and the full report?</summary><p>The <a href="checker.html">free Release Check</a> measures your file: loudness, true peak, clipping, silence and format, and what each streaming service will do with it. The full report also looks at the mix itself. It starts with your top 3 fixes in priority order, each with a clear action. Then it compares your song with similar songs, shows how the lead vocal sits against the band, and checks stereo width and mono. It also includes your Release Checklist and one free re-check.</p></details>
-    <details><summary>How does the free re-check work?</summary><p>After you fix your mix, send us one revised version of the same song within 14 days of getting your report. We run the same checks again at no charge. You get a short pass or fix result for each fix in your report, usually within 2–3 days. Each report includes one re-check. A different song needs its own report. See the <a href="terms.html#recheck">re-check terms</a>.</p></details>
-    <details><summary>Which songs do you compare my mix with?</summary><p>Our own reference set: well-made recordings in your style, released under Creative Commons licenses that allow commercial use. We chose and checked them. They aren't songs you pick, and they aren't chart hits. We compare overall loudness, punch, the balance of bass, mids and treble, stereo width and, if there's a lead vocal, how loud it sits against the band. Some styles have small sets for now (12 to 16 recordings for country, worship and instrumental), and the report says so when that applies.</p></details>
-    <details><summary>Can I choose my own reference songs?</summary><p>Not yet. Every report uses our own reference set for the style you pick.</p></details>
-    <details><summary>What is the Release Checklist in my report?</summary><p>If you tell us your release date and distributor, your report lists your key dates: when to have files ready, the last safe day to upload, and the last day to pitch to Spotify. It also links to the free <a href="release-checklist.html">Release Checklist</a>, already filled in with your date and distributor, so you can print the full list. No date yet? You get a link to the tool to fill in yourself.</p></details>
-    <details><summary>Is my song uploaded when I use the free check?</summary><p>No. The free check runs entirely in your web browser. Your file never leaves your device, and we never see it or its results.</p></details>
-    <details><summary>What free tools do you have?</summary><p>Three, and they all run in your browser. The <a href="checker.html">Release Check</a> measures loudness, true peak, clipping and format. The <a href="loudness-preview.html">Loudness Preview</a> shows, and lets you hear, how much each streaming service will turn your song up or down. The <a href="release-checklist.html">Release Checklist</a> builds a dated to-do list from your release date and distributor.</p></details>
-    <details><summary>When should I upload my song and pitch it to Spotify?</summary><p>Most distributors suggest uploading about 3–4 weeks before release. Pitch to Spotify's editors in Spotify for Artists at least 7 days before release. Our free <a href="release-checklist.html">Release Checklist</a> works out the dates for you, with links to each distributor's own rules.</p></details>
-    <details><summary>How loud should my song be for Spotify?</summary><p>Spotify turns every song to about −14 LUFS on its default setting, so a louder master just gets turned down. Spotify recommends a true peak below −1 dBTP, or below −2 dBTP if your master is louder than −14 LUFS. Many acoustic releases sound good somewhere around −16 to −12 LUFS. Read more in <a href="blog/how-loud-acoustic-song-spotify-lufs.html">How loud should an acoustic song be for Spotify?</a></p></details>
-    <details><summary>What file types can I use?</summary><p>The full report accepts WAV, AIFF, FLAC and MP3. The free check works with WAV, FLAC and MP3 in every modern browser, and with AIFF and M4A in some browsers. For the most accurate result, use the same lossless file you'll send to your distributor.</p></details>
-    <details><summary>Do I need to install anything?</summary><p>No. The free check runs in your browser. For the full report, you export a mix from any recording app (or even a phone recording app) and send us the file.</p></details>
-    <details><summary>How long does a full report take?</summary><p>Usually 2–3 days. We email it to you as a PDF, starting with your top 3 fixes. It isn't instant, because each report is prepared one at a time during early access.</p></details>
-    <details><summary>Is a human listening to my song?</summary><p>No. Your report is generated automatically from measurements of your audio and written up in plain English. Your song stays private.</p></details>
-    <details><summary>What happens to my song after the report?</summary><p>We delete uploaded songs within 7 days of upload, along with any working copies we made. The report itself is kept so you can ask about it later. See our <a href="privacy.html">privacy policy</a>.</p></details>
-    <details><summary>Will you share my song or use it to train AI?</summary><p>No. Never. Your song is never public and is never shared with anyone. It's never sent to an outside AI service, and it's never used to train any AI model. We analyze it with our own software on our own computer (this includes an open-source audio-separation tool that splits the vocal from the instruments). No human listens to it.</p></details>
-    <details><summary>Does it work for mastered tracks too?</summary><p>Yes. Check a mix before mastering, or a final master before you send it to your distributor.</p></details>
-    <details><summary>When does the full report launch?</summary><p>We're inviting songwriters, bands and worship teams in small groups now. Join the waitlist for free, and when we invite you, your first full report is free. Pre-order customers ($4.99) are invited first. Once you send your song, we email the report, usually within 2–3 days.</p></details>
-    <details><summary>What if I'm not happy with my report?</summary><p>Pre-orders are fully refunded if Porchlight Mix doesn't launch. After launch, email us within 14 days of a report for a full refund. See our <a href="refunds.html">refund policy</a>.</p></details>
-    <p class="fine" style="margin-top:18px">Who runs Porchlight Mix? Iain, a long-time musician based in Washington State, USA. <a href="about.html">About Porchlight Mix</a> · Questions: <a href="mailto:porchlightmix@gmail.com">porchlightmix@gmail.com</a></p>
-  </div>
-</section>
-
+</main>
 <footer>
-  <div class="wrap">© Porchlight Mix · Made by a musician, for musicians · Washington, USA · <a href="checker.html">Release Check</a> · <a href="loudness-preview.html">Loudness Preview</a> · <a href="release-checklist.html">Release Checklist</a> · <a href="blog/">Blog</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="terms.html">Terms</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
+  <div class="wrap">© Porchlight Mix · Made by a musician, for musicians · Washington, USA · <a href="privacy.html">Privacy</a> · <a href="mailto:porchlightmix@gmail.com">Contact</a></div>
 </footer>
-
 </body>
 </html>
