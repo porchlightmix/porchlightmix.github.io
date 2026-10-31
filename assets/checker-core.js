@@ -1,6 +1,6 @@
 /* Porchlight Mix — free release check: measurement core.
  * Runs entirely on the listener's device. No audio leaves the browser.
- * Integrated loudness: ITU-R BS.1770-4 (K-weighting, 400 ms blocks, 75% overlap,
+ * Integrated loudness: ITU-R BS.1770 (K-weighting, 400 ms blocks, 75% overlap,
  * -70 LUFS absolute gate, -10 LU relative gate).
  * Loudness range: EBU Tech 3342 (3 s short-term, -70/-20 gates, 10th-95th percentile).
  * True peak: 4x oversampling (polyphase windowed-sinc interpolator), reported in dBTP.

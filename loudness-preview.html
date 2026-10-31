@@ -100,7 +100,7 @@ table.plat td.why{order:3;flex:1 1 100%}}
    "applicationCategory": "MultimediaApplication",
    "operatingSystem": "Any (runs in a web browser)",
    "browserRequirements": "Requires JavaScript and the Web Audio API",
-   "description": "Free in-browser tool that measures a song's integrated loudness (LUFS, ITU-R BS.1770-4) and true peak, then estimates how much Spotify (Normal, Loud and Quiet), Apple Music Sound Check, YouTube, Amazon Music, TIDAL and Deezer will turn it up or down. Optional A/B playback at the adjusted level. Audio never leaves the device.",
+   "description": "Free in-browser tool that measures a song's integrated loudness (LUFS, ITU-R BS.1770) and true peak, then estimates how much Spotify (Normal, Loud and Quiet), Apple Music Sound Check, YouTube, Amazon Music, TIDAL and Deezer will turn it up or down. Optional A/B playback at the adjusted level. Audio never leaves the device.",
    "featureList": [
     "Integrated loudness (LUFS)",
     "True peak (dBTP)",
@@ -144,7 +144,7 @@ table.plat td.why{order:3;flex:1 1 100%}}
      "name": "Why isn't my quiet song turned up all the way?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Spotify only turns a quiet song up until its true peak reaches −1 dBTP (except on the Loud setting, where it uses a limiter). Several other services are reported not to turn quiet songs up at all."
+      "text": "Spotify only turns a quiet song up as far as its peaks allow, leaving 1 dB of headroom for lossy streams, so about −1 dBTP (except on the Loud setting, where it uses a limiter). Several other services are reported not to turn quiet songs up at all."
      }
     },
     {
@@ -243,9 +243,9 @@ table.plat td.why{order:3;flex:1 1 100%}}
   <section class="how">
     <h2>How the preview works</h2>
     <div class="rows">
-      <div class="row"><div class="name">Loudness</div><div class="what">Integrated loudness in LUFS, measured with ITU-R BS.1770-4. Spotify says it measures loudness with the ITU 1770 standard. It's the same measuring code as our <a href="checker.html">free Release Check</a>, so the numbers match.</div><div></div></div>
+      <div class="row"><div class="name">Loudness</div><div class="what">Integrated loudness in LUFS, measured with ITU-R BS.1770. Spotify says it measures loudness with the ITU 1770 standard. It's the same measuring code as our <a href="checker.html">free Release Check</a>, so the numbers match.</div><div></div></div>
       <div class="row"><div class="name">Turned down</div><div class="what">If your song is louder than a service's reference level, it's turned down by the difference. A −8 LUFS master on Spotify's default setting is turned down about 6 dB.</div><div></div></div>
-      <div class="row"><div class="name">Turned up</div><div class="what">Spotify turns quiet songs up only until the true peak reaches −1 dBTP. On its Loud setting it turns songs up anyway and uses a limiter. Apple Music is reported to turn quiet songs up only as far as the peaks allow (about −1 dBTP; approximate). YouTube, Amazon Music, TIDAL and Deezer are reported to turn songs down but not up.</div><div></div></div>
+      <div class="row"><div class="name">Turned up</div><div class="what">Spotify turns quiet songs up only until the true peak reaches about −1 dBTP (it leaves 1 dB of headroom for lossy streams). On its Loud setting it turns songs up anyway and uses a limiter. Apple Music is reported to turn quiet songs up only as far as the peaks allow (about −1 dBTP; approximate). YouTube, Amazon Music, TIDAL and Deezer are reported to turn songs down but not up.</div><div></div></div>
       <div class="row"><div class="name">Listening</div><div class="what">Playback changes only the volume, using your browser's audio engine. It doesn't copy any service's audio processing. If a setting would push the song past full scale, the preview caps it so your speakers don't clip.</div><div></div></div>
     </div>
     <p class="fine" style="margin-top:12px">Learn more: <a href="blog/how-loud-acoustic-song-spotify-lufs.html">How loud should an acoustic song be for Spotify?</a> · <a href="blog/why-song-sounds-quieter-on-spotify.html">Why does my song sound quieter on Spotify?</a> · Releasing soon? Plan your dates with the <a href="release-checklist.html">Release Checklist</a>.</p>
@@ -255,7 +255,7 @@ table.plat td.why{order:3;flex:1 1 100%}}
     <h2>Questions about the Loudness Preview</h2>
       <details><summary>Is my song uploaded?</summary><p>No. The preview runs entirely in this browser tab. Your file never leaves your device, and nothing is stored.</p></details>
       <details><summary>Why does my loud master get turned down?</summary><p>Streaming services adjust playback so songs play at a similar loudness. A master louder than the service's reference is turned down, so the extra loudness doesn't reach listeners.</p></details>
-      <details><summary>Why isn't my quiet song turned up all the way?</summary><p>Spotify only turns a quiet song up until its true peak reaches −1 dBTP (except on the Loud setting, where it uses a limiter). Several other services are reported not to turn quiet songs up at all.</p></details>
+      <details><summary>Why isn't my quiet song turned up all the way?</summary><p>Spotify only turns a quiet song up as far as its peaks allow, leaving 1 dB of headroom for lossy streams, so about −1 dBTP (except on the Loud setting, where it uses a limiter). Several other services are reported not to turn quiet songs up at all.</p></details>
       <details><summary>Is this exactly what each service will do?</summary><p>It's a close estimate. Spotify publishes its numbers. Apple Music, YouTube, Amazon Music, TIDAL and Deezer don't, so those use independent measurements and are marked approximate. Services also treat albums differently from single tracks, and listeners can turn normalization off.</p></details>
       <details><summary>Does it give the same reading as the Release Check?</summary><p>Yes. Both tools use the same measuring code, so the loudness and true-peak numbers match.</p></details>
   </section>
@@ -269,9 +269,9 @@ table.plat td.why{order:3;flex:1 1 100%}}
   <div class="footnotes" id="sources">
     <strong>Sources and notes</strong>
     <ol>
-      <li id="src1"><b>Spotify (official):</b> normalizes to −14 LUFS by default. Premium listeners can choose Loud (−11 LUFS) or Quiet (−19 LUFS). Quiet songs are turned up while leaving 1 dB of headroom, so peaks stay at or below about −1 dBTP. On Loud, Spotify turns songs up regardless of peaks and applies a limiter. The web player and some TVs and speakers don't normalize. <a href="https://support.spotify.com/us/artists/article/loudness-normalization/">Spotify for Artists: Loudness normalization</a> (checked October 20, 2026).</li>
+      <li id="src1"><b>Spotify (official):</b> normalizes to −14 LUFS by default. Premium listeners can choose Loud (−11 LUFS) or Quiet (−19 LUFS). Quiet songs are turned up while leaving 1 dB of headroom for lossy encodings, so peaks stay at or below about −1 dBTP. On Loud, Spotify turns songs up regardless of peaks and applies a limiter. The web player and some TVs and speakers don't normalize. <a href="https://support.spotify.com/us/artists/article/loudness-normalization/">Spotify for Artists: Loudness normalization</a> (checked October 30, 2026).</li>
       <li id="src2"><b>Apple Music, YouTube, Amazon Music, TIDAL, Deezer (approximate):</b> none of these publish a loudness target for music. The values shown (Apple ≈ −16, YouTube ≈ −14, Amazon ≈ −14, TIDAL ≈ −14, Deezer ≈ −15 LUFS), and which ones turn quiet songs up, come from iZotope's platform table (<a href="https://www.izotope.com/community/blog/mastering-for-streaming-platforms">iZotope: Mastering for streaming platforms</a>). Apple recommends leaving at least 1 dB of headroom (<a href="https://www.apple.com/apple-music/apple-digital-masters/docs/apple-digital-masters.pdf">Apple Digital Masters</a>). Deezer's help page explains its "Normalize audio" setting without a number (<a href="https://support.deezer.com/hc/en-gb/articles/360005369938-Volume-Normalization-on-Deezer">Deezer support</a>); some sources report −14 LUFS for Deezer instead of −15. TIDAL is reported to normalize whole albums, even in playlists.</li>
-      <li><b>Measurement:</b> <a href="https://www.itu.int/rec/R-REC-BS.1770">ITU-R BS.1770-4</a> integrated loudness; true peak with 4× oversampling. Readings can differ slightly from your DAW's meter.</li>
+      <li><b>Measurement:</b> <a href="https://www.itu.int/rec/R-REC-BS.1770">ITU-R BS.1770</a> integrated loudness; true peak with 4× oversampling. Readings can differ slightly from your DAW's meter.</li>
     </ol>
   </div>
 </div>

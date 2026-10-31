@@ -32,7 +32,7 @@
  "headline": "Why does my song sound quieter on Spotify than other songs?",
  "description": "Spotify normalizes every track, so why does yours still sound quieter? Seven real reasons, from peak-limited quiet masters to frequency balance and buried vocals, and how to fix each one.",
  "datePublished": "2026-10-19",
- "dateModified": "2026-10-19",
+ "dateModified": "2026-10-30",
  "mainEntityOfPage": {
   "@type": "WebPage",
   "@id": "https://porchlightmix.github.io/blog/why-song-sounds-quieter-on-spotify.html"
@@ -103,16 +103,16 @@
     <article class="article">
       <p class="fine" style="margin-bottom:6px"><a href="./">← All articles</a></p>
       <h1>Why does my song sound quieter on Spotify than other songs?</h1>
-      <p class="meta">Porchlight Mix · <time datetime="2026-10-19">October 19, 2026</time> · 5 min read</p>
+      <p class="meta">Porchlight Mix · <time datetime="2026-10-19">October 19, 2026</time> (updated <time datetime="2026-10-30">October 30, 2026</time>) · 5 min read</p>
 <p>You finally hear your song on Spotify, and the track that plays next sounds bigger, brighter or simply louder. It's one of the most common questions home recordists ask, and the frustrating answer is that turning your master up usually isn't the fix. Spotify adjusts the playback volume of every track, so "louder" often comes down to things other than the file's level.</p>
 <p>Here are the real reasons a song can sound quieter on Spotify, roughly in the order worth checking, and what to do about each one.</p>
 
 <h2>First, how Spotify sets the volume</h2>
-<p>Spotify measures each track's integrated loudness using the ITU-R BS.1770 standard and, on the default setting, adjusts playback so tracks land around <strong>−14 LUFS</strong>.<sup><a href="#s1">1</a></sup> Louder masters are turned down. Quieter masters are turned up, but only as far as their peaks allow: Spotify leaves 1 dB of headroom, so a quiet track with high peaks may not be turned up all the way.<sup><a href="#s1">1</a></sup></p>
+<p>Spotify measures each track's integrated loudness using the ITU-R BS.1770 standard and, on the default setting, adjusts playback so tracks land around <strong>−14 LUFS</strong>.<sup><a href="#s1">1</a></sup> Louder masters are turned down. Quieter masters are turned up, but only as far as their peaks allow: Spotify says it leaves 1 dB of headroom for lossy (compressed) encodings, so a quiet track with high peaks may not be turned up all the way.<sup><a href="#s1">1</a></sup></p>
 <p>So in a normalized playlist, a −8 LUFS master and a −14 LUFS master <em>measure</em> about the same at playback. If yours still <em>sounds</em> quieter, something else is going on. Spotify's own artist help page lists several reasons,<sup><a href="#s2">2</a></sup> and they're a good place to start.</p>
 
 <h2>Reason 1: Your song is quiet and has high peaks</h2>
-<p>This is the one case where your song really does play at a lower level. If your master measures, say, −18 LUFS with true peaks at −2 dBTP, Spotify can only raise it about 1 dB before it hits the 1 dB headroom limit, so it plays about 3 dB below most other tracks. Spotify gives its own example: a track at −20 LUFS with a true peak of −5 dBFS only gets lifted to −16 LUFS.<sup><a href="#s1">1</a></sup></p>
+<p>This is the one case where your song really does play at a lower level. If your master measures, say, −18 LUFS with true peaks at −2 dBTP, Spotify can only raise it about 1 dB before it hits the 1 dB of headroom Spotify leaves on lossy streams, so it plays about 3 dB below most other tracks. Spotify gives its own example: a track at −20 LUFS with a true peak of −5 dBFS only gets lifted to −16 LUFS.<sup><a href="#s1">1</a></sup></p>
 <p><strong>What to do:</strong> measure integrated loudness and true peak. If you're well below −14 LUFS and the song isn't meant to be that gentle, a little more limiting or compression can bring it up without hurting it. A few dB of gain reduction on the loudest peaks is often enough for acoustic music. Our <a href="../checker.html">free Release Check</a> shows exactly how much Spotify will turn your file up and whether your peaks are limiting it.</p>
 
 <h2>Reason 2: You're comparing different settings or apps</h2>

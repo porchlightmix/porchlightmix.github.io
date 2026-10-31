@@ -86,7 +86,7 @@
    "applicationCategory": "MultimediaApplication",
    "operatingSystem": "Any (runs in a web browser)",
    "browserRequirements": "Requires JavaScript and the Web Audio API",
-   "description": "Free in-browser checker that measures a song's integrated loudness (LUFS, ITU-R BS.1770-4), true peak, loudness range, clipping, silence and file format, and estimates how Spotify, Apple Music, YouTube and Amazon Music will adjust it. Audio is analyzed locally and never uploaded.",
+   "description": "Free in-browser checker that measures a song's integrated loudness (LUFS, ITU-R BS.1770), true peak, loudness range, clipping, silence and file format, and estimates how Spotify, Apple Music, YouTube and Amazon Music will adjust it. Audio is analyzed locally and never uploaded.",
    "featureList": [
     "Integrated loudness (LUFS)",
     "True peak (dBTP, 4x oversampling)",
@@ -140,7 +140,7 @@
      "name": "Will my reading match my DAW's meter?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "It should be close. The check follows the ITU-R BS.1770-4 standard. Small differences between meters are normal, and mono files can read about 3 LU differently depending on how a meter treats them."
+      "text": "It should be close. The check follows the ITU-R BS.1770 standard. Small differences between meters are normal, and mono files can read about 3 LU differently depending on how a meter treats them."
      }
     },
     {
@@ -249,7 +249,7 @@
   <section class="how">
     <h2>What this check measures</h2>
     <div class="rows">
-      <div class="row"><div class="name">Integrated loudness</div><div class="what">The average loudness of the whole song in LUFS, measured the way streaming services do (ITU-R BS.1770-4 K-weighting with gating). This is the number they use to turn your song up or down.</div><div></div></div>
+      <div class="row"><div class="name">Integrated loudness</div><div class="what">The average loudness of the whole song in LUFS, measured the way streaming services do (ITU-R BS.1770 K-weighting with gating). This is the number they use to turn your song up or down.</div><div></div></div>
       <div class="row"><div class="name">True peak</div><div class="what">The highest level the waveform reaches between samples, estimated with 4× oversampling, in dBTP. A file can peak above 0 dBTP even when no sample hits 0 dBFS, and those overs can distort after MP3/AAC encoding.</div><div></div></div>
       <div class="row"><div class="name">Loudness range</div><div class="what">How much the loudness moves between the quiet and loud parts of the song, in LU (EBU Tech 3342). Acoustic songs often have more range than pop, and that's fine.</div><div></div></div>
       <div class="row"><div class="name">Clipped spots</div><div class="what">Places where 3 or more samples in a row sit at full scale, which usually means the master clipped.</div><div></div></div>
@@ -262,7 +262,7 @@
       <details><summary>Is my file uploaded?</summary><p>No. The check runs entirely in this browser tab. Your file never leaves your device, and nothing is stored.</p></details>
       <details><summary>Why isn't loudness pass or fail?</summary><p>Spotify, Apple Music, YouTube and Amazon Music adjust playback volume, so a louder master is simply turned down. What can cause real problems is peaks that are too high, which can distort when the file is converted for streaming.</p></details>
       <details><summary>What LUFS should I aim for on Spotify?</summary><p>Spotify's default setting plays songs at about −14 LUFS. It recommends a true peak below −1 dBTP, or below −2 dBTP if the master is louder than −14 LUFS. Many acoustic and vocal songs sound good somewhere around −16 to −12 LUFS.</p></details>
-      <details><summary>Will my reading match my DAW's meter?</summary><p>It should be close. The check follows the ITU-R BS.1770-4 standard. Small differences between meters are normal, and mono files can read about 3 LU differently depending on how a meter treats them.</p></details>
+      <details><summary>Will my reading match my DAW's meter?</summary><p>It should be close. The check follows the ITU-R BS.1770 standard. Small differences between meters are normal, and mono files can read about 3 LU differently depending on how a meter treats them.</p></details>
       <details><summary>What does the free check not cover?</summary><p>It measures the file, not the mix. It can't tell you if the vocal is buried or the guitar is muddy. The Porchlight Mix full report covers that.</p></details>
     <p class="fine" style="margin-top:12px">New to LUFS? Read <a href="blog/how-loud-acoustic-song-spotify-lufs.html">How loud should an acoustic song be for Spotify?</a></p>
   </section>
@@ -270,12 +270,12 @@
   <div class="footnotes">
     <strong>Sources and notes</strong>
     <ol>
-      <li><b>Spotify</b> normalizes to −14 LUFS integrated by default and recommends keeping true peak below −1 dBTP, or below −2 dBTP if the master is louder than −14 LUFS. Quieter songs are turned up only as far as leaving 1 dB of peak headroom allows. <a href="https://support.spotify.com/us/artists/article/loudness-normalization/">Spotify for Artists: Loudness normalization</a>.</li>
+      <li><b>Spotify</b> normalizes to −14 LUFS integrated by default and recommends keeping true peak below −1 dBTP, or below −2 dBTP if the master is louder than −14 LUFS. Quieter songs are turned up only as far as their peaks allow; Spotify says it leaves 1 dB of headroom for lossy encodings. <a href="https://support.spotify.com/us/artists/article/loudness-normalization/">Spotify for Artists: Loudness normalization</a>.</li>
       <li><b>Apple Music</b> uses Sound Check, but Apple doesn't publish a LUFS target for music. −16 LUFS is the reference level reported by independent measurements (<a href="https://www.izotope.com/community/blog/mastering-for-streaming-platforms">iZotope</a>). Apple recommends leaving at least 1 dB of headroom to avoid clipping on playback (<a href="https://www.apple.com/apple-music/apple-digital-masters/docs/apple-digital-masters.pdf">Apple Digital Masters</a>).</li>
       <li><b>YouTube</b> doesn't publish a loudness number. −14 LUFS is the reference level reported by independent measurements, and YouTube is reported to turn loud uploads down but not turn quiet ones up (<a href="https://www.izotope.com/community/blog/mastering-for-streaming-platforms">iZotope</a>). There's no published true-peak limit, so −1 dBTP is shown as general good practice.</li>
       <li><b>Amazon Music</b> offers loudness normalization in its apps (<a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=TgG1d8mPjGwf885hRP">Amazon help</a>) but doesn't publish a target. −14 LUFS comes from independent tests (<a href="https://productionadvice.co.uk/amazon-music-loudness-normalization/">Production Advice</a>), and −2 dBTP is a conservative working ceiling, not an Amazon rule.</li>
       <li><b>Distributor file specs:</b> DistroKid accepts WAV, FLAC, MP3, M4A, AIFF and WMA, and says a 16-bit, 44.1 kHz WAV is typical (<a href="https://support.distrokid.com/hc/en-us/articles/360013647753-What-Audio-File-Formats-Can-I-Upload">DistroKid help</a>). Other distributors have similar or stricter rules, so check yours. The silence thresholds here are rules of thumb, not published limits.</li>
-      <li><b>Measurement:</b> loudness follows <a href="https://www.itu.int/rec/R-REC-BS.1770">ITU-R BS.1770-4</a> and <a href="https://tech.ebu.ch/publications/tech3342">EBU Tech 3342</a> (loudness range). Mono files are measured as one channel, as BS.1770 specifies. Some players treat mono as dual-mono, which reads about 3 LU louder. Readings can differ slightly from your DAW's meter. Service targets change over time, and listeners can turn normalization off.</li>
+      <li><b>Measurement:</b> loudness follows <a href="https://www.itu.int/rec/R-REC-BS.1770">ITU-R BS.1770</a> and <a href="https://tech.ebu.ch/publications/tech3342">EBU Tech 3342</a> (loudness range). Mono files are measured as one channel, as BS.1770 specifies. Some players treat mono as dual-mono, which reads about 3 LU louder. Readings can differ slightly from your DAW's meter. Service targets change over time, and listeners can turn normalization off.</li>
     </ol>
   </div>
 </div>
