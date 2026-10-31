@@ -2,7 +2,7 @@
    Palette: night #121A30 · panel #1C2542 · cream text #F4ECDC · amber #F5B544 · light amber #FFCF7A.
    Fonts are self-hosted (SIL Open Font License, see assets/fonts/OFL-*.txt), so no third-party font requests. */
 @font-face{font-family:"Fraunces";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/fraunces.woff2) format("woff2")}
-@font-face{font-family:"Fraunces";font-style:italic;font-weight:400 700;font-display:swap;src:url(fonts/fraunces-italic.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/fraunces-italic-500-latin.woff2) format("woff2")}
 @font-face{font-family:"Inter";font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/inter.woff2) format("woff2")}
 
 :root{
@@ -54,7 +54,7 @@ footer a{color:var(--accent-dk)}
 .card,.hero-card,.price,.report,.article,.doc,.faq details,.panel{background:var(--card);border-color:var(--line);box-shadow:var(--shadow)}
 .card p,.price li,.faq p,.post-list .card p{color:var(--muted)}
 .check{border-bottom-color:var(--line)}
-.hero-card h4{color:var(--muted)}
+.hero-card .hc-title{color:var(--muted)}
 
 /* homepage */
 .try-band{background:#19213b;border-color:var(--line)}

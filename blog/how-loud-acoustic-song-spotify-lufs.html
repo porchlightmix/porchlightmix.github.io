@@ -32,7 +32,7 @@
  "headline": "How loud should an acoustic or singer-songwriter song be for Spotify? (LUFS explained)",
  "description": "What LUFS and true peak mean, what Spotify does to quiet and loud masters, and a sensible loudness range for singer-songwriter, folk and acoustic releases.",
  "datePublished": "2026-10-19",
- "dateModified": "2026-10-19",
+ "dateModified": "2026-10-30",
  "mainEntityOfPage": {
   "@type": "WebPage",
   "@id": "https://porchlightmix.github.io/blog/how-loud-acoustic-song-spotify-lufs.html"
@@ -103,7 +103,7 @@
     <article class="article">
       <p class="fine" style="margin-bottom:6px"><a href="./">← All articles</a></p>
       <h1>How loud should an acoustic or singer-songwriter song be for Spotify? (LUFS explained)</h1>
-      <p class="meta">Porchlight Mix · <time datetime="2026-10-19">October 19, 2026</time> · 6 min read</p>
+      <p class="meta">Porchlight Mix · <time datetime="2026-10-19">October 19, 2026</time> (updated <time datetime="2026-10-30">October 30, 2026</time>) · 6 min read</p>
 <p>If you've ever uploaded a quiet, fingerpicked song next to a friend's loud pop master, you've probably wondered whether yours needs to be louder. The short answer: on Spotify, usually not. Spotify adjusts playback volume so most songs land at about the same loudness, and once you understand how that works, you can master acoustic songs for how they <em>sound</em> instead of for a number.</p>
 <p>This guide explains what LUFS means, what Spotify actually does with your file, and a sensible loudness range for singer-songwriter, folk and acoustic releases.</p>
 
@@ -122,7 +122,7 @@
 <ul>
   <li><strong>The default reference is −14 LUFS integrated</strong>, measured with ITU 1770. Premium listeners can choose "Loud" (−11 LUFS) or "Quiet" (−19 LUFS) instead.</li>
   <li><strong>Louder songs are turned down.</strong> A master at −8 LUFS is played about 6 dB quieter. Spotify notes this lowers the volume without adding distortion.</li>
-  <li><strong>Quieter songs are turned up, but only as far as their peaks allow.</strong> Spotify leaves 1 dB of headroom. Its own example is a track at −20 LUFS with a true peak of −5 dBFS, which only gets raised to −16 LUFS.</li>
+  <li><strong>Quieter songs are turned up, but only as far as their peaks allow.</strong> Spotify says it leaves 1 dB of headroom for lossy (compressed) encodings. Its own example is a track at −20 LUFS with a true peak of −5 dBFS, which only gets raised to −16 LUFS.</li>
   <li><strong>Albums are normalized as a unit</strong> when someone plays the album, so a gentle ballad stays gentler than the full-band track next to it. In playlists and on shuffle, each track is adjusted individually.</li>
   <li><strong>Not every playback path normalizes.</strong> Spotify says the web player and some third-party devices, like TVs and speakers, don't apply normalization.</li>
 </ul>
@@ -135,7 +135,7 @@
 <ol>
   <li><strong>Master for the song first.</strong> Fingerpicked guitar, breathy vocals and room sound depend on dynamics. If pushing the limiter harder makes the vocal sound pinched or the guitar loses its attack, you've gone too far, whatever the meter says.</li>
   <li><strong>Somewhere around −16 to −12 LUFS integrated is a comfortable zone</strong> for many acoustic releases. It's close enough to Spotify's reference that the song isn't turned down by much, and it leaves room for dynamics. Treat this as a starting point, not a rule. A whisper-quiet piano piece might sit lower, and a full-band country track might sit higher.</li>
-  <li><strong>If you go quieter than −14, watch your peaks.</strong> Spotify only raises a quiet song until its true peak hits about −1 dBTP. A dynamic song at −17 LUFS with peaks at −1 dBTP can't be turned up at all, so it plays about 3 dB quieter than tracks around it. That's perfectly acceptable for an intimate song, but it should be a choice you make on purpose.</li>
+  <li><strong>If you go quieter than −14, watch your peaks.</strong> On Spotify's compressed (lossy) streams, a quiet song is only raised until its true peak hits about −1 dBTP. A dynamic song at −17 LUFS with peaks at −1 dBTP can't be turned up at all, so it plays about 3 dB quieter than tracks around it. That's perfectly acceptable for an intimate song, but it should be a choice you make on purpose.</li>
   <li><strong>Keep true peak at −1 dBTP or lower</strong> (−2 dBTP if you master louder than −14). Most modern limiters have a true-peak mode, so turn it on and set the ceiling there.</li>
   <li><strong>Keep songs on the same release consistent with each other.</strong> Because Spotify normalizes albums together, the relative levels between your tracks are what listeners hear when they play the whole album. Balance them by ear so the quiet song feels quieter by the amount you intend.</li>
 </ol>

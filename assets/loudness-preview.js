@@ -1,5 +1,5 @@
 /* Porchlight Mix: free Loudness Preview.
- * Measures integrated loudness (ITU-R BS.1770-4) and true peak with the same code as the free Release Check
+ * Measures integrated loudness (ITU-R BS.1770) and true peak with the same code as the free Release Check
  * (checker-core.js + audio-io.js), then estimates how each streaming service adjusts playback volume.
  * Runs entirely in this browser tab. The file is never uploaded. No tracking, no network calls. */
 (function () {

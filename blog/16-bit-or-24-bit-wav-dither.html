@@ -32,7 +32,7 @@
  "headline": "Should I export 16-bit or 24-bit WAV for release? (And when to dither)",
  "description": "What bit depth and sample rate to export for Spotify, Apple Music, DistroKid, CD Baby and TuneCore, when dither matters, and how to check your file before upload.",
  "datePublished": "2026-10-26",
- "dateModified": "2026-10-26",
+ "dateModified": "2026-10-30",
  "mainEntityOfPage": {
   "@type": "WebPage",
   "@id": "https://porchlightmix.github.io/blog/16-bit-or-24-bit-wav-dither.html"
@@ -103,7 +103,7 @@
     <article class="article">
       <p class="fine" style="margin-bottom:6px"><a href="./">← All articles</a></p>
       <h1>Should I export 16-bit or 24-bit WAV for release? (And when to dither)</h1>
-      <p class="meta">Porchlight Mix · <time datetime="2026-10-26">October 26, 2026</time> · 6 min read</p>
+      <p class="meta">Porchlight Mix · <time datetime="2026-10-26">October 26, 2026</time> (updated <time datetime="2026-10-30">October 30, 2026</time>) · 6 min read</p>
 <p>You've finished the master and the export window is asking questions: 16-bit or 24-bit? 44.1 or 48 kHz? Dither on or off? The question comes up again and again on Reddit and recording forums, and the advice often disagrees because the rules have changed and each distributor words them a little differently.</p>
 <p>Here's the short answer, then the reasons, using what Spotify, Apple, DistroKid, CD Baby and TuneCore actually publish.</p>
 
@@ -115,7 +115,7 @@
 </ul></div>
 
 <h2>What the streaming services want now</h2>
-<p>Spotify's guidance for audio delivery is clear. It asks for your highest-quality native stereo master, at 44.1 kHz or higher, and 24-bit if that's what the master is. It says to deliver 16-bit only if no higher bit depth master exists, and specifically says not to create a 16-bit version from a 24-bit master for delivery. It also asks you not to downsample, because it handles format conversion itself.<sup><a href="#s1">1</a></sup> That matters more than it used to: Spotify Premium now offers lossless playback at up to 24-bit/44.1 kHz FLAC.<sup><a href="#s2">2</a></sup></p>
+<p>Spotify's guidance for audio delivery is clear. It says it strongly prefers FLAC, and accepts WAV if it meets the same technical requirements. A WAV delivered to Spotify must be plain PCM (format code 0x0001), not the "extensible" WAV type (0xFFFE).<sup><a href="#s1">1</a></sup> It asks for your highest-quality native stereo master, at 44.1 kHz or higher, and 24-bit if that's what the master is. It says to deliver 16-bit only if no higher bit depth master exists, and specifically says not to create a 16-bit version from a 24-bit master for delivery. It also asks you not to downsample, because it handles format conversion itself.<sup><a href="#s1">1</a></sup> That matters more than it used to: Spotify Premium now offers lossless playback at up to 24-bit/44.1 kHz FLAC.<sup><a href="#s2">2</a></sup></p>
 <p>Apple says the same thing in its own terms. To be badged as an Apple Digital Master, audio has to be delivered at 24-bit, at 44.1 kHz up to 192 kHz, and Apple asks for the project's native resolution without downsampling. It also says up-sampling or "bit-padding" 44.1 kHz/16-bit files isn't allowed for that badge.<sup><a href="#s3">3</a></sup></p>
 <p>So if you're uploading straight to the stores' standards, a 24-bit master at the rate you mixed at is the file they're asking for.</p>
 
@@ -123,7 +123,7 @@
 <p>Most home artists don't send files to Spotify or Apple directly. A distributor sits in the middle, and its upload rules are the ones your file has to pass. They're not all the same:</p>
 <ul>
   <li><strong>DistroKid</strong> accepts WAV, FLAC, AIFF, MP3 and other formats. For WAV it says 16-bit, 44.1 kHz is typical, "but pretty much any specification works."<sup><a href="#s4">4</a></sup></li>
-  <li><strong>TuneCore's</strong> upload help article recommends 24-bit WAV files and also accepts 16-bit, 44.1 kHz.<sup><a href="#s5">5</a></sup></li>
+  <li><strong>TuneCore's</strong> upload help article recommends 24-bit, 192 kHz WAV files, and also accepts 16-bit, 44.1 kHz WAV files ("accepted, but not recommended"). Those are the only two formats it names.<sup><a href="#s5">5</a></sup></li>
   <li><strong>CD Baby</strong> lists stereo WAV or FLAC at 44.1 kHz and 16-bit in its audio requirements. It even says a 24-bit, 48 kHz file is a common mismatch that needs converting before upload.<sup><a href="#s6">6</a></sup></li>
 </ul>
 <p>Help pages change, so check your distributor's current one before you export. If it accepts 24-bit, send 24-bit. If it asks for 16-bit, give it 16-bit and do the conversion properly, which is where dither comes in.</p>
@@ -143,7 +143,7 @@
 
 <h2>What about 24-bit exports?</h2>
 <p>If you're sending a 24-bit file, you're not doing the 24-to-16 cut that the dither rules above are about. Spotify says it does any bit-depth reduction it needs on its side, and asks you not to do those conversions yourself.<sup><a href="#s1">1</a></sup> So for a 24-bit delivery, focus on the master itself, not dither settings.</p>
-<p>What about 32-bit float? Your DAW may mix in 32-bit float, but Spotify says files delivered above 24-bit are reduced internally to a maximum of 24-bit/44.1 kHz FLAC.<sup><a href="#s1">1</a></sup> A 24-bit export is what Spotify and Apple ask for, and DistroKid and TuneCore accept it. CD Baby is the exception, so follow its 16-bit rule there.</p>
+<p>What about 32-bit float? Your DAW may mix in 32-bit float, but Spotify says files delivered above 24-bit are reduced internally to a maximum of 24-bit/44.1 kHz FLAC.<sup><a href="#s1">1</a></sup> A 24-bit export is what Spotify and Apple ask for, DistroKid accepts it, and TuneCore recommends 24-bit (at 192 kHz). CD Baby is the exception, so follow its 16-bit rule there.</p>
 
 <h2>How to check the file you exported</h2>
 <p>Don't trust the export dialog alone. CD Baby suggests right-clicking the file and choosing Properties (Windows) or Get Info (Mac). A 16-bit, 44.1 kHz WAV shows a bit rate of 1,411 kbps and a sample rate of 44.100 kHz.<sup><a href="#s6">6</a></sup> Then actually play it all the way through, especially the quiet start and the fade at the end.</p>
@@ -158,7 +158,7 @@
   <li>☐ True peak at or below −1 dBTP, with a little room left if you're dithering</li>
   <li>☐ File properties confirmed, and the quiet intro and fade played back</li>
 </ul></div>
-<p>For the rest of the release, the <a href="../release-checklist.html">free Release Checklist</a> builds a to-do list from your release date and distributor. Our guide to <a href="how-loud-acoustic-song-spotify-lufs.html">how loud an acoustic song should be on Spotify</a> covers loudness and true peak in more depth, <a href="16-bit-or-24-bit-wav-dither.html">why distributors reject songs</a> covers cover art, names and rights, and <a href="why-song-sounds-quieter-on-spotify.html">why your song might sound quieter on Spotify</a> picks up where the export leaves off.</p>
+<p>For the rest of the release, the <a href="../release-checklist.html">free Release Checklist</a> builds a to-do list from your release date and distributor. Our guide to <a href="how-loud-acoustic-song-spotify-lufs.html">how loud an acoustic song should be on Spotify</a> covers loudness and true peak in more depth, <a href="why-distributor-rejected-my-song.html">why distributors reject songs</a> covers cover art, names and rights, and <a href="why-song-sounds-quieter-on-spotify.html">why your song might sound quieter on Spotify</a> picks up where the export leaves off.</p>
 <p>Porchlight Mix is building a full Release-Ready report for home recordings, with a plain-English fix list for the mix and master before you upload. <a href="../#waitlist">Join the waitlist</a> to get early access.</p>
 
       <div class="cta-band" style="margin:30px 0 0">

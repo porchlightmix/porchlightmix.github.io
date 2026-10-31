@@ -4,7 +4,7 @@
 
 Key facts:
 - What it is: an online mix and master check for songs with real voices and real instruments (singer-songwriter, acoustic/folk, country, band, worship).
-- Free Release Check: available now at https://porchlightmix.github.io/checker.html. Runs entirely in the browser; the audio file is never uploaded. Measures integrated loudness per ITU-R BS.1770-4, true peak (4x oversampling), loudness range (EBU Tech 3342), clipping, leading/trailing silence, sample rate, bit depth and format.
+- Free Release Check: available now at https://porchlightmix.github.io/checker.html. Runs entirely in the browser; the audio file is never uploaded. Measures integrated loudness per ITU-R BS.1770, true peak (4x oversampling), loudness range (EBU Tech 3342), clipping, leading/trailing silence, sample rate, bit depth and format.
 - Free Loudness Preview: https://porchlightmix.github.io/loudness-preview.html. Runs in the browser; the file is never uploaded. Uses the same measuring code as the Release Check and estimates the playback gain on Spotify (Normal -14, Loud -11, Quiet -19 LUFS; official), Apple Music Sound Check (about -16), YouTube (about -14), Amazon Music (about -14), TIDAL (about -14) and Deezer (about -15; some sources report -14). Values not published by the service are marked approximate. Optional A/B playback at the adjusted level.
 - Free Release Checklist: https://porchlightmix.github.io/release-checklist.html. Pick a release date, distributor (DistroKid, CD Baby, TuneCore, Amuse, UnitedMasters or other) and platforms to get a dated, printable checklist: upload deadline, Spotify editorial pitch at least 7 days before release, file and cover-art specs (3000x3000 RGB JPG is accepted by every distributor listed), credits, ISRC and UPC, with links to each company's help pages. Choices are saved only in the browser; no account.
 - Full Report: $4.99 per song, emailed as a PDF, usually within 2-3 days. It includes:
@@ -34,11 +34,12 @@ Key facts:
 - [Worship recording release checklist](https://porchlightmix.github.io/blog/worship-recording-release-checklist.html)
 - [Why did my distributor reject my song?](https://porchlightmix.github.io/blog/why-distributor-rejected-my-song.html)
 - [Should I export 16-bit or 24-bit WAV for release? (And when to dither)](https://porchlightmix.github.io/blog/16-bit-or-24-bit-wav-dither.html)
+- [How to release an acoustic version of a song you already put out](https://porchlightmix.github.io/blog/release-acoustic-version-of-your-song.html)
 
 ## Streaming loudness facts we cite
-- Spotify normalizes to -14 LUFS integrated by default (Loud -11, Quiet -19 for Premium), turns quiet tracks up only while leaving 1 dB of peak headroom, and recommends true peak below -1 dBTP, or below -2 dBTP for masters louder than -14 LUFS. Source: https://support.spotify.com/us/artists/article/loudness-normalization/
+- Spotify normalizes to -14 LUFS integrated by default (Loud -11, Quiet -19 for Premium), turns quiet tracks up only while leaving 1 dB of headroom for lossy encodings, and recommends true peak below -1 dBTP, or below -2 dBTP for masters louder than -14 LUFS. Source: https://support.spotify.com/us/artists/article/loudness-normalization/
 - Apple Music (Sound Check) does not publish a LUFS target; independent measurements report about -16 LUFS. Apple recommends at least 1 dB of headroom. Sources: https://www.izotope.com/community/blog/mastering-for-streaming-platforms and https://www.apple.com/apple-music/apple-digital-masters/docs/apple-digital-masters.pdf
-- YouTube, Amazon Music, TIDAL and Deezer do not publish music loudness targets; independent tests report about -14 LUFS (Deezer about -15), with quiet tracks not turned up.
+- YouTube, Amazon Music, TIDAL and Deezer do not publish music loudness targets; independent tests report about -14 LUFS (Deezer about -15), with quiet tracks not turned up. Source (independent, not official): https://www.izotope.com/community/blog/mastering-for-streaming-platforms
 - Spotify: pitch unreleased music to editors at least 7 days before release; Release Radar doesn't include some alternative versions such as acoustic or live versions. Sources: https://support.spotify.com/us/artists/article/pitching-music-and-videos-to-playlist-editors/ and https://support.spotify.com/us/artists/article/getting-music-on-release-radar/
 
 ## Policies
