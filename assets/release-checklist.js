@@ -1,6 +1,6 @@
 /* Porchlight Mix: free Release Checklist builder.
  * Everything happens in this browser tab. Choices are saved only in this browser (localStorage).
- * No accounts, no tracking, no network calls. Specs checked against official help pages on October 20, 2026. */
+ * No accounts, no tracking, no network calls. Specs checked against official help pages on November 22, 2026. */
 (function () {
   'use strict';
   var KEY = 'pm-checklist-v1';
